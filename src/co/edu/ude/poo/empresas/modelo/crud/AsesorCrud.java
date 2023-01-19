@@ -51,4 +51,8 @@ public class AsesorCrud {
         
         return asesores;
     }
+    
+    public int contar() {
+        return asesores.size();
+    }
 }
