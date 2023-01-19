@@ -49,4 +49,8 @@ public class PaisCrud {
         
         return paises;
     }
+    
+    public int contar() {
+        return paises.size();
+    }
 }

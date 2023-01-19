@@ -52,4 +52,8 @@ public class EmpresaCrud {
         
         return empresas;
     }
+    
+    public int contar() {
+        return empresas.size();
+    }
 }

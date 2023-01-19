@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package co.edu.ude.poo.empresas;
+import co.edu.ude.poo.empresas.modelo.crud.*;
 import co.edu.ude.poo.empresas.modelo.entidades.*;
 /**
  *
@@ -37,6 +38,29 @@ public class Principal {
         System.out.println(vendedor2);
         vendedor2.setNumero_trabajos(2);
         System.out.println(vendedor2.getNumero_trabajos());
+        
+        System.out.println();
+        
+        AsesorCrud asesorCrud = new AsesorCrud();
+        Asesor asesor1 = new Asesor("1654", "4/1/2023", "Diego", "Calle 24", "Asesoria financiera");
+        asesorCrud.agregar(asesor1);
+        
+        Asesor asesor2 = new Asesor("7891", "8/6/2021", "Mateo", "Calle 64", "Asesoria Legal");
+        asesorCrud.agregar(asesor2);
+        
+        System.out.println("Número de asesores en la lista: " + asesorCrud.contar());
+
+        Asesor asesorEncontrado = asesorCrud.buscar("1654");
+        if (asesorEncontrado != null) {
+            System.out.println("Asesor encontrado:");
+            System.out.println("    -Código: " + asesorEncontrado.getId());
+            System.out.println("    -Nombre: " + asesorEncontrado.getNombre());
+            System.out.println("    -Dirección: " + asesorEncontrado.getDireccion());
+            System.out.println("    -Fecha de inicio: " + asesorEncontrado.getFecha_inicio());
+            System.out.println("    -Titulación: " + asesorEncontrado.getTitulacion());
+        } else {
+            System.out.println("Asesor no encontrado.");
+        }
     }
     
 }

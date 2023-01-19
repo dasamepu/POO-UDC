@@ -49,4 +49,8 @@ public class HoldingCrud {
         
         return holdings;
     }
+    
+    public int contar() {
+        return holdings.size();
+    }
 }

@@ -50,4 +50,8 @@ public class SedeCrud {
         
         return sedes;
     }
+    
+    public int contar() {
+        return sedes.size();
+    }
 }

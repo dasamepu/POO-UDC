@@ -48,5 +48,9 @@ public class VendedorCrud {
         
         return vendedores;
     }
+    
+    public int contar() {
+        return vendedores.size();
+    }
 }
         

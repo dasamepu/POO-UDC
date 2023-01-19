@@ -49,4 +49,8 @@ public class AreaCrud {
         
         return areas;
     }
+    
+    public int contar() {
+        return areas.size();
+    }
 }
