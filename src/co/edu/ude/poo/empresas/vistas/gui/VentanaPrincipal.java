@@ -20,10 +20,7 @@ public class VentanaPrincipal extends JFrame {
 
         setExtendedState(JFrame.MAXIMIZED_BOTH);
         
-        setTitle("Holding");
-        
-        ImageIcon icon = new ImageIcon("src/co/edu/ude/poo/empresas/vistas/iconos icono.png");
-        setIconImage(icon.getImage());        
+        setTitle("Holding");      
         
         JMenuBar barraDeMenu = new JMenuBar();
         
@@ -56,13 +53,6 @@ public class VentanaPrincipal extends JFrame {
 
         setJMenuBar(barraDeMenu);
         
-        JLabel fondo = new JLabel(); 
-        ImageIcon imagen = new ImageIcon("./iconos/background.png"); 
-        fondo.setIcon(imagen); 
-        fondo.setHorizontalAlignment(JLabel.CENTER); 
-        fondo.setVerticalAlignment(JLabel.CENTER); 
-        add(fondo);
-    
     }
     
 
