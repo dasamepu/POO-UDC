@@ -4,6 +4,7 @@
  */
 package co.edu.ude.poo.empresas;
 import java.util.ArrayList;
+import co.edu.ude.poo.empresas.vistas.gui.*;
 import co.edu.ude.poo.empresas.modelo.crud.*;
 import co.edu.ude.poo.empresas.modelo.entidades.*;
 /**
@@ -12,6 +13,10 @@ import co.edu.ude.poo.empresas.modelo.entidades.*;
  */
 public class Principal {
     public static void main(String[] args){
+        
+        VentanaPrincipal ventana = new VentanaPrincipal();
+        ventana.setVisible(true);
+        
         Empresa empresa1 = new Empresa("12345", "ecopetrol", 
                 "1/1/2022", 363563456, 354);
         empresa1.setNum_sedes(1);
