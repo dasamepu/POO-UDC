@@ -20,7 +20,7 @@ public class VentanaPrincipal extends JFrame {
 
         setExtendedState(JFrame.MAXIMIZED_BOTH);
         
-        setTitle("Holding");      
+        setTitle("Base de datos");      
         
         JMenuBar barraDeMenu = new JMenuBar();
         
@@ -53,8 +53,32 @@ public class VentanaPrincipal extends JFrame {
 
         setJMenuBar(barraDeMenu);
         
+        // Obtener el ítem "Agregar" del menú "Asesor"
+        JMenuItem itemAgregarAsesor = menu[1].getItem(0);
+        // Agregar evento de acción para mostrar el formulario de agregar asesor
+        itemAgregarAsesor.addActionListener(e -> mostrarVentanaCrudAsesor("Agregar"));
+        
+        // Obtener el ítem "Buscar" del menú "Asesor"
+        JMenuItem itemBuscarAsesor = menu[1].getItem(1);
+        // Agregar evento de acción para mostrar el formulario de buscar asesor
+        itemBuscarAsesor.addActionListener(e -> mostrarVentanaCrudAsesor("Buscar"));
+
+        // Obtener el ítem "Editar" del menú "Asesor" 
+        JMenuItem itemEditarAsesor = menu[1].getItem(2); 
+        // Agregar evento de acción para mostrar el formulario de editar asesor 
+        itemEditarAsesor.addActionListener(e -> mostrarVentanaCrudAsesor("Editar"));
+
+        // Obtener el ítem "Eliminar" del menú "Asesor" 
+        JMenuItem itemEliminarAsesor = menu[1].getItem(3); 
+        // Agregar evento de acción para mostrar el formulario de eliminar asesor 
+        itemEliminarAsesor.addActionListener(e -> mostrarVentanaCrudAsesor("Eliminar"));
+           
     }
     
+    private void mostrarVentanaCrudAsesor(String operacion) {
+            VentanaCrudAsesor ventana = new VentanaCrudAsesor(this, operacion);
+            ventana.setVisible(true);
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
