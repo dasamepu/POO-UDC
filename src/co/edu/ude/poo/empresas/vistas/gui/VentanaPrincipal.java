@@ -6,6 +6,7 @@ package co.edu.ude.poo.empresas.vistas.gui;
 import java.awt.Image;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
@@ -21,9 +22,11 @@ public class VentanaPrincipal extends JFrame {
     public VentanaPrincipal() {
         initComponents();
 
-        ImageIcon icono = new ImageIcon("./icono.png");
-        Image iconoEscalado = icono.getImage().getScaledInstance(10, 10, Image.SCALE_SMOOTH);
-        setIconImage(iconoEscalado);
+        setExtendedState(JFrame.MAXIMIZED_BOTH);
+        
+        ClassLoader classLoader = getClass().getClassLoader();
+        ImageIcon imagen = new ImageIcon(classLoader.getResource("agregar.png"));
+        
         setTitle("Holding");
 
         JMenuBar barraDeMenu = new JMenuBar();
@@ -35,7 +38,7 @@ public class VentanaPrincipal extends JFrame {
         }
 
         for (JMenu jMenu : menu) {
-            JMenuItem ItemAgregar = new JMenuItem("Agregar");
+            JMenuItem ItemAgregar = new JMenuItem("Agregar", imagen);
             JMenuItem ItemBuscar = new JMenuItem("Buscar");
             JMenuItem ItemEditar = new JMenuItem("Editar");
             JMenuItem ItemEliminar = new JMenuItem("Eliminar");
@@ -55,6 +58,11 @@ public class VentanaPrincipal extends JFrame {
         }
 
         setJMenuBar(barraDeMenu);
+        
+        //JLabel fondo = new JLabel(); 
+        //ImageIcon imagen = new ImageIcon("icono.png"); 
+        //fondo.setIcon(imagen); 
+        //add(fondo);
 }
 
     /**
