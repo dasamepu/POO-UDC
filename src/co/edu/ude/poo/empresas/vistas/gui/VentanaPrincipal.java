@@ -4,12 +4,7 @@
  */
 package co.edu.ude.poo.empresas.vistas.gui;
 import java.awt.Image;
-import javax.swing.ImageIcon;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JMenu;
-import javax.swing.JMenuBar;
-import javax.swing.JMenuItem;
+import javax.swing.*;
 /**
  *
  * @author david
@@ -19,13 +14,12 @@ public class VentanaPrincipal extends JFrame {
     /**
      * Creates new form VentanaPrincipal
      */
+    
     public VentanaPrincipal() {
+        
         initComponents();
 
         setExtendedState(JFrame.MAXIMIZED_BOTH);
-        
-        ClassLoader classLoader = getClass().getClassLoader();
-        ImageIcon imagen = new ImageIcon(classLoader.getResource("agregar.png"));
         
         setTitle("Holding");
 
@@ -38,7 +32,7 @@ public class VentanaPrincipal extends JFrame {
         }
 
         for (JMenu jMenu : menu) {
-            JMenuItem ItemAgregar = new JMenuItem("Agregar", imagen);
+            JMenuItem ItemAgregar = new JMenuItem("Agregar");
             JMenuItem ItemBuscar = new JMenuItem("Buscar");
             JMenuItem ItemEditar = new JMenuItem("Editar");
             JMenuItem ItemEliminar = new JMenuItem("Eliminar");
@@ -58,11 +52,7 @@ public class VentanaPrincipal extends JFrame {
         }
 
         setJMenuBar(barraDeMenu);
-        
-        //JLabel fondo = new JLabel(); 
-        //ImageIcon imagen = new ImageIcon("icono.png"); 
-        //fondo.setIcon(imagen); 
-        //add(fondo);
+    
 }
 
     /**
@@ -74,17 +64,26 @@ public class VentanaPrincipal extends JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel1 = new javax.swing.JPanel();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jPanel1.setLayout(null);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap(423, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(327, Short.MAX_VALUE))
         );
 
         pack();
@@ -126,5 +125,6 @@ public class VentanaPrincipal extends JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }
