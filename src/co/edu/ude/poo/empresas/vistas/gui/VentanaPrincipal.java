@@ -39,13 +39,19 @@ public class VentanaPrincipal extends JFrame {
             JMenuItem ItemBuscar = new JMenuItem("Buscar");
             JMenuItem ItemEditar = new JMenuItem("Editar");
             JMenuItem ItemEliminar = new JMenuItem("Eliminar");
-            JMenuItem ItemReportes = new JMenuItem("Reportes");
-            
+            JMenu ItemReportes = new JMenu("Reportes");
+   
+            JMenuItem subitemListarTodo = new JMenuItem("Listar Todo"); 
+            JMenuItem subitemListarXPropiedad = new JMenuItem("Listar por X propiedad"); 
+           
             jMenu.add(ItemAgregar);
             jMenu.add(ItemBuscar);
             jMenu.add(ItemEditar);
             jMenu.add(ItemEliminar);
             jMenu.add(ItemReportes);
+            
+            ItemReportes.add(subitemListarTodo); 
+            ItemReportes.add(subitemListarXPropiedad);
         }
 
         setJMenuBar(barraDeMenu);
