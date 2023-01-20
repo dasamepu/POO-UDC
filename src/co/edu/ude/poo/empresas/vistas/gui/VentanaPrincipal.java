@@ -3,7 +3,6 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package co.edu.ude.poo.empresas.vistas.gui;
-import co.edu.ude.poo.empresas.vistas.iconos.*;
 import java.awt.Image;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
@@ -14,59 +13,43 @@ import javax.swing.JMenuItem;
  *
  * @author david
  */
-public class VentanaPrincipal extends javax.swing.JFrame {
+public class VentanaPrincipal extends JFrame {
 
     /**
      * Creates new form VentanaPrincipal
      */
     public VentanaPrincipal() {
         initComponents();
-         //Código de la ventana
-        //...
 
-        //Carga la imagen del icono
-        ImageIcon icono = new ImageIcon("icono.png");
-        Image iconoEscalado = icono.getImage().getScaledInstance(20, 20, Image.SCALE_SMOOTH);
-        //Asigna el icono a la ventana
+        ImageIcon icono = new ImageIcon("./icono.png");
+        Image iconoEscalado = icono.getImage().getScaledInstance(10, 10, Image.SCALE_SMOOTH);
         setIconImage(iconoEscalado);
-        
-        // Crea una barra de menús
+        setTitle("Holding");
+
         JMenuBar barraDeMenu = new JMenuBar();
-
-        // Crea el menú principal
-        //JMenu menuPrincipal = new JMenu("Clases");
-
-        // Crea los items del menú
-        JMenu Area = new JMenu("Area");
-        JMenu Asesor = new JMenu("Asesor");
-        JMenu Empresa = new JMenu("Empresa");
-        JMenu Holding = new JMenu("Holding");
-        JMenu Pais = new JMenu("Pais");
-        JMenu Sede = new JMenu("Sede");
-        JMenu Vendedor = new JMenu("Vendedor");
-
-        // Añade los items al menú
-        //menuPrincipal.add(itemArea);
-        //menuPrincipal.add(itemAsesor);
-        //menuPrincipal.add(itemEmpresa);
-        //menuPrincipal.add(itemHolding);
-        //menuPrincipal.add(itemPais);
-        //menuPrincipal.add(itemSede);
-        //menuPrincipal.add(itemVendedor);
-
-        // Añade el menú principal a la barra de menús
-        //barraDeMenu.add(menuPrincipal);
-        barraDeMenu.add(Area);
-        barraDeMenu.add(Asesor);
-        barraDeMenu.add(Empresa);
-        barraDeMenu.add(Holding);
-        barraDeMenu.add(Pais);
-        barraDeMenu.add(Sede);
-        barraDeMenu.add(Vendedor);
         
-        // Añade la barra de menús a la ventana
+        JMenu[] menu = {new JMenu("Area"), new JMenu("Asesor"), new JMenu("Empresa"), new JMenu("Holding"), new JMenu("Pais"), new JMenu("Sede"), new JMenu("Vendedor")};
+
+        for (JMenu jMenu : menu) {
+            barraDeMenu.add(jMenu);
+        }
+
+        for (JMenu jMenu : menu) {
+            JMenuItem ItemAgregar = new JMenuItem("Agregar");
+            JMenuItem ItemBuscar = new JMenuItem("Buscar");
+            JMenuItem ItemEditar = new JMenuItem("Editar");
+            JMenuItem ItemEliminar = new JMenuItem("Eliminar");
+            JMenuItem ItemReportes = new JMenuItem("Reportes");
+            
+            jMenu.add(ItemAgregar);
+            jMenu.add(ItemBuscar);
+            jMenu.add(ItemEditar);
+            jMenu.add(ItemEliminar);
+            jMenu.add(ItemReportes);
+        }
+
         setJMenuBar(barraDeMenu);
-    }
+}
 
     /**
      * This method is called from within the constructor to initialize the form.
