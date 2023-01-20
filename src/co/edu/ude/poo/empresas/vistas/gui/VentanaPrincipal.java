@@ -3,7 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package co.edu.ude.poo.empresas.vistas.gui;
-import java.awt.Image;
+import java.awt.*;
 import javax.swing.*;
 /**
  *
@@ -14,7 +14,6 @@ public class VentanaPrincipal extends JFrame {
     /**
      * Creates new form VentanaPrincipal
      */
-    
     public VentanaPrincipal() {
         
         initComponents();
@@ -22,10 +21,14 @@ public class VentanaPrincipal extends JFrame {
         setExtendedState(JFrame.MAXIMIZED_BOTH);
         
         setTitle("Holding");
-
+        
+        ImageIcon icon = new ImageIcon("src/co/edu/ude/poo/empresas/vistas/iconos icono.png");
+        setIconImage(icon.getImage());        
+        
         JMenuBar barraDeMenu = new JMenuBar();
         
-        JMenu[] menu = {new JMenu("Area"), new JMenu("Asesor"), new JMenu("Empresa"), new JMenu("Holding"), new JMenu("Pais"), new JMenu("Sede"), new JMenu("Vendedor")};
+        JMenu[] menu = {new JMenu("Area"), new JMenu("Asesor"), new JMenu("Empresa"), 
+            new JMenu("Holding"), new JMenu("Pais"), new JMenu("Sede"), new JMenu("Vendedor")};
 
         for (JMenu jMenu : menu) {
             barraDeMenu.add(jMenu);
@@ -52,8 +55,16 @@ public class VentanaPrincipal extends JFrame {
         }
 
         setJMenuBar(barraDeMenu);
+        
+        JLabel fondo = new JLabel(); 
+        ImageIcon imagen = new ImageIcon("./iconos/background.png"); 
+        fondo.setIcon(imagen); 
+        fondo.setHorizontalAlignment(JLabel.CENTER); 
+        fondo.setVerticalAlignment(JLabel.CENTER); 
+        add(fondo);
     
-}
+    }
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
