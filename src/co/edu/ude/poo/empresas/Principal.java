@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package co.edu.ude.poo.empresas;
+import java.util.ArrayList;
 import co.edu.ude.poo.empresas.modelo.crud.*;
 import co.edu.ude.poo.empresas.modelo.entidades.*;
 /**
@@ -48,7 +49,11 @@ public class Principal {
         Asesor asesor2 = new Asesor("7891", "8/6/2021", "Mateo", "Calle 64", "Asesoria Legal");
         asesorCrud.agregar(asesor2);
         
+        Asesor asesor3 = new Asesor("4566", "3/4/2020", "Julio", "Calle 41", "Asesoria Tributaria");
+        asesorCrud.agregar(asesor3);
+        
         System.out.println("Número de asesores en la lista: " + asesorCrud.contar());
+        System.out.println("");
 
         Asesor asesorEncontrado = asesorCrud.buscar("1654");
         if (asesorEncontrado != null) {
@@ -58,8 +63,29 @@ public class Principal {
             System.out.println("    -Dirección: " + asesorEncontrado.getDireccion());
             System.out.println("    -Fecha de inicio: " + asesorEncontrado.getFecha_inicio());
             System.out.println("    -Titulación: " + asesorEncontrado.getTitulacion());
+            System.out.println("");
         } else {
             System.out.println("Asesor no encontrado.");
+        }
+        
+        Asesor asesor1Editado = new Asesor("1654", "Juan Diego", "Calle 45", "01/01/2020", "Asesor de marketing");
+        asesorCrud.editar(asesor1Editado);
+
+        asesorCrud.eliminar("7891");
+        
+        System.out.println("Número de asesores en la lista: " + asesorCrud.contar());
+        System.out.println("");
+        
+        System.out.println("La lista de asesores:");
+        ArrayList<Asesor> listaAsesores = asesorCrud.listarTodo();
+        for (int i = 0; i < listaAsesores.size(); i++) {
+            Asesor a = listaAsesores.get(i);
+            System.out.println("    -Código: " + a.getId());
+            System.out.println("    -Nombre: " + a.getNombre());
+            System.out.println("    -Dirección: " + a.getDireccion());
+            System.out.println("    -Fecha de inicio: " + a.getFecha_inicio());
+            System.out.println("    -Titulación: " + a.getTitulacion());
+            System.out.println("");
         }
     }
     
