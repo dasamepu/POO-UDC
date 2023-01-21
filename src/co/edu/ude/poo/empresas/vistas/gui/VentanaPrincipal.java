@@ -30,76 +30,83 @@ public class VentanaPrincipal extends JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jMenuBar1 = new javax.swing.JMenuBar();
-        jMenu1 = new javax.swing.JMenu();
-        jMenuItem2 = new javax.swing.JMenuItem();
-        jMenuItem3 = new javax.swing.JMenuItem();
-        jMenuItem4 = new javax.swing.JMenuItem();
-        jMenuItem1 = new javax.swing.JMenuItem();
-        jMenu8 = new javax.swing.JMenu();
-        jMenuItem5 = new javax.swing.JMenuItem();
-        jMenuItem6 = new javax.swing.JMenuItem();
-        jMenuItem7 = new javax.swing.JMenuItem();
-        jMenu2 = new javax.swing.JMenu();
-        jMenuItem8 = new javax.swing.JMenuItem();
-        jMenuItem9 = new javax.swing.JMenuItem();
-        jMenuItem10 = new javax.swing.JMenuItem();
-        jMenuItem11 = new javax.swing.JMenuItem();
-        jMenu9 = new javax.swing.JMenu();
-        jMenuItem12 = new javax.swing.JMenuItem();
-        jMenuItem13 = new javax.swing.JMenuItem();
-        jMenuItem14 = new javax.swing.JMenuItem();
-        jMenuItem50 = new javax.swing.JMenuItem();
-        jMenuItem51 = new javax.swing.JMenuItem();
-        jMenuItem52 = new javax.swing.JMenuItem();
-        jMenu3 = new javax.swing.JMenu();
-        jMenuItem15 = new javax.swing.JMenuItem();
-        jMenuItem16 = new javax.swing.JMenuItem();
-        jMenuItem17 = new javax.swing.JMenuItem();
-        jMenuItem18 = new javax.swing.JMenuItem();
-        jMenu10 = new javax.swing.JMenu();
-        jMenuItem19 = new javax.swing.JMenuItem();
-        jMenuItem20 = new javax.swing.JMenuItem();
-        jMenuItem21 = new javax.swing.JMenuItem();
-        jMenuItem53 = new javax.swing.JMenuItem();
-        jMenuItem54 = new javax.swing.JMenuItem();
-        jMenuItem55 = new javax.swing.JMenuItem();
-        jMenuItem56 = new javax.swing.JMenuItem();
-        jMenu4 = new javax.swing.JMenu();
-        jMenuItem22 = new javax.swing.JMenuItem();
-        jMenuItem23 = new javax.swing.JMenuItem();
-        jMenuItem24 = new javax.swing.JMenuItem();
-        jMenuItem25 = new javax.swing.JMenuItem();
-        jMenu11 = new javax.swing.JMenu();
-        jMenuItem26 = new javax.swing.JMenuItem();
-        jMenuItem27 = new javax.swing.JMenuItem();
-        jMenuItem28 = new javax.swing.JMenuItem();
-        jMenu5 = new javax.swing.JMenu();
-        jMenuItem29 = new javax.swing.JMenuItem();
-        jMenuItem30 = new javax.swing.JMenuItem();
-        jMenuItem31 = new javax.swing.JMenuItem();
-        jMenuItem32 = new javax.swing.JMenuItem();
-        jMenu12 = new javax.swing.JMenu();
-        jMenuItem33 = new javax.swing.JMenuItem();
-        jMenuItem34 = new javax.swing.JMenuItem();
-        jMenuItem35 = new javax.swing.JMenuItem();
-        jMenuItem57 = new javax.swing.JMenuItem();
-        jMenuItem58 = new javax.swing.JMenuItem();
-        jMenuItem59 = new javax.swing.JMenuItem();
-        jMenu6 = new javax.swing.JMenu();
+        MenuArea = new javax.swing.JMenu();
+        ItemAgregarArea = new javax.swing.JMenuItem();
+        ItemBuscarArea = new javax.swing.JMenuItem();
+        ItemEditarArea = new javax.swing.JMenuItem();
+        ItemEliminarArea = new javax.swing.JMenuItem();
+        jSeparator1 = new javax.swing.JPopupMenu.Separator();
+        SubMenuReportesArea = new javax.swing.JMenu();
+        ItemListarTodoArea = new javax.swing.JMenuItem();
+        ItemListarPorIdArea = new javax.swing.JMenuItem();
+        ItemListarPorNombreArea = new javax.swing.JMenuItem();
+        MenuAsesor = new javax.swing.JMenu();
+        ItemAgregarAsesor = new javax.swing.JMenuItem();
+        ItemBuscarAsesor = new javax.swing.JMenuItem();
+        ItemEditarAsesor = new javax.swing.JMenuItem();
+        ItemEliminarAsesor = new javax.swing.JMenuItem();
+        jSeparator2 = new javax.swing.JPopupMenu.Separator();
+        SubMenuReportesAsesor = new javax.swing.JMenu();
+        ItemListarTodoAsesor = new javax.swing.JMenuItem();
+        ItemListarPorIdAsesor = new javax.swing.JMenuItem();
+        ItemListarPorFechaInicioAsesor = new javax.swing.JMenuItem();
+        ItemListarPorNombreAsesor = new javax.swing.JMenuItem();
+        ItemListarPorDireccionAsesor = new javax.swing.JMenuItem();
+        ItemListarPorTitulaciónAsesor = new javax.swing.JMenuItem();
+        MenuEmpresa = new javax.swing.JMenu();
+        ItemAgregarEmpresa = new javax.swing.JMenuItem();
+        ItemBuscarEmpresa = new javax.swing.JMenuItem();
+        ItemEditarEmpresa = new javax.swing.JMenuItem();
+        ItemEliminarEmpresa = new javax.swing.JMenuItem();
+        jSeparator3 = new javax.swing.JPopupMenu.Separator();
+        SubMenuReportesEmpresa = new javax.swing.JMenu();
+        ItemListarTodoEmpresa = new javax.swing.JMenuItem();
+        ItemListarPorIdEmpresa = new javax.swing.JMenuItem();
+        ItemListarPorNombreEmpresa = new javax.swing.JMenuItem();
+        ItemListarPorFechaEntradaEmpresa = new javax.swing.JMenuItem();
+        ItemListarPorFacturacionAnualEmpresa = new javax.swing.JMenuItem();
+        ItemListarPorNumeroVendedoresEmpresa = new javax.swing.JMenuItem();
+        ItemListarPorNUmeroSedesEmpresa = new javax.swing.JMenuItem();
+        MenuHolding = new javax.swing.JMenu();
+        ItemAgregarHolding = new javax.swing.JMenuItem();
+        ItemBuscarHolding = new javax.swing.JMenuItem();
+        ItemEditarHolding = new javax.swing.JMenuItem();
+        ItemEliminarHolding = new javax.swing.JMenuItem();
+        jSeparator6 = new javax.swing.JPopupMenu.Separator();
+        SubMenuReportesHolding = new javax.swing.JMenu();
+        ItemListarTodoHolding = new javax.swing.JMenuItem();
+        ItemListarPorIdHolding = new javax.swing.JMenuItem();
+        ItemListarPorNombreHolding = new javax.swing.JMenuItem();
+        MenuPais = new javax.swing.JMenu();
+        ItemAgregarPais = new javax.swing.JMenuItem();
+        ItemBuscarPais = new javax.swing.JMenuItem();
+        ItemEditarPais = new javax.swing.JMenuItem();
+        ItemEliminarPais = new javax.swing.JMenuItem();
+        jSeparator4 = new javax.swing.JPopupMenu.Separator();
+        SubMenuReportesPais = new javax.swing.JMenu();
+        ItemListarTodoPais = new javax.swing.JMenuItem();
+        ItemListarPorIdPais = new javax.swing.JMenuItem();
+        ItemListarPorNombrePais = new javax.swing.JMenuItem();
+        ItemListarPorCapitalPais = new javax.swing.JMenuItem();
+        ItemListarPorNumeroHabitantesPais = new javax.swing.JMenuItem();
+        ItemListarPorPibPais = new javax.swing.JMenuItem();
+        MenuSede = new javax.swing.JMenu();
         jMenuItem36 = new javax.swing.JMenuItem();
         jMenuItem37 = new javax.swing.JMenuItem();
         jMenuItem38 = new javax.swing.JMenuItem();
         jMenuItem39 = new javax.swing.JMenuItem();
-        jMenu13 = new javax.swing.JMenu();
+        jSeparator5 = new javax.swing.JPopupMenu.Separator();
+        SubMenuReportesSede = new javax.swing.JMenu();
         jMenuItem40 = new javax.swing.JMenuItem();
         jMenuItem41 = new javax.swing.JMenuItem();
         jMenuItem42 = new javax.swing.JMenuItem();
-        jMenu7 = new javax.swing.JMenu();
+        MenuVendedor = new javax.swing.JMenu();
         jMenuItem43 = new javax.swing.JMenuItem();
         jMenuItem44 = new javax.swing.JMenuItem();
         jMenuItem45 = new javax.swing.JMenuItem();
         jMenuItem46 = new javax.swing.JMenuItem();
-        jMenu14 = new javax.swing.JMenu();
+        jSeparator7 = new javax.swing.JPopupMenu.Separator();
+        SubMenuReportesVendedor = new javax.swing.JMenu();
         jMenuItem47 = new javax.swing.JMenuItem();
         jMenuItem48 = new javax.swing.JMenuItem();
         jMenuItem49 = new javax.swing.JMenuItem();
@@ -111,382 +118,387 @@ public class VentanaPrincipal extends JFrame {
 
         jPanel1.setLayout(null);
 
-        jMenu1.setText("Area");
+        MenuArea.setText("Area");
 
-        jMenuItem2.setText("Agregar...");
-        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+        ItemAgregarArea.setText("Agregar...");
+        ItemAgregarArea.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem2ActionPerformed(evt);
+                ItemAgregarAreaActionPerformed(evt);
             }
         });
-        jMenu1.add(jMenuItem2);
+        MenuArea.add(ItemAgregarArea);
 
-        jMenuItem3.setText("Buscar...");
-        jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
+        ItemBuscarArea.setText("Buscar...");
+        ItemBuscarArea.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem3ActionPerformed(evt);
+                ItemBuscarAreaActionPerformed(evt);
             }
         });
-        jMenu1.add(jMenuItem3);
+        MenuArea.add(ItemBuscarArea);
 
-        jMenuItem4.setText("Editar...");
-        jMenuItem4.addActionListener(new java.awt.event.ActionListener() {
+        ItemEditarArea.setText("Editar...");
+        ItemEditarArea.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem4ActionPerformed(evt);
+                ItemEditarAreaActionPerformed(evt);
             }
         });
-        jMenu1.add(jMenuItem4);
+        MenuArea.add(ItemEditarArea);
 
-        jMenuItem1.setText("Eliminar...");
-        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+        ItemEliminarArea.setText("Eliminar...");
+        ItemEliminarArea.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem1ActionPerformed(evt);
+                ItemEliminarAreaActionPerformed(evt);
             }
         });
-        jMenu1.add(jMenuItem1);
+        MenuArea.add(ItemEliminarArea);
+        MenuArea.add(jSeparator1);
 
-        jMenu8.setText("Reportes");
+        SubMenuReportesArea.setText("Reportes");
 
-        jMenuItem5.setText("Listar Todo...");
-        jMenu8.add(jMenuItem5);
+        ItemListarTodoArea.setText("Listar Todo...");
+        SubMenuReportesArea.add(ItemListarTodoArea);
 
-        jMenuItem6.setText("Listar por Id...");
-        jMenuItem6.addActionListener(new java.awt.event.ActionListener() {
+        ItemListarPorIdArea.setText("Listar por Id...");
+        ItemListarPorIdArea.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem6ActionPerformed(evt);
+                ItemListarPorIdAreaActionPerformed(evt);
             }
         });
-        jMenu8.add(jMenuItem6);
+        SubMenuReportesArea.add(ItemListarPorIdArea);
 
-        jMenuItem7.setText("Listar por Nombre...");
-        jMenuItem7.addActionListener(new java.awt.event.ActionListener() {
+        ItemListarPorNombreArea.setText("Listar por Nombre...");
+        ItemListarPorNombreArea.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem7ActionPerformed(evt);
+                ItemListarPorNombreAreaActionPerformed(evt);
             }
         });
-        jMenu8.add(jMenuItem7);
+        SubMenuReportesArea.add(ItemListarPorNombreArea);
 
-        jMenu1.add(jMenu8);
+        MenuArea.add(SubMenuReportesArea);
 
-        jMenuBar1.add(jMenu1);
+        jMenuBar1.add(MenuArea);
 
-        jMenu2.setText("Asesor");
+        MenuAsesor.setText("Asesor");
 
-        jMenuItem8.setText("Agregar...");
-        jMenuItem8.addActionListener(new java.awt.event.ActionListener() {
+        ItemAgregarAsesor.setText("Agregar...");
+        ItemAgregarAsesor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem8ActionPerformed(evt);
+                ItemAgregarAsesorActionPerformed(evt);
             }
         });
-        jMenu2.add(jMenuItem8);
+        MenuAsesor.add(ItemAgregarAsesor);
 
-        jMenuItem9.setText("Buscar...");
-        jMenuItem9.addActionListener(new java.awt.event.ActionListener() {
+        ItemBuscarAsesor.setText("Buscar...");
+        ItemBuscarAsesor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem9ActionPerformed(evt);
+                ItemBuscarAsesorActionPerformed(evt);
             }
         });
-        jMenu2.add(jMenuItem9);
+        MenuAsesor.add(ItemBuscarAsesor);
 
-        jMenuItem10.setText("Editar...");
-        jMenuItem10.addActionListener(new java.awt.event.ActionListener() {
+        ItemEditarAsesor.setText("Editar...");
+        ItemEditarAsesor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem10ActionPerformed(evt);
+                ItemEditarAsesorActionPerformed(evt);
             }
         });
-        jMenu2.add(jMenuItem10);
+        MenuAsesor.add(ItemEditarAsesor);
 
-        jMenuItem11.setText("Eliminar...");
-        jMenuItem11.addActionListener(new java.awt.event.ActionListener() {
+        ItemEliminarAsesor.setText("Eliminar...");
+        ItemEliminarAsesor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem11ActionPerformed(evt);
+                ItemEliminarAsesorActionPerformed(evt);
             }
         });
-        jMenu2.add(jMenuItem11);
+        MenuAsesor.add(ItemEliminarAsesor);
+        MenuAsesor.add(jSeparator2);
 
-        jMenu9.setText("Reportes");
+        SubMenuReportesAsesor.setText("Reportes");
 
-        jMenuItem12.setText("Listar Todo...");
-        jMenu9.add(jMenuItem12);
+        ItemListarTodoAsesor.setText("Listar Todo...");
+        SubMenuReportesAsesor.add(ItemListarTodoAsesor);
 
-        jMenuItem13.setText("Listar por Id...");
-        jMenuItem13.addActionListener(new java.awt.event.ActionListener() {
+        ItemListarPorIdAsesor.setText("Listar por Id...");
+        ItemListarPorIdAsesor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem13ActionPerformed(evt);
+                ItemListarPorIdAsesorActionPerformed(evt);
             }
         });
-        jMenu9.add(jMenuItem13);
+        SubMenuReportesAsesor.add(ItemListarPorIdAsesor);
 
-        jMenuItem14.setText("Listar por Fecha de inicio...");
-        jMenuItem14.addActionListener(new java.awt.event.ActionListener() {
+        ItemListarPorFechaInicioAsesor.setText("Listar por Fecha de inicio...");
+        ItemListarPorFechaInicioAsesor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem14ActionPerformed(evt);
+                ItemListarPorFechaInicioAsesorActionPerformed(evt);
             }
         });
-        jMenu9.add(jMenuItem14);
+        SubMenuReportesAsesor.add(ItemListarPorFechaInicioAsesor);
 
-        jMenuItem50.setText("Listar por Nombre...");
-        jMenuItem50.addActionListener(new java.awt.event.ActionListener() {
+        ItemListarPorNombreAsesor.setText("Listar por Nombre...");
+        ItemListarPorNombreAsesor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem50ActionPerformed(evt);
+                ItemListarPorNombreAsesorActionPerformed(evt);
             }
         });
-        jMenu9.add(jMenuItem50);
+        SubMenuReportesAsesor.add(ItemListarPorNombreAsesor);
 
-        jMenuItem51.setText("Listar por Dirección...");
-        jMenuItem51.addActionListener(new java.awt.event.ActionListener() {
+        ItemListarPorDireccionAsesor.setText("Listar por Dirección...");
+        ItemListarPorDireccionAsesor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem51ActionPerformed(evt);
+                ItemListarPorDireccionAsesorActionPerformed(evt);
             }
         });
-        jMenu9.add(jMenuItem51);
+        SubMenuReportesAsesor.add(ItemListarPorDireccionAsesor);
 
-        jMenuItem52.setText("Listar por Titulación...");
-        jMenuItem52.addActionListener(new java.awt.event.ActionListener() {
+        ItemListarPorTitulaciónAsesor.setText("Listar por Titulación...");
+        ItemListarPorTitulaciónAsesor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem52ActionPerformed(evt);
+                ItemListarPorTitulaciónAsesorActionPerformed(evt);
             }
         });
-        jMenu9.add(jMenuItem52);
+        SubMenuReportesAsesor.add(ItemListarPorTitulaciónAsesor);
 
-        jMenu2.add(jMenu9);
+        MenuAsesor.add(SubMenuReportesAsesor);
 
-        jMenuBar1.add(jMenu2);
+        jMenuBar1.add(MenuAsesor);
 
-        jMenu3.setText("Empresa");
+        MenuEmpresa.setText("Empresa");
 
-        jMenuItem15.setText("Agregar...");
-        jMenuItem15.addActionListener(new java.awt.event.ActionListener() {
+        ItemAgregarEmpresa.setText("Agregar...");
+        ItemAgregarEmpresa.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem15ActionPerformed(evt);
+                ItemAgregarEmpresaActionPerformed(evt);
             }
         });
-        jMenu3.add(jMenuItem15);
+        MenuEmpresa.add(ItemAgregarEmpresa);
 
-        jMenuItem16.setText("Buscar...");
-        jMenuItem16.addActionListener(new java.awt.event.ActionListener() {
+        ItemBuscarEmpresa.setText("Buscar...");
+        ItemBuscarEmpresa.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem16ActionPerformed(evt);
+                ItemBuscarEmpresaActionPerformed(evt);
             }
         });
-        jMenu3.add(jMenuItem16);
+        MenuEmpresa.add(ItemBuscarEmpresa);
 
-        jMenuItem17.setText("Editar...");
-        jMenuItem17.addActionListener(new java.awt.event.ActionListener() {
+        ItemEditarEmpresa.setText("Editar...");
+        ItemEditarEmpresa.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem17ActionPerformed(evt);
+                ItemEditarEmpresaActionPerformed(evt);
             }
         });
-        jMenu3.add(jMenuItem17);
+        MenuEmpresa.add(ItemEditarEmpresa);
 
-        jMenuItem18.setText("Eliminar...");
-        jMenuItem18.addActionListener(new java.awt.event.ActionListener() {
+        ItemEliminarEmpresa.setText("Eliminar...");
+        ItemEliminarEmpresa.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem18ActionPerformed(evt);
+                ItemEliminarEmpresaActionPerformed(evt);
             }
         });
-        jMenu3.add(jMenuItem18);
+        MenuEmpresa.add(ItemEliminarEmpresa);
+        MenuEmpresa.add(jSeparator3);
 
-        jMenu10.setText("Reportes");
+        SubMenuReportesEmpresa.setText("Reportes");
 
-        jMenuItem19.setText("Listar Todo...");
-        jMenu10.add(jMenuItem19);
+        ItemListarTodoEmpresa.setText("Listar Todo...");
+        SubMenuReportesEmpresa.add(ItemListarTodoEmpresa);
 
-        jMenuItem20.setText("Listar por Id...");
-        jMenuItem20.addActionListener(new java.awt.event.ActionListener() {
+        ItemListarPorIdEmpresa.setText("Listar por Id...");
+        ItemListarPorIdEmpresa.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem20ActionPerformed(evt);
+                ItemListarPorIdEmpresaActionPerformed(evt);
             }
         });
-        jMenu10.add(jMenuItem20);
+        SubMenuReportesEmpresa.add(ItemListarPorIdEmpresa);
 
-        jMenuItem21.setText("Listar por Nombre...");
-        jMenuItem21.addActionListener(new java.awt.event.ActionListener() {
+        ItemListarPorNombreEmpresa.setText("Listar por Nombre...");
+        ItemListarPorNombreEmpresa.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem21ActionPerformed(evt);
+                ItemListarPorNombreEmpresaActionPerformed(evt);
             }
         });
-        jMenu10.add(jMenuItem21);
+        SubMenuReportesEmpresa.add(ItemListarPorNombreEmpresa);
 
-        jMenuItem53.setText("Listar por Fecha de entrada...");
-        jMenuItem53.addActionListener(new java.awt.event.ActionListener() {
+        ItemListarPorFechaEntradaEmpresa.setText("Listar por Fecha de entrada...");
+        ItemListarPorFechaEntradaEmpresa.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem53ActionPerformed(evt);
+                ItemListarPorFechaEntradaEmpresaActionPerformed(evt);
             }
         });
-        jMenu10.add(jMenuItem53);
+        SubMenuReportesEmpresa.add(ItemListarPorFechaEntradaEmpresa);
 
-        jMenuItem54.setText("Listar por Facturación anual...");
-        jMenuItem54.addActionListener(new java.awt.event.ActionListener() {
+        ItemListarPorFacturacionAnualEmpresa.setText("Listar por Facturación anual...");
+        ItemListarPorFacturacionAnualEmpresa.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem54ActionPerformed(evt);
+                ItemListarPorFacturacionAnualEmpresaActionPerformed(evt);
             }
         });
-        jMenu10.add(jMenuItem54);
+        SubMenuReportesEmpresa.add(ItemListarPorFacturacionAnualEmpresa);
 
-        jMenuItem55.setText("Listar por Numero de vendedores...");
-        jMenuItem55.addActionListener(new java.awt.event.ActionListener() {
+        ItemListarPorNumeroVendedoresEmpresa.setText("Listar por Numero de vendedores...");
+        ItemListarPorNumeroVendedoresEmpresa.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem55ActionPerformed(evt);
+                ItemListarPorNumeroVendedoresEmpresaActionPerformed(evt);
             }
         });
-        jMenu10.add(jMenuItem55);
+        SubMenuReportesEmpresa.add(ItemListarPorNumeroVendedoresEmpresa);
 
-        jMenuItem56.setText("Listar por Numero de sedes...");
-        jMenuItem56.addActionListener(new java.awt.event.ActionListener() {
+        ItemListarPorNUmeroSedesEmpresa.setText("Listar por Numero de sedes...");
+        ItemListarPorNUmeroSedesEmpresa.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem56ActionPerformed(evt);
+                ItemListarPorNUmeroSedesEmpresaActionPerformed(evt);
             }
         });
-        jMenu10.add(jMenuItem56);
+        SubMenuReportesEmpresa.add(ItemListarPorNUmeroSedesEmpresa);
 
-        jMenu3.add(jMenu10);
+        MenuEmpresa.add(SubMenuReportesEmpresa);
 
-        jMenuBar1.add(jMenu3);
+        jMenuBar1.add(MenuEmpresa);
 
-        jMenu4.setText("Holding");
+        MenuHolding.setText("Holding");
 
-        jMenuItem22.setText("Agregar...");
-        jMenuItem22.addActionListener(new java.awt.event.ActionListener() {
+        ItemAgregarHolding.setText("Agregar...");
+        ItemAgregarHolding.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem22ActionPerformed(evt);
+                ItemAgregarHoldingActionPerformed(evt);
             }
         });
-        jMenu4.add(jMenuItem22);
+        MenuHolding.add(ItemAgregarHolding);
 
-        jMenuItem23.setText("Buscar...");
-        jMenuItem23.addActionListener(new java.awt.event.ActionListener() {
+        ItemBuscarHolding.setText("Buscar...");
+        ItemBuscarHolding.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem23ActionPerformed(evt);
+                ItemBuscarHoldingActionPerformed(evt);
             }
         });
-        jMenu4.add(jMenuItem23);
+        MenuHolding.add(ItemBuscarHolding);
 
-        jMenuItem24.setText("Editar...");
-        jMenuItem24.addActionListener(new java.awt.event.ActionListener() {
+        ItemEditarHolding.setText("Editar...");
+        ItemEditarHolding.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem24ActionPerformed(evt);
+                ItemEditarHoldingActionPerformed(evt);
             }
         });
-        jMenu4.add(jMenuItem24);
+        MenuHolding.add(ItemEditarHolding);
 
-        jMenuItem25.setText("Eliminar...");
-        jMenuItem25.addActionListener(new java.awt.event.ActionListener() {
+        ItemEliminarHolding.setText("Eliminar...");
+        ItemEliminarHolding.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem25ActionPerformed(evt);
+                ItemEliminarHoldingActionPerformed(evt);
             }
         });
-        jMenu4.add(jMenuItem25);
+        MenuHolding.add(ItemEliminarHolding);
+        MenuHolding.add(jSeparator6);
 
-        jMenu11.setText("Reportes");
+        SubMenuReportesHolding.setText("Reportes");
 
-        jMenuItem26.setText("Listar Todo...");
-        jMenu11.add(jMenuItem26);
+        ItemListarTodoHolding.setText("Listar Todo...");
+        SubMenuReportesHolding.add(ItemListarTodoHolding);
 
-        jMenuItem27.setText("Listar por Id...");
-        jMenuItem27.addActionListener(new java.awt.event.ActionListener() {
+        ItemListarPorIdHolding.setText("Listar por Id...");
+        ItemListarPorIdHolding.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem27ActionPerformed(evt);
+                ItemListarPorIdHoldingActionPerformed(evt);
             }
         });
-        jMenu11.add(jMenuItem27);
+        SubMenuReportesHolding.add(ItemListarPorIdHolding);
 
-        jMenuItem28.setText("Listar por Nombre...");
-        jMenuItem28.addActionListener(new java.awt.event.ActionListener() {
+        ItemListarPorNombreHolding.setText("Listar por Nombre...");
+        ItemListarPorNombreHolding.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem28ActionPerformed(evt);
+                ItemListarPorNombreHoldingActionPerformed(evt);
             }
         });
-        jMenu11.add(jMenuItem28);
+        SubMenuReportesHolding.add(ItemListarPorNombreHolding);
 
-        jMenu4.add(jMenu11);
+        MenuHolding.add(SubMenuReportesHolding);
 
-        jMenuBar1.add(jMenu4);
+        jMenuBar1.add(MenuHolding);
 
-        jMenu5.setText("Pais");
+        MenuPais.setText("Pais");
 
-        jMenuItem29.setText("Agregar...");
-        jMenuItem29.addActionListener(new java.awt.event.ActionListener() {
+        ItemAgregarPais.setText("Agregar...");
+        ItemAgregarPais.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem29ActionPerformed(evt);
+                ItemAgregarPaisActionPerformed(evt);
             }
         });
-        jMenu5.add(jMenuItem29);
+        MenuPais.add(ItemAgregarPais);
 
-        jMenuItem30.setText("Buscar...");
-        jMenuItem30.addActionListener(new java.awt.event.ActionListener() {
+        ItemBuscarPais.setText("Buscar...");
+        ItemBuscarPais.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem30ActionPerformed(evt);
+                ItemBuscarPaisActionPerformed(evt);
             }
         });
-        jMenu5.add(jMenuItem30);
+        MenuPais.add(ItemBuscarPais);
 
-        jMenuItem31.setText("Editar...");
-        jMenuItem31.addActionListener(new java.awt.event.ActionListener() {
+        ItemEditarPais.setText("Editar...");
+        ItemEditarPais.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem31ActionPerformed(evt);
+                ItemEditarPaisActionPerformed(evt);
             }
         });
-        jMenu5.add(jMenuItem31);
+        MenuPais.add(ItemEditarPais);
 
-        jMenuItem32.setText("Eliminar...");
-        jMenuItem32.addActionListener(new java.awt.event.ActionListener() {
+        ItemEliminarPais.setText("Eliminar...");
+        ItemEliminarPais.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem32ActionPerformed(evt);
+                ItemEliminarPaisActionPerformed(evt);
             }
         });
-        jMenu5.add(jMenuItem32);
+        MenuPais.add(ItemEliminarPais);
+        MenuPais.add(jSeparator4);
 
-        jMenu12.setText("Reportes");
+        SubMenuReportesPais.setText("Reportes");
 
-        jMenuItem33.setText("Listar Todo...");
-        jMenu12.add(jMenuItem33);
+        ItemListarTodoPais.setText("Listar Todo...");
+        SubMenuReportesPais.add(ItemListarTodoPais);
 
-        jMenuItem34.setText("Listar por Id...");
-        jMenuItem34.addActionListener(new java.awt.event.ActionListener() {
+        ItemListarPorIdPais.setText("Listar por Id...");
+        ItemListarPorIdPais.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem34ActionPerformed(evt);
+                ItemListarPorIdPaisActionPerformed(evt);
             }
         });
-        jMenu12.add(jMenuItem34);
+        SubMenuReportesPais.add(ItemListarPorIdPais);
 
-        jMenuItem35.setText("Listar por Nombre...");
-        jMenuItem35.addActionListener(new java.awt.event.ActionListener() {
+        ItemListarPorNombrePais.setText("Listar por Nombre...");
+        ItemListarPorNombrePais.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem35ActionPerformed(evt);
+                ItemListarPorNombrePaisActionPerformed(evt);
             }
         });
-        jMenu12.add(jMenuItem35);
+        SubMenuReportesPais.add(ItemListarPorNombrePais);
 
-        jMenuItem57.setText("Listar por Capital...");
-        jMenuItem57.addActionListener(new java.awt.event.ActionListener() {
+        ItemListarPorCapitalPais.setText("Listar por Capital...");
+        ItemListarPorCapitalPais.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem57ActionPerformed(evt);
+                ItemListarPorCapitalPaisActionPerformed(evt);
             }
         });
-        jMenu12.add(jMenuItem57);
+        SubMenuReportesPais.add(ItemListarPorCapitalPais);
 
-        jMenuItem58.setText("Listar por Numero de habitantes...");
-        jMenuItem58.addActionListener(new java.awt.event.ActionListener() {
+        ItemListarPorNumeroHabitantesPais.setText("Listar por Numero de habitantes...");
+        ItemListarPorNumeroHabitantesPais.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem58ActionPerformed(evt);
+                ItemListarPorNumeroHabitantesPaisActionPerformed(evt);
             }
         });
-        jMenu12.add(jMenuItem58);
+        SubMenuReportesPais.add(ItemListarPorNumeroHabitantesPais);
 
-        jMenuItem59.setText("Listar por PIB...");
-        jMenuItem59.addActionListener(new java.awt.event.ActionListener() {
+        ItemListarPorPibPais.setText("Listar por PIB...");
+        ItemListarPorPibPais.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem59ActionPerformed(evt);
+                ItemListarPorPibPaisActionPerformed(evt);
             }
         });
-        jMenu12.add(jMenuItem59);
+        SubMenuReportesPais.add(ItemListarPorPibPais);
 
-        jMenu5.add(jMenu12);
+        MenuPais.add(SubMenuReportesPais);
 
-        jMenuBar1.add(jMenu5);
+        jMenuBar1.add(MenuPais);
 
-        jMenu6.setText("Sede");
+        MenuSede.setText("Sede");
 
         jMenuItem36.setText("Agregar...");
         jMenuItem36.addActionListener(new java.awt.event.ActionListener() {
@@ -494,7 +506,7 @@ public class VentanaPrincipal extends JFrame {
                 jMenuItem36ActionPerformed(evt);
             }
         });
-        jMenu6.add(jMenuItem36);
+        MenuSede.add(jMenuItem36);
 
         jMenuItem37.setText("Buscar...");
         jMenuItem37.addActionListener(new java.awt.event.ActionListener() {
@@ -502,7 +514,7 @@ public class VentanaPrincipal extends JFrame {
                 jMenuItem37ActionPerformed(evt);
             }
         });
-        jMenu6.add(jMenuItem37);
+        MenuSede.add(jMenuItem37);
 
         jMenuItem38.setText("Editar...");
         jMenuItem38.addActionListener(new java.awt.event.ActionListener() {
@@ -510,7 +522,7 @@ public class VentanaPrincipal extends JFrame {
                 jMenuItem38ActionPerformed(evt);
             }
         });
-        jMenu6.add(jMenuItem38);
+        MenuSede.add(jMenuItem38);
 
         jMenuItem39.setText("Eliminar...");
         jMenuItem39.addActionListener(new java.awt.event.ActionListener() {
@@ -518,12 +530,13 @@ public class VentanaPrincipal extends JFrame {
                 jMenuItem39ActionPerformed(evt);
             }
         });
-        jMenu6.add(jMenuItem39);
+        MenuSede.add(jMenuItem39);
+        MenuSede.add(jSeparator5);
 
-        jMenu13.setText("Reportes");
+        SubMenuReportesSede.setText("Reportes");
 
         jMenuItem40.setText("Listar Todo...");
-        jMenu13.add(jMenuItem40);
+        SubMenuReportesSede.add(jMenuItem40);
 
         jMenuItem41.setText("Listar por Id...");
         jMenuItem41.addActionListener(new java.awt.event.ActionListener() {
@@ -531,7 +544,7 @@ public class VentanaPrincipal extends JFrame {
                 jMenuItem41ActionPerformed(evt);
             }
         });
-        jMenu13.add(jMenuItem41);
+        SubMenuReportesSede.add(jMenuItem41);
 
         jMenuItem42.setText("Listar por Ciudad donde se localiza...");
         jMenuItem42.addActionListener(new java.awt.event.ActionListener() {
@@ -539,13 +552,13 @@ public class VentanaPrincipal extends JFrame {
                 jMenuItem42ActionPerformed(evt);
             }
         });
-        jMenu13.add(jMenuItem42);
+        SubMenuReportesSede.add(jMenuItem42);
 
-        jMenu6.add(jMenu13);
+        MenuSede.add(SubMenuReportesSede);
 
-        jMenuBar1.add(jMenu6);
+        jMenuBar1.add(MenuSede);
 
-        jMenu7.setText("Vendedor");
+        MenuVendedor.setText("Vendedor");
 
         jMenuItem43.setText("Agregar...");
         jMenuItem43.addActionListener(new java.awt.event.ActionListener() {
@@ -553,7 +566,7 @@ public class VentanaPrincipal extends JFrame {
                 jMenuItem43ActionPerformed(evt);
             }
         });
-        jMenu7.add(jMenuItem43);
+        MenuVendedor.add(jMenuItem43);
 
         jMenuItem44.setText("Buscar...");
         jMenuItem44.addActionListener(new java.awt.event.ActionListener() {
@@ -561,7 +574,7 @@ public class VentanaPrincipal extends JFrame {
                 jMenuItem44ActionPerformed(evt);
             }
         });
-        jMenu7.add(jMenuItem44);
+        MenuVendedor.add(jMenuItem44);
 
         jMenuItem45.setText("Editar...");
         jMenuItem45.addActionListener(new java.awt.event.ActionListener() {
@@ -569,7 +582,7 @@ public class VentanaPrincipal extends JFrame {
                 jMenuItem45ActionPerformed(evt);
             }
         });
-        jMenu7.add(jMenuItem45);
+        MenuVendedor.add(jMenuItem45);
 
         jMenuItem46.setText("Eliminar...");
         jMenuItem46.addActionListener(new java.awt.event.ActionListener() {
@@ -577,12 +590,13 @@ public class VentanaPrincipal extends JFrame {
                 jMenuItem46ActionPerformed(evt);
             }
         });
-        jMenu7.add(jMenuItem46);
+        MenuVendedor.add(jMenuItem46);
+        MenuVendedor.add(jSeparator7);
 
-        jMenu14.setText("Reportes");
+        SubMenuReportesVendedor.setText("Reportes");
 
         jMenuItem47.setText("Listar Todo...");
-        jMenu14.add(jMenuItem47);
+        SubMenuReportesVendedor.add(jMenuItem47);
 
         jMenuItem48.setText("Listar por Id...");
         jMenuItem48.addActionListener(new java.awt.event.ActionListener() {
@@ -590,7 +604,7 @@ public class VentanaPrincipal extends JFrame {
                 jMenuItem48ActionPerformed(evt);
             }
         });
-        jMenu14.add(jMenuItem48);
+        SubMenuReportesVendedor.add(jMenuItem48);
 
         jMenuItem49.setText("Listar por Nombre...");
         jMenuItem49.addActionListener(new java.awt.event.ActionListener() {
@@ -598,7 +612,7 @@ public class VentanaPrincipal extends JFrame {
                 jMenuItem49ActionPerformed(evt);
             }
         });
-        jMenu14.add(jMenuItem49);
+        SubMenuReportesVendedor.add(jMenuItem49);
 
         jMenuItem60.setText("Listar por Dirección...");
         jMenuItem60.addActionListener(new java.awt.event.ActionListener() {
@@ -606,19 +620,19 @@ public class VentanaPrincipal extends JFrame {
                 jMenuItem60ActionPerformed(evt);
             }
         });
-        jMenu14.add(jMenuItem60);
+        SubMenuReportesVendedor.add(jMenuItem60);
 
-        jMenuItem61.setText("Listar por Numero de trabagos...");
+        jMenuItem61.setText("Listar por Numero de trabajos...");
         jMenuItem61.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuItem61ActionPerformed(evt);
             }
         });
-        jMenu14.add(jMenuItem61);
+        SubMenuReportesVendedor.add(jMenuItem61);
 
-        jMenu7.add(jMenu14);
+        MenuVendedor.add(SubMenuReportesVendedor);
 
-        jMenuBar1.add(jMenu7);
+        jMenuBar1.add(MenuVendedor);
 
         setJMenuBar(jMenuBar1);
 
@@ -641,125 +655,125 @@ public class VentanaPrincipal extends JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+    private void ItemAgregarAreaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ItemAgregarAreaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem2ActionPerformed
+    }//GEN-LAST:event_ItemAgregarAreaActionPerformed
 
-    private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
+    private void ItemBuscarAreaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ItemBuscarAreaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem3ActionPerformed
+    }//GEN-LAST:event_ItemBuscarAreaActionPerformed
 
-    private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
+    private void ItemEditarAreaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ItemEditarAreaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem4ActionPerformed
+    }//GEN-LAST:event_ItemEditarAreaActionPerformed
 
-    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+    private void ItemEliminarAreaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ItemEliminarAreaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem1ActionPerformed
+    }//GEN-LAST:event_ItemEliminarAreaActionPerformed
 
-    private void jMenuItem6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem6ActionPerformed
+    private void ItemListarPorIdAreaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ItemListarPorIdAreaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem6ActionPerformed
+    }//GEN-LAST:event_ItemListarPorIdAreaActionPerformed
 
-    private void jMenuItem7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem7ActionPerformed
+    private void ItemListarPorNombreAreaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ItemListarPorNombreAreaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem7ActionPerformed
+    }//GEN-LAST:event_ItemListarPorNombreAreaActionPerformed
 
-    private void jMenuItem8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem8ActionPerformed
+    private void ItemAgregarAsesorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ItemAgregarAsesorActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem8ActionPerformed
+    }//GEN-LAST:event_ItemAgregarAsesorActionPerformed
 
-    private void jMenuItem9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem9ActionPerformed
+    private void ItemBuscarAsesorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ItemBuscarAsesorActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem9ActionPerformed
+    }//GEN-LAST:event_ItemBuscarAsesorActionPerformed
 
-    private void jMenuItem10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem10ActionPerformed
+    private void ItemEditarAsesorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ItemEditarAsesorActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem10ActionPerformed
+    }//GEN-LAST:event_ItemEditarAsesorActionPerformed
 
-    private void jMenuItem11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem11ActionPerformed
+    private void ItemEliminarAsesorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ItemEliminarAsesorActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem11ActionPerformed
+    }//GEN-LAST:event_ItemEliminarAsesorActionPerformed
 
-    private void jMenuItem13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem13ActionPerformed
+    private void ItemListarPorIdAsesorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ItemListarPorIdAsesorActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem13ActionPerformed
+    }//GEN-LAST:event_ItemListarPorIdAsesorActionPerformed
 
-    private void jMenuItem14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem14ActionPerformed
+    private void ItemListarPorFechaInicioAsesorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ItemListarPorFechaInicioAsesorActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem14ActionPerformed
+    }//GEN-LAST:event_ItemListarPorFechaInicioAsesorActionPerformed
 
-    private void jMenuItem15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem15ActionPerformed
+    private void ItemAgregarEmpresaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ItemAgregarEmpresaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem15ActionPerformed
+    }//GEN-LAST:event_ItemAgregarEmpresaActionPerformed
 
-    private void jMenuItem16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem16ActionPerformed
+    private void ItemBuscarEmpresaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ItemBuscarEmpresaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem16ActionPerformed
+    }//GEN-LAST:event_ItemBuscarEmpresaActionPerformed
 
-    private void jMenuItem17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem17ActionPerformed
+    private void ItemEditarEmpresaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ItemEditarEmpresaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem17ActionPerformed
+    }//GEN-LAST:event_ItemEditarEmpresaActionPerformed
 
-    private void jMenuItem18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem18ActionPerformed
+    private void ItemEliminarEmpresaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ItemEliminarEmpresaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem18ActionPerformed
+    }//GEN-LAST:event_ItemEliminarEmpresaActionPerformed
 
-    private void jMenuItem20ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem20ActionPerformed
+    private void ItemListarPorIdEmpresaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ItemListarPorIdEmpresaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem20ActionPerformed
+    }//GEN-LAST:event_ItemListarPorIdEmpresaActionPerformed
 
-    private void jMenuItem21ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem21ActionPerformed
+    private void ItemListarPorNombreEmpresaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ItemListarPorNombreEmpresaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem21ActionPerformed
+    }//GEN-LAST:event_ItemListarPorNombreEmpresaActionPerformed
 
-    private void jMenuItem22ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem22ActionPerformed
+    private void ItemAgregarHoldingActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ItemAgregarHoldingActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem22ActionPerformed
+    }//GEN-LAST:event_ItemAgregarHoldingActionPerformed
 
-    private void jMenuItem23ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem23ActionPerformed
+    private void ItemBuscarHoldingActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ItemBuscarHoldingActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem23ActionPerformed
+    }//GEN-LAST:event_ItemBuscarHoldingActionPerformed
 
-    private void jMenuItem24ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem24ActionPerformed
+    private void ItemEditarHoldingActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ItemEditarHoldingActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem24ActionPerformed
+    }//GEN-LAST:event_ItemEditarHoldingActionPerformed
 
-    private void jMenuItem25ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem25ActionPerformed
+    private void ItemEliminarHoldingActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ItemEliminarHoldingActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem25ActionPerformed
+    }//GEN-LAST:event_ItemEliminarHoldingActionPerformed
 
-    private void jMenuItem27ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem27ActionPerformed
+    private void ItemListarPorIdHoldingActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ItemListarPorIdHoldingActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem27ActionPerformed
+    }//GEN-LAST:event_ItemListarPorIdHoldingActionPerformed
 
-    private void jMenuItem28ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem28ActionPerformed
+    private void ItemListarPorNombreHoldingActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ItemListarPorNombreHoldingActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem28ActionPerformed
+    }//GEN-LAST:event_ItemListarPorNombreHoldingActionPerformed
 
-    private void jMenuItem29ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem29ActionPerformed
+    private void ItemAgregarPaisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ItemAgregarPaisActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem29ActionPerformed
+    }//GEN-LAST:event_ItemAgregarPaisActionPerformed
 
-    private void jMenuItem30ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem30ActionPerformed
+    private void ItemBuscarPaisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ItemBuscarPaisActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem30ActionPerformed
+    }//GEN-LAST:event_ItemBuscarPaisActionPerformed
 
-    private void jMenuItem31ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem31ActionPerformed
+    private void ItemEditarPaisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ItemEditarPaisActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem31ActionPerformed
+    }//GEN-LAST:event_ItemEditarPaisActionPerformed
 
-    private void jMenuItem32ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem32ActionPerformed
+    private void ItemEliminarPaisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ItemEliminarPaisActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem32ActionPerformed
+    }//GEN-LAST:event_ItemEliminarPaisActionPerformed
 
-    private void jMenuItem34ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem34ActionPerformed
+    private void ItemListarPorIdPaisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ItemListarPorIdPaisActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem34ActionPerformed
+    }//GEN-LAST:event_ItemListarPorIdPaisActionPerformed
 
-    private void jMenuItem35ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem35ActionPerformed
+    private void ItemListarPorNombrePaisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ItemListarPorNombrePaisActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem35ActionPerformed
+    }//GEN-LAST:event_ItemListarPorNombrePaisActionPerformed
 
     private void jMenuItem36ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem36ActionPerformed
         // TODO add your handling code here:
@@ -809,45 +823,45 @@ public class VentanaPrincipal extends JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jMenuItem49ActionPerformed
 
-    private void jMenuItem50ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem50ActionPerformed
+    private void ItemListarPorNombreAsesorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ItemListarPorNombreAsesorActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem50ActionPerformed
+    }//GEN-LAST:event_ItemListarPorNombreAsesorActionPerformed
 
-    private void jMenuItem51ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem51ActionPerformed
+    private void ItemListarPorDireccionAsesorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ItemListarPorDireccionAsesorActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem51ActionPerformed
+    }//GEN-LAST:event_ItemListarPorDireccionAsesorActionPerformed
 
-    private void jMenuItem52ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem52ActionPerformed
+    private void ItemListarPorTitulaciónAsesorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ItemListarPorTitulaciónAsesorActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem52ActionPerformed
+    }//GEN-LAST:event_ItemListarPorTitulaciónAsesorActionPerformed
 
-    private void jMenuItem53ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem53ActionPerformed
+    private void ItemListarPorFechaEntradaEmpresaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ItemListarPorFechaEntradaEmpresaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem53ActionPerformed
+    }//GEN-LAST:event_ItemListarPorFechaEntradaEmpresaActionPerformed
 
-    private void jMenuItem54ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem54ActionPerformed
+    private void ItemListarPorFacturacionAnualEmpresaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ItemListarPorFacturacionAnualEmpresaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem54ActionPerformed
+    }//GEN-LAST:event_ItemListarPorFacturacionAnualEmpresaActionPerformed
 
-    private void jMenuItem55ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem55ActionPerformed
+    private void ItemListarPorNumeroVendedoresEmpresaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ItemListarPorNumeroVendedoresEmpresaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem55ActionPerformed
+    }//GEN-LAST:event_ItemListarPorNumeroVendedoresEmpresaActionPerformed
 
-    private void jMenuItem56ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem56ActionPerformed
+    private void ItemListarPorNUmeroSedesEmpresaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ItemListarPorNUmeroSedesEmpresaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem56ActionPerformed
+    }//GEN-LAST:event_ItemListarPorNUmeroSedesEmpresaActionPerformed
 
-    private void jMenuItem57ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem57ActionPerformed
+    private void ItemListarPorCapitalPaisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ItemListarPorCapitalPaisActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem57ActionPerformed
+    }//GEN-LAST:event_ItemListarPorCapitalPaisActionPerformed
 
-    private void jMenuItem58ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem58ActionPerformed
+    private void ItemListarPorNumeroHabitantesPaisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ItemListarPorNumeroHabitantesPaisActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem58ActionPerformed
+    }//GEN-LAST:event_ItemListarPorNumeroHabitantesPaisActionPerformed
 
-    private void jMenuItem59ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem59ActionPerformed
+    private void ItemListarPorPibPaisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ItemListarPorPibPaisActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem59ActionPerformed
+    }//GEN-LAST:event_ItemListarPorPibPaisActionPerformed
 
     private void jMenuItem60ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem60ActionPerformed
         // TODO add your handling code here:
@@ -893,55 +907,70 @@ public class VentanaPrincipal extends JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu10;
-    private javax.swing.JMenu jMenu11;
-    private javax.swing.JMenu jMenu12;
-    private javax.swing.JMenu jMenu13;
-    private javax.swing.JMenu jMenu14;
-    private javax.swing.JMenu jMenu2;
-    private javax.swing.JMenu jMenu3;
-    private javax.swing.JMenu jMenu4;
-    private javax.swing.JMenu jMenu5;
-    private javax.swing.JMenu jMenu6;
-    private javax.swing.JMenu jMenu7;
-    private javax.swing.JMenu jMenu8;
-    private javax.swing.JMenu jMenu9;
+    private javax.swing.JMenuItem ItemAgregarArea;
+    private javax.swing.JMenuItem ItemAgregarAsesor;
+    private javax.swing.JMenuItem ItemAgregarEmpresa;
+    private javax.swing.JMenuItem ItemAgregarHolding;
+    private javax.swing.JMenuItem ItemAgregarPais;
+    private javax.swing.JMenuItem ItemBuscarArea;
+    private javax.swing.JMenuItem ItemBuscarAsesor;
+    private javax.swing.JMenuItem ItemBuscarEmpresa;
+    private javax.swing.JMenuItem ItemBuscarHolding;
+    private javax.swing.JMenuItem ItemBuscarPais;
+    private javax.swing.JMenuItem ItemEditarArea;
+    private javax.swing.JMenuItem ItemEditarAsesor;
+    private javax.swing.JMenuItem ItemEditarEmpresa;
+    private javax.swing.JMenuItem ItemEditarHolding;
+    private javax.swing.JMenuItem ItemEditarPais;
+    private javax.swing.JMenuItem ItemEliminarArea;
+    private javax.swing.JMenuItem ItemEliminarAsesor;
+    private javax.swing.JMenuItem ItemEliminarEmpresa;
+    private javax.swing.JMenuItem ItemEliminarHolding;
+    private javax.swing.JMenuItem ItemEliminarPais;
+    private javax.swing.JMenuItem ItemListarPorCapitalPais;
+    private javax.swing.JMenuItem ItemListarPorDireccionAsesor;
+    private javax.swing.JMenuItem ItemListarPorFacturacionAnualEmpresa;
+    private javax.swing.JMenuItem ItemListarPorFechaEntradaEmpresa;
+    private javax.swing.JMenuItem ItemListarPorFechaInicioAsesor;
+    private javax.swing.JMenuItem ItemListarPorIdArea;
+    private javax.swing.JMenuItem ItemListarPorIdAsesor;
+    private javax.swing.JMenuItem ItemListarPorIdEmpresa;
+    private javax.swing.JMenuItem ItemListarPorIdHolding;
+    private javax.swing.JMenuItem ItemListarPorIdPais;
+    private javax.swing.JMenuItem ItemListarPorNUmeroSedesEmpresa;
+    private javax.swing.JMenuItem ItemListarPorNombreArea;
+    private javax.swing.JMenuItem ItemListarPorNombreAsesor;
+    private javax.swing.JMenuItem ItemListarPorNombreEmpresa;
+    private javax.swing.JMenuItem ItemListarPorNombreHolding;
+    private javax.swing.JMenuItem ItemListarPorNombrePais;
+    private javax.swing.JMenuItem ItemListarPorNumeroHabitantesPais;
+    private javax.swing.JMenuItem ItemListarPorNumeroVendedoresEmpresa;
+    private javax.swing.JMenuItem ItemListarPorPibPais;
+    private javax.swing.JMenuItem ItemListarPorTitulaciónAsesor;
+    private javax.swing.JMenuItem ItemListarTodoArea;
+    private javax.swing.JMenuItem ItemListarTodoAsesor;
+    private javax.swing.JMenuItem ItemListarTodoEmpresa;
+    private javax.swing.JMenuItem ItemListarTodoHolding;
+    private javax.swing.JMenuItem ItemListarTodoPais;
+    private javax.swing.JMenu MenuArea;
+    private javax.swing.JMenu MenuAsesor;
+    private javax.swing.JMenu MenuEmpresa;
+    private javax.swing.JMenu MenuHolding;
+    private javax.swing.JMenu MenuPais;
+    private javax.swing.JMenu MenuSede;
+    private javax.swing.JMenu MenuVendedor;
+    private javax.swing.JMenu SubMenuReportesArea;
+    private javax.swing.JMenu SubMenuReportesAsesor;
+    private javax.swing.JMenu SubMenuReportesEmpresa;
+    private javax.swing.JMenu SubMenuReportesHolding;
+    private javax.swing.JMenu SubMenuReportesPais;
+    private javax.swing.JMenu SubMenuReportesSede;
+    private javax.swing.JMenu SubMenuReportesVendedor;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JMenuItem jMenuItem10;
-    private javax.swing.JMenuItem jMenuItem11;
-    private javax.swing.JMenuItem jMenuItem12;
-    private javax.swing.JMenuItem jMenuItem13;
-    private javax.swing.JMenuItem jMenuItem14;
-    private javax.swing.JMenuItem jMenuItem15;
-    private javax.swing.JMenuItem jMenuItem16;
-    private javax.swing.JMenuItem jMenuItem17;
-    private javax.swing.JMenuItem jMenuItem18;
-    private javax.swing.JMenuItem jMenuItem19;
-    private javax.swing.JMenuItem jMenuItem2;
-    private javax.swing.JMenuItem jMenuItem20;
-    private javax.swing.JMenuItem jMenuItem21;
-    private javax.swing.JMenuItem jMenuItem22;
-    private javax.swing.JMenuItem jMenuItem23;
-    private javax.swing.JMenuItem jMenuItem24;
-    private javax.swing.JMenuItem jMenuItem25;
-    private javax.swing.JMenuItem jMenuItem26;
-    private javax.swing.JMenuItem jMenuItem27;
-    private javax.swing.JMenuItem jMenuItem28;
-    private javax.swing.JMenuItem jMenuItem29;
-    private javax.swing.JMenuItem jMenuItem3;
-    private javax.swing.JMenuItem jMenuItem30;
-    private javax.swing.JMenuItem jMenuItem31;
-    private javax.swing.JMenuItem jMenuItem32;
-    private javax.swing.JMenuItem jMenuItem33;
-    private javax.swing.JMenuItem jMenuItem34;
-    private javax.swing.JMenuItem jMenuItem35;
     private javax.swing.JMenuItem jMenuItem36;
     private javax.swing.JMenuItem jMenuItem37;
     private javax.swing.JMenuItem jMenuItem38;
     private javax.swing.JMenuItem jMenuItem39;
-    private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JMenuItem jMenuItem40;
     private javax.swing.JMenuItem jMenuItem41;
     private javax.swing.JMenuItem jMenuItem42;
@@ -952,23 +981,15 @@ public class VentanaPrincipal extends JFrame {
     private javax.swing.JMenuItem jMenuItem47;
     private javax.swing.JMenuItem jMenuItem48;
     private javax.swing.JMenuItem jMenuItem49;
-    private javax.swing.JMenuItem jMenuItem5;
-    private javax.swing.JMenuItem jMenuItem50;
-    private javax.swing.JMenuItem jMenuItem51;
-    private javax.swing.JMenuItem jMenuItem52;
-    private javax.swing.JMenuItem jMenuItem53;
-    private javax.swing.JMenuItem jMenuItem54;
-    private javax.swing.JMenuItem jMenuItem55;
-    private javax.swing.JMenuItem jMenuItem56;
-    private javax.swing.JMenuItem jMenuItem57;
-    private javax.swing.JMenuItem jMenuItem58;
-    private javax.swing.JMenuItem jMenuItem59;
-    private javax.swing.JMenuItem jMenuItem6;
     private javax.swing.JMenuItem jMenuItem60;
     private javax.swing.JMenuItem jMenuItem61;
-    private javax.swing.JMenuItem jMenuItem7;
-    private javax.swing.JMenuItem jMenuItem8;
-    private javax.swing.JMenuItem jMenuItem9;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPopupMenu.Separator jSeparator1;
+    private javax.swing.JPopupMenu.Separator jSeparator2;
+    private javax.swing.JPopupMenu.Separator jSeparator3;
+    private javax.swing.JPopupMenu.Separator jSeparator4;
+    private javax.swing.JPopupMenu.Separator jSeparator5;
+    private javax.swing.JPopupMenu.Separator jSeparator6;
+    private javax.swing.JPopupMenu.Separator jSeparator7;
     // End of variables declaration//GEN-END:variables
 }
