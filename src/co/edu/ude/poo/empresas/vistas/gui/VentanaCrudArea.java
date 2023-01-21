@@ -139,9 +139,16 @@ public class VentanaCrudArea extends javax.swing.JDialog {
 
         BotonEditar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/co/edu/ude/poo/empresas/vistas/iconos/editar24px.png"))); // NOI18N
         BotonEditar.setText("EDITAR");
+        BotonEditar.setEnabled(false);
+        BotonEditar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotonEditarActionPerformed(evt);
+            }
+        });
 
         BotonEliminar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/co/edu/ude/poo/empresas/vistas/iconos/eliminar24px.png"))); // NOI18N
         BotonEliminar.setText("ELIMINAR");
+        BotonEliminar.setEnabled(false);
 
         BotonLimpiar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/co/edu/ude/poo/empresas/vistas/iconos/limpiar24px.png"))); // NOI18N
         BotonLimpiar.setText("LIMPIAR");
@@ -241,28 +248,47 @@ public class VentanaCrudArea extends javax.swing.JDialog {
         if(Area.getAreaBD().containsKey(id)){
             String msj = "Ya existe el area con id: " + id;
             JOptionPane.showMessageDialog(this, msj);
-        }else{
-            //se guarda el area si no existia
-            Area.getAreaBD().put(id, area);
-            //obtenemos el numero de areas
-            int cuentaAreas = Area.getAreaBD().size();
-            String msj = "el area fue guardada. "
-                    + "Existen: " + cuentaAreas + " area(s)";
+        }else if(id.isEmpty() || id.length() == 0 ||    //verificar si algun campo está vacio
+                 nombre.isEmpty() || nombre.length() == 0 ||
+                 descripcion.isEmpty() || descripcion.length() == 0){
+            String msj = "Hay campo(s) vacio(s), no se guardara nada hasta que el problema se solucione";
             JOptionPane.showMessageDialog(this, msj);
-            limpiarCampos();
-        }
-        
+        }else if(!nombre.matches("[a-zA-Z]+") || !descripcion.matches("[a-zA-Z0-9\\s\\p{Punct}]+")){
+            String msj = "El nombre o la descripción no son textos, no se guardara nada hasta que el problema se solucione";
+            JOptionPane.showMessageDialog(this, msj);
+        }else{
+            //se pregunta si se quiere guardar la informacion
+            int option = JOptionPane.showConfirmDialog(this
+            , "Guardar la informacion?", "confirmar guardado"
+            , JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+            if(option == JOptionPane.YES_OPTION){
+                //se guarda el area si no existia
+                Area.getAreaBD().put(id, area);
+                //obtenemos el numero de areas
+                int cuentaAreas = Area.getAreaBD().size();
+                String msj = "el area fue guardada. "
+                        + "Existen: " + cuentaAreas + " area(s)";
+                JOptionPane.showMessageDialog(this, msj);
+                limpiarCampos();
+            }
+            
+        }        
     }//GEN-LAST:event_BotonAgregarActionPerformed
 
     public void limpiarCampos(){
         CampoId.setText("");
         CampoNombre.setText("");
         CampoDescripcion.setText("");
+        
+        BotonEditar.setEnabled(false);
+        BotonEliminar.setEnabled(false);
     }
     
     private void BotonBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonBuscarActionPerformed
-        //Recuperar el id del formulario
+        //recuperar los datos ingresados en los campos del formulario
         String id = CampoId.getText();
+        String nombre = CampoNombre.getText();
+        String descripcion = CampoDescripcion.getText();
         //verificar si el map existe o si esta vacio
         if(Area.getAreaBD() == null || Area.getAreaBD().isEmpty()){
             String msj = "no hay usuarios en la BD";
@@ -273,7 +299,15 @@ public class VentanaCrudArea extends javax.swing.JDialog {
                 Area area = Area.getAreaBD().get(id);
                 CampoNombre.setText(area.getNombre());
                 CampoDescripcion.setText(area.getDescripción());
+            //se activan los botones si la busqueda fue exitosa
+            BotonEditar.setEnabled(true);
+            BotonEliminar.setEnabled(true);
+            }else if(id.isEmpty() || id.length() == 0){
+                String msj = "El campo id está vacio, es requerido para realizar la busqueda";
+                JOptionPane.showMessageDialog(this, msj);
             }else{
+                BotonEditar.setEnabled(false);
+                BotonEliminar.setEnabled(false);
                 String msj = "no hay usuarios en la BD con ese id: " + id;
                 JOptionPane.showMessageDialog(this, msj);
                 limpiarCampos();
@@ -293,6 +327,10 @@ public class VentanaCrudArea extends javax.swing.JDialog {
             this.dispose();
         }
     }//GEN-LAST:event_BotonCancelarActionPerformed
+
+    private void BotonEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonEditarActionPerformed
+        
+    }//GEN-LAST:event_BotonEditarActionPerformed
 
     /**
      * @param args the command line arguments

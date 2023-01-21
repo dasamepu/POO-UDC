@@ -255,7 +255,11 @@
           <Image iconType="3" name="/co/edu/ude/poo/empresas/vistas/iconos/editar24px.png"/>
         </Property>
         <Property name="text" type="java.lang.String" value="EDITAR"/>
+        <Property name="enabled" type="boolean" value="false"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BotonEditarActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="BotonEliminar">
       <Properties>
@@ -263,6 +267,7 @@
           <Image iconType="3" name="/co/edu/ude/poo/empresas/vistas/iconos/eliminar24px.png"/>
         </Property>
         <Property name="text" type="java.lang.String" value="ELIMINAR"/>
+        <Property name="enabled" type="boolean" value="false"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="BotonLimpiar">
