@@ -46,7 +46,7 @@ public class VentanaCrudArea extends javax.swing.JDialog {
         BotonEditar = new javax.swing.JButton();
         BotonEliminar = new javax.swing.JButton();
         BotonLimpiar = new javax.swing.JButton();
-        BotonLimpiar1 = new javax.swing.JButton();
+        BotonCancelar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Area");
@@ -96,9 +96,9 @@ public class VentanaCrudArea extends javax.swing.JDialog {
                     .addComponent(EtiquetaId))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(CampoNombre)
+                    .addComponent(CampoNombre, javax.swing.GroupLayout.DEFAULT_SIZE, 357, Short.MAX_VALUE)
                     .addComponent(CampoId)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 294, Short.MAX_VALUE))
+                    .addComponent(jScrollPane1))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -151,11 +151,11 @@ public class VentanaCrudArea extends javax.swing.JDialog {
             }
         });
 
-        BotonLimpiar1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/co/edu/ude/poo/empresas/vistas/iconos/cancel24px.png"))); // NOI18N
-        BotonLimpiar1.setText("CANCELAR");
-        BotonLimpiar1.addActionListener(new java.awt.event.ActionListener() {
+        BotonCancelar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/co/edu/ude/poo/empresas/vistas/iconos/cancel24px.png"))); // NOI18N
+        BotonCancelar.setText("CANCELAR");
+        BotonCancelar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BotonLimpiar1ActionPerformed(evt);
+                BotonCancelarActionPerformed(evt);
             }
         });
 
@@ -177,7 +177,7 @@ public class VentanaCrudArea extends javax.swing.JDialog {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(BotonLimpiar)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(BotonLimpiar1))
+                        .addComponent(BotonCancelar))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(54, 54, 54)
                         .addComponent(jLabel2)
@@ -208,7 +208,7 @@ public class VentanaCrudArea extends javax.swing.JDialog {
                     .addComponent(BotonEditar)
                     .addComponent(BotonEliminar)
                     .addComponent(BotonLimpiar)
-                    .addComponent(BotonLimpiar1))
+                    .addComponent(BotonCancelar))
                 .addContainerGap(27, Short.MAX_VALUE))
         );
 
@@ -285,9 +285,14 @@ public class VentanaCrudArea extends javax.swing.JDialog {
         limpiarCampos();
     }//GEN-LAST:event_BotonLimpiarActionPerformed
 
-    private void BotonLimpiar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonLimpiar1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_BotonLimpiar1ActionPerformed
+    private void BotonCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonCancelarActionPerformed
+        int option = JOptionPane.showConfirmDialog(this
+            , "Cerrar ventana?", "confirmar cierre"
+            , JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+        if(option == JOptionPane.YES_OPTION){
+            this.dispose();
+        }
+    }//GEN-LAST:event_BotonCancelarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -334,10 +339,10 @@ public class VentanaCrudArea extends javax.swing.JDialog {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BotonAgregar;
     private javax.swing.JButton BotonBuscar;
+    private javax.swing.JButton BotonCancelar;
     private javax.swing.JButton BotonEditar;
     private javax.swing.JButton BotonEliminar;
     private javax.swing.JButton BotonLimpiar;
-    private javax.swing.JButton BotonLimpiar1;
     private javax.swing.JTextArea CampoDescripcion;
     private javax.swing.JTextField CampoId;
     private javax.swing.JTextField CampoNombre;

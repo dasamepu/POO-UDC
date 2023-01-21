@@ -721,7 +721,7 @@ public class VentanaPrincipal extends JFrame {
     }//GEN-LAST:event_ItemAgregarAreaActionPerformed
 
     private void ItemBuscarAreaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ItemBuscarAreaActionPerformed
-        // TODO add your handling code here:
+        ItemAgregarAreaActionPerformed(evt);
     }//GEN-LAST:event_ItemBuscarAreaActionPerformed
 
     private void ItemEditarAreaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ItemEditarAreaActionPerformed
