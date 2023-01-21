@@ -5,12 +5,20 @@
         <group>
             <file>file:/home/david/poo-udc/src/co/edu/ude/poo/empresas/Principal.java</file>
             <file>file:/home/david/poo-udc/src/co/edu/ude/poo/empresas/modelo/crud/PaisCrud.java</file>
+            <file>file:/home/david/poo-udc/src/co/edu/ude/poo/empresas/vistas/gui/VentanaCrudHolding.java</file>
             <file>file:/home/david/poo-udc/src/co/edu/ude/poo/empresas/modelo/entidades/Asesor.java</file>
+            <file>file:/home/david/poo-udc/src/co/edu/ude/poo/empresas/vistas/gui/VentanaCrudPais.java</file>
+            <file>file:/home/david/poo-udc/src/co/edu/ude/poo/empresas/vistas/gui/VentanaCrudVendedor.java</file>
+            <file>file:/home/david/poo-udc/src/co/edu/ude/poo/empresas/modelo/crud/AreaCrud.java</file>
+            <file>file:/home/david/poo-udc/src/co/edu/ude/poo/empresas/vistas/gui/VentanaCrudArea.java</file>
+            <file>file:/home/david/poo-udc/src/co/edu/ude/poo/empresas/vistas/gui/VentanaCrudEmpresa.java</file>
             <file>file:/home/david/poo-udc/src/co/edu/ude/poo/empresas/modelo/crud/EmpresaCrud.java</file>
             <file>file:/home/david/poo-udc/src/co/edu/ude/poo/empresas/modelo/crud/VendedorCrud.java</file>
             <file>file:/home/david/poo-udc/src/co/edu/ude/poo/empresas/modelo/crud/SedeCrud.java</file>
             <file>file:/home/david/poo-udc/src/co/edu/ude/poo/empresas/modelo/crud/HoldingCrud.java</file>
-            <file>file:/home/david/poo-udc/src/co/edu/ude/poo/empresas/modelo/crud/AreaCrud.java</file>
+            <file>file:/home/david/poo-udc/src/co/edu/ude/poo/empresas/vistas/gui/VentanaPrincipal.java</file>
+            <file>file:/home/david/poo-udc/src/co/edu/ude/poo/empresas/vistas/gui/VentanaCrudAsesor.java</file>
+            <file>file:/home/david/poo-udc/src/co/edu/ude/poo/empresas/vistas/gui/VentanaCrudSede.java</file>
             <file>file:/home/david/poo-udc/src/co/edu/ude/poo/empresas/modelo/crud/AsesorCrud.java</file>
         </group>
     </open-files>
