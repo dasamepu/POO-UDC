@@ -3,14 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package co.edu.ude.poo.empresas.vistas.gui;
-import java.awt.Graphics;
-import java.awt.Image;
 import java.awt.Toolkit;
-import java.awt.event.ComponentAdapter;
-import java.awt.event.ComponentEvent;
-import java.io.File;
-import java.io.IOException;
-import javax.imageio.ImageIO;
 import javax.swing.*;
 /**
  *
@@ -20,9 +13,7 @@ public class VentanaPrincipal extends JFrame {
 
     /**
      * Creates new form VentanaPrincipal
-     */
-    Image fondo;
-    
+     */    
     public VentanaPrincipal() {
         
         initComponents();
