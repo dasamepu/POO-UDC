@@ -124,6 +124,7 @@ public class VentanaPrincipal extends JFrame {
 
         MenuArea.setText("Area");
 
+        ItemAgregarArea.setIcon(new javax.swing.ImageIcon(getClass().getResource("/co/edu/ude/poo/empresas/vistas/iconos/agregar24px.png"))); // NOI18N
         ItemAgregarArea.setText("Agregar...");
         ItemAgregarArea.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -132,6 +133,7 @@ public class VentanaPrincipal extends JFrame {
         });
         MenuArea.add(ItemAgregarArea);
 
+        ItemBuscarArea.setIcon(new javax.swing.ImageIcon(getClass().getResource("/co/edu/ude/poo/empresas/vistas/iconos/buscar24px.png"))); // NOI18N
         ItemBuscarArea.setText("Buscar...");
         ItemBuscarArea.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -140,6 +142,7 @@ public class VentanaPrincipal extends JFrame {
         });
         MenuArea.add(ItemBuscarArea);
 
+        ItemEditarArea.setIcon(new javax.swing.ImageIcon(getClass().getResource("/co/edu/ude/poo/empresas/vistas/iconos/editar24px.png"))); // NOI18N
         ItemEditarArea.setText("Editar...");
         ItemEditarArea.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -148,6 +151,7 @@ public class VentanaPrincipal extends JFrame {
         });
         MenuArea.add(ItemEditarArea);
 
+        ItemEliminarArea.setIcon(new javax.swing.ImageIcon(getClass().getResource("/co/edu/ude/poo/empresas/vistas/iconos/eliminar24px.png"))); // NOI18N
         ItemEliminarArea.setText("Eliminar...");
         ItemEliminarArea.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -157,6 +161,7 @@ public class VentanaPrincipal extends JFrame {
         MenuArea.add(ItemEliminarArea);
         MenuArea.add(jSeparator1);
 
+        SubMenuReportesArea.setIcon(new javax.swing.ImageIcon(getClass().getResource("/co/edu/ude/poo/empresas/vistas/iconos/reporte24px.png"))); // NOI18N
         SubMenuReportesArea.setText("Reportes");
 
         ItemListarTodoArea.setText("Listar Todo...");
@@ -184,6 +189,7 @@ public class VentanaPrincipal extends JFrame {
 
         MenuAsesor.setText("Asesor");
 
+        ItemAgregarAsesor.setIcon(new javax.swing.ImageIcon(getClass().getResource("/co/edu/ude/poo/empresas/vistas/iconos/agregar24px.png"))); // NOI18N
         ItemAgregarAsesor.setText("Agregar...");
         ItemAgregarAsesor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -192,6 +198,7 @@ public class VentanaPrincipal extends JFrame {
         });
         MenuAsesor.add(ItemAgregarAsesor);
 
+        ItemBuscarAsesor.setIcon(new javax.swing.ImageIcon(getClass().getResource("/co/edu/ude/poo/empresas/vistas/iconos/buscar24px.png"))); // NOI18N
         ItemBuscarAsesor.setText("Buscar...");
         ItemBuscarAsesor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -200,6 +207,7 @@ public class VentanaPrincipal extends JFrame {
         });
         MenuAsesor.add(ItemBuscarAsesor);
 
+        ItemEditarAsesor.setIcon(new javax.swing.ImageIcon(getClass().getResource("/co/edu/ude/poo/empresas/vistas/iconos/editar24px.png"))); // NOI18N
         ItemEditarAsesor.setText("Editar...");
         ItemEditarAsesor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -208,6 +216,7 @@ public class VentanaPrincipal extends JFrame {
         });
         MenuAsesor.add(ItemEditarAsesor);
 
+        ItemEliminarAsesor.setIcon(new javax.swing.ImageIcon(getClass().getResource("/co/edu/ude/poo/empresas/vistas/iconos/eliminar24px.png"))); // NOI18N
         ItemEliminarAsesor.setText("Eliminar...");
         ItemEliminarAsesor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -217,6 +226,7 @@ public class VentanaPrincipal extends JFrame {
         MenuAsesor.add(ItemEliminarAsesor);
         MenuAsesor.add(jSeparator2);
 
+        SubMenuReportesAsesor.setIcon(new javax.swing.ImageIcon(getClass().getResource("/co/edu/ude/poo/empresas/vistas/iconos/reporte24px.png"))); // NOI18N
         SubMenuReportesAsesor.setText("Reportes");
 
         ItemListarTodoAsesor.setText("Listar Todo...");
@@ -268,6 +278,7 @@ public class VentanaPrincipal extends JFrame {
 
         MenuEmpresa.setText("Empresa");
 
+        ItemAgregarEmpresa.setIcon(new javax.swing.ImageIcon(getClass().getResource("/co/edu/ude/poo/empresas/vistas/iconos/agregar24px.png"))); // NOI18N
         ItemAgregarEmpresa.setText("Agregar...");
         ItemAgregarEmpresa.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -276,6 +287,7 @@ public class VentanaPrincipal extends JFrame {
         });
         MenuEmpresa.add(ItemAgregarEmpresa);
 
+        ItemBuscarEmpresa.setIcon(new javax.swing.ImageIcon(getClass().getResource("/co/edu/ude/poo/empresas/vistas/iconos/buscar24px.png"))); // NOI18N
         ItemBuscarEmpresa.setText("Buscar...");
         ItemBuscarEmpresa.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -284,6 +296,7 @@ public class VentanaPrincipal extends JFrame {
         });
         MenuEmpresa.add(ItemBuscarEmpresa);
 
+        ItemEditarEmpresa.setIcon(new javax.swing.ImageIcon(getClass().getResource("/co/edu/ude/poo/empresas/vistas/iconos/editar24px.png"))); // NOI18N
         ItemEditarEmpresa.setText("Editar...");
         ItemEditarEmpresa.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -292,6 +305,7 @@ public class VentanaPrincipal extends JFrame {
         });
         MenuEmpresa.add(ItemEditarEmpresa);
 
+        ItemEliminarEmpresa.setIcon(new javax.swing.ImageIcon(getClass().getResource("/co/edu/ude/poo/empresas/vistas/iconos/eliminar24px.png"))); // NOI18N
         ItemEliminarEmpresa.setText("Eliminar...");
         ItemEliminarEmpresa.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -301,6 +315,7 @@ public class VentanaPrincipal extends JFrame {
         MenuEmpresa.add(ItemEliminarEmpresa);
         MenuEmpresa.add(jSeparator3);
 
+        SubMenuReportesEmpresa.setIcon(new javax.swing.ImageIcon(getClass().getResource("/co/edu/ude/poo/empresas/vistas/iconos/reporte24px.png"))); // NOI18N
         SubMenuReportesEmpresa.setText("Reportes");
 
         ItemListarTodoEmpresa.setText("Listar Todo...");
@@ -360,6 +375,7 @@ public class VentanaPrincipal extends JFrame {
 
         MenuHolding.setText("Holding");
 
+        ItemAgregarHolding.setIcon(new javax.swing.ImageIcon(getClass().getResource("/co/edu/ude/poo/empresas/vistas/iconos/agregar24px.png"))); // NOI18N
         ItemAgregarHolding.setText("Agregar...");
         ItemAgregarHolding.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -368,6 +384,7 @@ public class VentanaPrincipal extends JFrame {
         });
         MenuHolding.add(ItemAgregarHolding);
 
+        ItemBuscarHolding.setIcon(new javax.swing.ImageIcon(getClass().getResource("/co/edu/ude/poo/empresas/vistas/iconos/buscar24px.png"))); // NOI18N
         ItemBuscarHolding.setText("Buscar...");
         ItemBuscarHolding.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -376,6 +393,7 @@ public class VentanaPrincipal extends JFrame {
         });
         MenuHolding.add(ItemBuscarHolding);
 
+        ItemEditarHolding.setIcon(new javax.swing.ImageIcon(getClass().getResource("/co/edu/ude/poo/empresas/vistas/iconos/editar24px.png"))); // NOI18N
         ItemEditarHolding.setText("Editar...");
         ItemEditarHolding.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -384,6 +402,7 @@ public class VentanaPrincipal extends JFrame {
         });
         MenuHolding.add(ItemEditarHolding);
 
+        ItemEliminarHolding.setIcon(new javax.swing.ImageIcon(getClass().getResource("/co/edu/ude/poo/empresas/vistas/iconos/eliminar24px.png"))); // NOI18N
         ItemEliminarHolding.setText("Eliminar...");
         ItemEliminarHolding.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -393,6 +412,7 @@ public class VentanaPrincipal extends JFrame {
         MenuHolding.add(ItemEliminarHolding);
         MenuHolding.add(jSeparator6);
 
+        SubMenuReportesHolding.setIcon(new javax.swing.ImageIcon(getClass().getResource("/co/edu/ude/poo/empresas/vistas/iconos/reporte24px.png"))); // NOI18N
         SubMenuReportesHolding.setText("Reportes");
 
         ItemListarTodoHolding.setText("Listar Todo...");
@@ -420,6 +440,7 @@ public class VentanaPrincipal extends JFrame {
 
         MenuPais.setText("Pais");
 
+        ItemAgregarPais.setIcon(new javax.swing.ImageIcon(getClass().getResource("/co/edu/ude/poo/empresas/vistas/iconos/agregar24px.png"))); // NOI18N
         ItemAgregarPais.setText("Agregar...");
         ItemAgregarPais.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -428,6 +449,7 @@ public class VentanaPrincipal extends JFrame {
         });
         MenuPais.add(ItemAgregarPais);
 
+        ItemBuscarPais.setIcon(new javax.swing.ImageIcon(getClass().getResource("/co/edu/ude/poo/empresas/vistas/iconos/buscar24px.png"))); // NOI18N
         ItemBuscarPais.setText("Buscar...");
         ItemBuscarPais.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -436,6 +458,7 @@ public class VentanaPrincipal extends JFrame {
         });
         MenuPais.add(ItemBuscarPais);
 
+        ItemEditarPais.setIcon(new javax.swing.ImageIcon(getClass().getResource("/co/edu/ude/poo/empresas/vistas/iconos/editar24px.png"))); // NOI18N
         ItemEditarPais.setText("Editar...");
         ItemEditarPais.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -444,6 +467,7 @@ public class VentanaPrincipal extends JFrame {
         });
         MenuPais.add(ItemEditarPais);
 
+        ItemEliminarPais.setIcon(new javax.swing.ImageIcon(getClass().getResource("/co/edu/ude/poo/empresas/vistas/iconos/eliminar24px.png"))); // NOI18N
         ItemEliminarPais.setText("Eliminar...");
         ItemEliminarPais.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -453,6 +477,7 @@ public class VentanaPrincipal extends JFrame {
         MenuPais.add(ItemEliminarPais);
         MenuPais.add(jSeparator4);
 
+        SubMenuReportesPais.setIcon(new javax.swing.ImageIcon(getClass().getResource("/co/edu/ude/poo/empresas/vistas/iconos/reporte24px.png"))); // NOI18N
         SubMenuReportesPais.setText("Reportes");
 
         ItemListarTodoPais.setText("Listar Todo...");
@@ -504,6 +529,7 @@ public class VentanaPrincipal extends JFrame {
 
         MenuSede.setText("Sede");
 
+        ItemAgregarSede.setIcon(new javax.swing.ImageIcon(getClass().getResource("/co/edu/ude/poo/empresas/vistas/iconos/agregar24px.png"))); // NOI18N
         ItemAgregarSede.setText("Agregar...");
         ItemAgregarSede.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -512,6 +538,7 @@ public class VentanaPrincipal extends JFrame {
         });
         MenuSede.add(ItemAgregarSede);
 
+        ItemBuscarSede.setIcon(new javax.swing.ImageIcon(getClass().getResource("/co/edu/ude/poo/empresas/vistas/iconos/buscar24px.png"))); // NOI18N
         ItemBuscarSede.setText("Buscar...");
         ItemBuscarSede.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -520,6 +547,7 @@ public class VentanaPrincipal extends JFrame {
         });
         MenuSede.add(ItemBuscarSede);
 
+        ItemEditarSede.setIcon(new javax.swing.ImageIcon(getClass().getResource("/co/edu/ude/poo/empresas/vistas/iconos/editar24px.png"))); // NOI18N
         ItemEditarSede.setText("Editar...");
         ItemEditarSede.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -528,6 +556,7 @@ public class VentanaPrincipal extends JFrame {
         });
         MenuSede.add(ItemEditarSede);
 
+        ItemEliminarSede.setIcon(new javax.swing.ImageIcon(getClass().getResource("/co/edu/ude/poo/empresas/vistas/iconos/eliminar24px.png"))); // NOI18N
         ItemEliminarSede.setText("Eliminar...");
         ItemEliminarSede.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -537,6 +566,7 @@ public class VentanaPrincipal extends JFrame {
         MenuSede.add(ItemEliminarSede);
         MenuSede.add(jSeparator5);
 
+        SubMenuReportesSede.setIcon(new javax.swing.ImageIcon(getClass().getResource("/co/edu/ude/poo/empresas/vistas/iconos/reporte24px.png"))); // NOI18N
         SubMenuReportesSede.setText("Reportes");
 
         ItemListarTodoSede.setText("Listar Todo...");
@@ -564,6 +594,7 @@ public class VentanaPrincipal extends JFrame {
 
         MenuVendedor.setText("Vendedor");
 
+        ItemAgregarVendedor.setIcon(new javax.swing.ImageIcon(getClass().getResource("/co/edu/ude/poo/empresas/vistas/iconos/agregar24px.png"))); // NOI18N
         ItemAgregarVendedor.setText("Agregar...");
         ItemAgregarVendedor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -572,6 +603,7 @@ public class VentanaPrincipal extends JFrame {
         });
         MenuVendedor.add(ItemAgregarVendedor);
 
+        ItemBuscarVendedor.setIcon(new javax.swing.ImageIcon(getClass().getResource("/co/edu/ude/poo/empresas/vistas/iconos/buscar24px.png"))); // NOI18N
         ItemBuscarVendedor.setText("Buscar...");
         ItemBuscarVendedor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -580,6 +612,7 @@ public class VentanaPrincipal extends JFrame {
         });
         MenuVendedor.add(ItemBuscarVendedor);
 
+        ItemEditarVendedor.setIcon(new javax.swing.ImageIcon(getClass().getResource("/co/edu/ude/poo/empresas/vistas/iconos/editar24px.png"))); // NOI18N
         ItemEditarVendedor.setText("Editar...");
         ItemEditarVendedor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -588,6 +621,7 @@ public class VentanaPrincipal extends JFrame {
         });
         MenuVendedor.add(ItemEditarVendedor);
 
+        ItemEliminarVendedor.setIcon(new javax.swing.ImageIcon(getClass().getResource("/co/edu/ude/poo/empresas/vistas/iconos/eliminar24px.png"))); // NOI18N
         ItemEliminarVendedor.setText("Eliminar...");
         ItemEliminarVendedor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -597,6 +631,7 @@ public class VentanaPrincipal extends JFrame {
         MenuVendedor.add(ItemEliminarVendedor);
         MenuVendedor.add(jSeparator7);
 
+        SubMenuReportesVendedor.setIcon(new javax.swing.ImageIcon(getClass().getResource("/co/edu/ude/poo/empresas/vistas/iconos/reporte24px.png"))); // NOI18N
         SubMenuReportesVendedor.setText("Reportes");
 
         ItemListarTodoVendedor.setText("Listar Todo...");
