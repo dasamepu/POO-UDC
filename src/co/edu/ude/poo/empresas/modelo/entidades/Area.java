@@ -4,6 +4,8 @@
  */
 package co.edu.ude.poo.empresas.modelo.entidades;
 
+import java.util.HashMap;
+
 /**
  *
  * @author david
@@ -12,11 +14,15 @@ public class Area {
     private String id;
     private String nombre;
     private String descripción;
+    private static HashMap<String, Area> areaBD;
 
     public Area(String id, String nombre, String descripción) {
         this.id = id;
         this.nombre = nombre;
         this.descripción = descripción;
+    }
+
+    public Area() {
     }
 
     @Override
@@ -46,6 +52,14 @@ public class Area {
 
     public void setDescripción(String descripción) {
         this.descripción = descripción;
+    }
+
+    public static HashMap<String, Area> getAreaBD() {
+        return areaBD;
+    }
+
+    public static void setAreaBD(HashMap<String, Area> areaBD) {
+        Area.areaBD = areaBD;
     }
     
     

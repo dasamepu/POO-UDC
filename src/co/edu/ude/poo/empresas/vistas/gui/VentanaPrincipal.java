@@ -126,7 +126,7 @@ public class VentanaPrincipal extends JFrame {
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1048, Short.MAX_VALUE)
+            .addGap(0, 1367, Short.MAX_VALUE)
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -615,6 +615,7 @@ public class VentanaPrincipal extends JFrame {
 
         jMenuBar1.add(MenuSede);
 
+        MenuVendedor.setIcon(new javax.swing.ImageIcon(getClass().getResource("/co/edu/ude/poo/empresas/vistas/iconos/vendedor24px.png"))); // NOI18N
         MenuVendedor.setText("Vendedor");
         MenuVendedor.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
 
