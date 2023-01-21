@@ -126,14 +126,16 @@ public class VentanaPrincipal extends JFrame {
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 631, Short.MAX_VALUE)
+            .addGap(0, 1048, Short.MAX_VALUE)
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 414, Short.MAX_VALUE)
+            .addGap(0, 407, Short.MAX_VALUE)
         );
 
+        MenuArea.setIcon(new javax.swing.ImageIcon(getClass().getResource("/co/edu/ude/poo/empresas/vistas/iconos/area24px.png"))); // NOI18N
         MenuArea.setText("Area");
+        MenuArea.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
 
         ItemAgregarArea.setIcon(new javax.swing.ImageIcon(getClass().getResource("/co/edu/ude/poo/empresas/vistas/iconos/agregar24px.png"))); // NOI18N
         ItemAgregarArea.setText("Agregar...");
@@ -198,7 +200,9 @@ public class VentanaPrincipal extends JFrame {
 
         jMenuBar1.add(MenuArea);
 
+        MenuAsesor.setIcon(new javax.swing.ImageIcon(getClass().getResource("/co/edu/ude/poo/empresas/vistas/iconos/asesor24px.png"))); // NOI18N
         MenuAsesor.setText("Asesor");
+        MenuAsesor.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
 
         ItemAgregarAsesor.setIcon(new javax.swing.ImageIcon(getClass().getResource("/co/edu/ude/poo/empresas/vistas/iconos/agregar24px.png"))); // NOI18N
         ItemAgregarAsesor.setText("Agregar...");
@@ -287,7 +291,9 @@ public class VentanaPrincipal extends JFrame {
 
         jMenuBar1.add(MenuAsesor);
 
+        MenuEmpresa.setIcon(new javax.swing.ImageIcon(getClass().getResource("/co/edu/ude/poo/empresas/vistas/iconos/empresa24px.png"))); // NOI18N
         MenuEmpresa.setText("Empresa");
+        MenuEmpresa.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
 
         ItemAgregarEmpresa.setIcon(new javax.swing.ImageIcon(getClass().getResource("/co/edu/ude/poo/empresas/vistas/iconos/agregar24px.png"))); // NOI18N
         ItemAgregarEmpresa.setText("Agregar...");
@@ -384,7 +390,9 @@ public class VentanaPrincipal extends JFrame {
 
         jMenuBar1.add(MenuEmpresa);
 
+        MenuHolding.setIcon(new javax.swing.ImageIcon(getClass().getResource("/co/edu/ude/poo/empresas/vistas/iconos/holding24px.png"))); // NOI18N
         MenuHolding.setText("Holding");
+        MenuHolding.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
 
         ItemAgregarHolding.setIcon(new javax.swing.ImageIcon(getClass().getResource("/co/edu/ude/poo/empresas/vistas/iconos/agregar24px.png"))); // NOI18N
         ItemAgregarHolding.setText("Agregar...");
@@ -449,7 +457,9 @@ public class VentanaPrincipal extends JFrame {
 
         jMenuBar1.add(MenuHolding);
 
+        MenuPais.setIcon(new javax.swing.ImageIcon(getClass().getResource("/co/edu/ude/poo/empresas/vistas/iconos/pais24px.png"))); // NOI18N
         MenuPais.setText("Pais");
+        MenuPais.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
 
         ItemAgregarPais.setIcon(new javax.swing.ImageIcon(getClass().getResource("/co/edu/ude/poo/empresas/vistas/iconos/agregar24px.png"))); // NOI18N
         ItemAgregarPais.setText("Agregar...");
@@ -538,7 +548,9 @@ public class VentanaPrincipal extends JFrame {
 
         jMenuBar1.add(MenuPais);
 
+        MenuSede.setIcon(new javax.swing.ImageIcon(getClass().getResource("/co/edu/ude/poo/empresas/vistas/iconos/sede24px.png"))); // NOI18N
         MenuSede.setText("Sede");
+        MenuSede.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
 
         ItemAgregarSede.setIcon(new javax.swing.ImageIcon(getClass().getResource("/co/edu/ude/poo/empresas/vistas/iconos/agregar24px.png"))); // NOI18N
         ItemAgregarSede.setText("Agregar...");
@@ -604,6 +616,7 @@ public class VentanaPrincipal extends JFrame {
         jMenuBar1.add(MenuSede);
 
         MenuVendedor.setText("Vendedor");
+        MenuVendedor.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
 
         ItemAgregarVendedor.setIcon(new javax.swing.ImageIcon(getClass().getResource("/co/edu/ude/poo/empresas/vistas/iconos/agregar24px.png"))); // NOI18N
         ItemAgregarVendedor.setText("Agregar...");
@@ -701,7 +714,9 @@ public class VentanaPrincipal extends JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void ItemAgregarAreaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ItemAgregarAreaActionPerformed
-        // TODO add your handling code here:
+        VentanaCrudArea ventana_area = new VentanaCrudArea(this, true);
+        ventana_area.setLocationRelativeTo(this);
+        ventana_area.setVisible(true);
     }//GEN-LAST:event_ItemAgregarAreaActionPerformed
 
     private void ItemBuscarAreaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ItemBuscarAreaActionPerformed
@@ -1039,6 +1054,6 @@ public class VentanaPrincipal extends JFrame {
     // End of variables declaration//GEN-END:variables
 
     private void Seticon() {
-        setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("icono.png")));
+        setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/co/edu/ude/poo/empresas/vistas/iconos/icono.png")));
     }
 }

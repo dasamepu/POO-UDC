@@ -6,7 +6,13 @@
       <SubComponents>
         <Menu class="javax.swing.JMenu" name="MenuArea">
           <Properties>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="3" name="/co/edu/ude/poo/empresas/vistas/iconos/area24px.png"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="Area"/>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Arial" size="16" style="1"/>
+            </Property>
           </Properties>
           <SubComponents>
             <MenuItem class="javax.swing.JMenuItem" name="ItemAgregarArea">
@@ -90,7 +96,13 @@
         </Menu>
         <Menu class="javax.swing.JMenu" name="MenuAsesor">
           <Properties>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="3" name="/co/edu/ude/poo/empresas/vistas/iconos/asesor24px.png"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="Asesor"/>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Arial" size="16" style="1"/>
+            </Property>
           </Properties>
           <SubComponents>
             <MenuItem class="javax.swing.JMenuItem" name="ItemAgregarAsesor">
@@ -198,7 +210,13 @@
         </Menu>
         <Menu class="javax.swing.JMenu" name="MenuEmpresa">
           <Properties>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="3" name="/co/edu/ude/poo/empresas/vistas/iconos/empresa24px.png"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="Empresa"/>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Arial" size="16" style="1"/>
+            </Property>
           </Properties>
           <SubComponents>
             <MenuItem class="javax.swing.JMenuItem" name="ItemAgregarEmpresa">
@@ -314,7 +332,13 @@
         </Menu>
         <Menu class="javax.swing.JMenu" name="MenuHolding">
           <Properties>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="3" name="/co/edu/ude/poo/empresas/vistas/iconos/holding24px.png"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="Holding"/>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Arial" size="16" style="1"/>
+            </Property>
           </Properties>
           <SubComponents>
             <MenuItem class="javax.swing.JMenuItem" name="ItemAgregarHolding">
@@ -398,7 +422,13 @@
         </Menu>
         <Menu class="javax.swing.JMenu" name="MenuPais">
           <Properties>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="3" name="/co/edu/ude/poo/empresas/vistas/iconos/pais24px.png"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="Pais"/>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Arial" size="16" style="1"/>
+            </Property>
           </Properties>
           <SubComponents>
             <MenuItem class="javax.swing.JMenuItem" name="ItemAgregarPais">
@@ -506,7 +536,13 @@
         </Menu>
         <Menu class="javax.swing.JMenu" name="MenuSede">
           <Properties>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="3" name="/co/edu/ude/poo/empresas/vistas/iconos/sede24px.png"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="Sede"/>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Arial" size="16" style="1"/>
+            </Property>
           </Properties>
           <SubComponents>
             <MenuItem class="javax.swing.JMenuItem" name="ItemAgregarSede">
@@ -591,6 +627,9 @@
         <Menu class="javax.swing.JMenu" name="MenuVendedor">
           <Properties>
             <Property name="text" type="java.lang.String" value="Vendedor"/>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Arial" size="16" style="1"/>
+            </Property>
           </Properties>
           <SubComponents>
             <MenuItem class="javax.swing.JMenuItem" name="ItemAgregarVendedor">
@@ -733,12 +772,12 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <EmptySpace min="0" pref="631" max="32767" attributes="0"/>
+              <EmptySpace min="0" pref="1048" max="32767" attributes="0"/>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
-              <EmptySpace min="0" pref="414" max="32767" attributes="0"/>
+              <EmptySpace min="0" pref="407" max="32767" attributes="0"/>
           </Group>
         </DimensionLayout>
       </Layout>
