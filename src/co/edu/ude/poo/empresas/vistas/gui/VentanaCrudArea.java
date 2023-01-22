@@ -149,6 +149,11 @@ public class VentanaCrudArea extends javax.swing.JDialog {
         BotonEliminar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/co/edu/ude/poo/empresas/vistas/iconos/eliminar24px.png"))); // NOI18N
         BotonEliminar.setText("ELIMINAR");
         BotonEliminar.setEnabled(false);
+        BotonEliminar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotonEliminarActionPerformed(evt);
+            }
+        });
 
         BotonLimpiar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/co/edu/ude/poo/empresas/vistas/iconos/limpiar24px.png"))); // NOI18N
         BotonLimpiar.setText("LIMPIAR");
@@ -329,8 +334,6 @@ public class VentanaCrudArea extends javax.swing.JDialog {
     }//GEN-LAST:event_BotonCancelarActionPerformed
 
     private void BotonEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonEditarActionPerformed
-        //BotonBuscarActionPerformed(evt);
-        
         //validamos que el campo cedula tenga algun dato
         if(CampoId.getText() == null || CampoId.getText().isEmpty()){
             String msj = "Para editar introduzca el id";
@@ -338,11 +341,19 @@ public class VentanaCrudArea extends javax.swing.JDialog {
             limpiarCampos();
             return;
         }
-        
+        //validar que el id coincida con el id consultado previamente
         if(CampoId.getText().equals(this.area.getId()) != true){
             String msj = "El id no coincide con el id consultado previamente";
             JOptionPane.showMessageDialog(this, msj);
             limpiarCampos();
+            return;
+        }
+        
+        //validando que el area sí sea editada
+        if(CampoNombre.getText().equals(this.area.getNombre()) == true && 
+           CampoDescripcion.getText().equals(this.area.getDescripción()) == true){
+            String msj = "No se ha cambiado nada";
+            JOptionPane.showMessageDialog(this, msj);
             return;
         }
         
@@ -364,7 +375,37 @@ public class VentanaCrudArea extends javax.swing.JDialog {
         //mostramos el mensaje
         String msj = "Area modificada con exito";
         JOptionPane.showMessageDialog(this, msj);
+        limpiarCampos();
     }//GEN-LAST:event_BotonEditarActionPerformed
+
+    private void BotonEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonEliminarActionPerformed
+        //validamos que el campo cedula tenga algun dato
+        if(CampoId.getText() == null || CampoId.getText().isEmpty()){
+            String msj = "Para editar introduzca el id";
+            JOptionPane.showMessageDialog(this, msj);
+            limpiarCampos();
+            return;
+        }
+        
+        //validar que el id coincida con el id consultado previamente
+        if(CampoId.getText().equals(this.area.getId()) != true){
+            String msj = "El id no coincide con el id consultado previamente";
+            JOptionPane.showMessageDialog(this, msj);
+            limpiarCampos();
+            return;
+        }
+        String msj = "Seguro desae eliminar el area?";
+        int respuesta = JOptionPane.showConfirmDialog(this, msj
+                , "CONFIRMAR ELIMINACION", JOptionPane.YES_NO_OPTION
+                , JOptionPane.QUESTION_MESSAGE);
+        if(respuesta == JOptionPane.YES_OPTION){
+            Area.getAreaBD().remove(this.area.getId());
+            int total = Area.getAreaBD().size();
+            String msj2 = "Area eliminada exitosamente, hay " + total + " area(s)";
+            JOptionPane.showMessageDialog(this, msj2);
+            limpiarCampos();
+        }
+    }//GEN-LAST:event_BotonEliminarActionPerformed
 
     /**
      * @param args the command line arguments
