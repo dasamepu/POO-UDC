@@ -274,8 +274,10 @@ public class VentanaCrudArea extends javax.swing.JDialog {
                  descripcion.isEmpty() || descripcion.length() == 0){
             String msj = "Hay campo(s) vacio(s), no se guardara nada hasta que el problema se solucione";
             JOptionPane.showMessageDialog(this, msj);
-        }else if(!nombre.matches("[a-zA-Z]+") || !descripcion.matches("[a-zA-Z0-9\\s\\p{Punct}]+")){
-            String msj = "El nombre o la descripción no son textos, no se guardara nada hasta que el problema se solucione";
+        }else if(!nombre.matches("[a-zA-Z\\s\\p{Punct}]+") || !descripcion.matches("[a-zA-Z0-9\\s\\p{Punct}]+")){
+            String msj = "El nombre o la descripción no son textos \n "
+                    + "no se guardara nada hasta que el problema se solucione \n "
+                    + "Posible error: El nombre no puede llevar numeros" ;
             JOptionPane.showMessageDialog(this, msj);
         }else{
             //se pregunta si se quiere guardar la informacion
@@ -339,9 +341,11 @@ public class VentanaCrudArea extends javax.swing.JDialog {
     private void BotonLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonLimpiarActionPerformed
         //se pregunta si se quiere guardar la informacion
             int option = JOptionPane.showConfirmDialog(this
-            , "Guardar los cambios?", "confirmar cambios"
+            , "Limpiar el formulario?", "confirmar limpieza"
             , JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
             if(option == JOptionPane.YES_OPTION){
+                String msj = "Formulario limpiado con exito";
+                JOptionPane.showMessageDialog(this, msj);
                 limpiarCampos();
             }
     }//GEN-LAST:event_BotonLimpiarActionPerformed
@@ -422,7 +426,7 @@ public class VentanaCrudArea extends javax.swing.JDialog {
             limpiarCampos();
             return;
         }
-        String msj = "Seguro desae eliminar el area?";
+        String msj = "Seguro desea eliminar el area?";
         int respuesta = JOptionPane.showConfirmDialog(this, msj
                 , "CONFIRMAR ELIMINACION", JOptionPane.YES_NO_OPTION
                 , JOptionPane.QUESTION_MESSAGE);
