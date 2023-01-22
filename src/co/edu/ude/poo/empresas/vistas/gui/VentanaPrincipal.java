@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package co.edu.ude.poo.empresas.vistas.gui;
+import co.edu.ude.poo.empresas.modelo.entidades.Area;
 import java.awt.Toolkit;
 import javax.swing.*;
 /**
@@ -178,6 +179,11 @@ public class VentanaPrincipal extends JFrame {
         SubMenuReportesArea.setText("Reportes");
 
         ItemListarTodoArea.setText("Listar Todo...");
+        ItemListarTodoArea.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ItemListarTodoAreaActionPerformed(evt);
+            }
+        });
         SubMenuReportesArea.add(ItemListarTodoArea);
 
         ItemListarPorIdArea.setText("Listar por Id...");
@@ -931,6 +937,18 @@ public class VentanaPrincipal extends JFrame {
     private void ItemListarPorNumeroTrabajosVendedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ItemListarPorNumeroTrabajosVendedorActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_ItemListarPorNumeroTrabajosVendedorActionPerformed
+
+    private void ItemListarTodoAreaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ItemListarTodoAreaActionPerformed
+        if(Area.getAreaBD() == null || Area.getAreaBD().isEmpty()){
+            JOptionPane.showMessageDialog(this, "no hay usuarios"
+            , "RESULTADO NEGATIVO", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+        
+        VentanaReporteArea v = new VentanaReporteArea(this,true);
+        v.setLocationRelativeTo(this);
+        v.setVisible(true);
+    }//GEN-LAST:event_ItemListarTodoAreaActionPerformed
 
     /**
      * @param args the command line arguments
