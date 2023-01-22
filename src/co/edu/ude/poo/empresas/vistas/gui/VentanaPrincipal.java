@@ -4,6 +4,7 @@
  */
 package co.edu.ude.poo.empresas.vistas.gui;
 import co.edu.ude.poo.empresas.modelo.entidades.Area;
+import co.edu.ude.poo.empresas.vistas.gui.reportes.*;
 import java.awt.Toolkit;
 import javax.swing.*;
 /**
@@ -739,11 +740,27 @@ public class VentanaPrincipal extends JFrame {
     }//GEN-LAST:event_ItemEliminarAreaActionPerformed
 
     private void ItemListarPorIdAreaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ItemListarPorIdAreaActionPerformed
-        // TODO add your handling code here:
+        if(Area.getAreaBD() == null || Area.getAreaBD().isEmpty()){
+            JOptionPane.showMessageDialog(this, "no hay usuarios"
+            , "RESULTADO NEGATIVO", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+        
+        VentanaReporteXIdArea v = new VentanaReporteXIdArea(this,true);
+        v.setLocationRelativeTo(this);
+        v.setVisible(true);
     }//GEN-LAST:event_ItemListarPorIdAreaActionPerformed
 
     private void ItemListarPorNombreAreaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ItemListarPorNombreAreaActionPerformed
-        // TODO add your handling code here:
+        if(Area.getAreaBD() == null || Area.getAreaBD().isEmpty()){
+            JOptionPane.showMessageDialog(this, "no hay usuarios"
+            , "RESULTADO NEGATIVO", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+        
+        VentanaReporteXNombreArea v = new VentanaReporteXNombreArea(this,true);
+        v.setLocationRelativeTo(this);
+        v.setVisible(true);
     }//GEN-LAST:event_ItemListarPorNombreAreaActionPerformed
 
     private void ItemAgregarAsesorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ItemAgregarAsesorActionPerformed
