@@ -101,7 +101,7 @@ public class VentanaCrudArea extends javax.swing.JDialog {
                     .addComponent(EtiquetaId))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(CampoNombre, javax.swing.GroupLayout.DEFAULT_SIZE, 357, Short.MAX_VALUE)
+                    .addComponent(CampoNombre, javax.swing.GroupLayout.DEFAULT_SIZE, 465, Short.MAX_VALUE)
                     .addComponent(CampoId)
                     .addComponent(jScrollPane1))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -337,7 +337,13 @@ public class VentanaCrudArea extends javax.swing.JDialog {
     }//GEN-LAST:event_BotonBuscarActionPerformed
 
     private void BotonLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonLimpiarActionPerformed
-        limpiarCampos();
+        //se pregunta si se quiere guardar la informacion
+            int option = JOptionPane.showConfirmDialog(this
+            , "Guardar los cambios?", "confirmar cambios"
+            , JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+            if(option == JOptionPane.YES_OPTION){
+                limpiarCampos();
+            }
     }//GEN-LAST:event_BotonLimpiarActionPerformed
 
     private void BotonCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonCancelarActionPerformed

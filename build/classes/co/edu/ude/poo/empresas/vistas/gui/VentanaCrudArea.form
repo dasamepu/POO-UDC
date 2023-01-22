@@ -130,7 +130,7 @@
                   </Group>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                      <Component id="CampoNombre" pref="357" max="32767" attributes="0"/>
+                      <Component id="CampoNombre" pref="465" max="32767" attributes="0"/>
                       <Component id="CampoId" max="32767" attributes="0"/>
                       <Component id="jScrollPane1" alignment="0" max="32767" attributes="0"/>
                   </Group>
