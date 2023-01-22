@@ -799,19 +799,21 @@ public class VentanaPrincipal extends JFrame {
     }//GEN-LAST:event_ItemListarPorFechaInicioAsesorActionPerformed
 
     private void ItemAgregarEmpresaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ItemAgregarEmpresaActionPerformed
-        // TODO add your handling code here:
+        VentanaCrudEmpresa ventana_empresa = new VentanaCrudEmpresa(this, true);
+        ventana_empresa.setLocationRelativeTo(this);
+        ventana_empresa.setVisible(true);
     }//GEN-LAST:event_ItemAgregarEmpresaActionPerformed
 
     private void ItemBuscarEmpresaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ItemBuscarEmpresaActionPerformed
-        // TODO add your handling code here:
+        ItemAgregarEmpresaActionPerformed(evt);
     }//GEN-LAST:event_ItemBuscarEmpresaActionPerformed
 
     private void ItemEditarEmpresaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ItemEditarEmpresaActionPerformed
-        // TODO add your handling code here:
+        ItemAgregarEmpresaActionPerformed(evt);
     }//GEN-LAST:event_ItemEditarEmpresaActionPerformed
 
     private void ItemEliminarEmpresaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ItemEliminarEmpresaActionPerformed
-        // TODO add your handling code here:
+        ItemAgregarEmpresaActionPerformed(evt);
     }//GEN-LAST:event_ItemEliminarEmpresaActionPerformed
 
     private void ItemListarPorIdEmpresaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ItemListarPorIdEmpresaActionPerformed

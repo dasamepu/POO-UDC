@@ -4,6 +4,8 @@
  */
 package co.edu.ude.poo.empresas.modelo.entidades;
 
+import java.util.HashMap;
+
 /**
  *
  * @author david
@@ -15,19 +17,28 @@ public class Empresa {
     private Integer facturacion_anual;
     private Integer numero_vendedores;
     private Integer num_sedes;
+    private static HashMap<String, Empresa> empresaBD;
 
-    public Empresa(String id, String nombre_empresa, String fecha_entrada_holding, Integer facturacion_anual, Integer numero_vendedores) {
+    public Empresa(String id, String nombre_empresa, String fecha_entrada_holding, Integer facturacion_anual, Integer numero_vendedores, Integer num_sedes) {
         this.id = id;
         this.nombre_empresa = nombre_empresa;
         this.fecha_entrada_holding = fecha_entrada_holding;
         this.facturacion_anual = facturacion_anual;
         this.numero_vendedores = numero_vendedores;
+        this.num_sedes = num_sedes;
+    }
+
+    
+
+    public Empresa() {
     }
 
     @Override
     public String toString() {
         return "Empresa{" + "id=" + id + ", nombre_empresa=" + nombre_empresa + ", fecha_entrada_holding=" + fecha_entrada_holding + ", facturacion_anual=" + facturacion_anual + ", numero_vendedores=" + numero_vendedores + ", num_sedes=" + num_sedes + '}';
     }
+    
+    
 
     public Integer getNum_sedes() {
         return num_sedes;
@@ -81,7 +92,11 @@ public class Empresa {
         this.numero_vendedores = numero_vendedores;
     }
 
-    
-    
-    
+    public static HashMap<String, Empresa> getEmpresaBD() {
+        return empresaBD;
+    }
+
+    public static void setEmpresaBD(HashMap<String, Empresa> empresaBD) {
+        Empresa.empresaBD = empresaBD;
+    }
 }
