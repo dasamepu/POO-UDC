@@ -17,9 +17,9 @@ import javax.swing.JOptionPane;
  * @author david
  */
 public class VentanaCrudSede extends javax.swing.JDialog {
-    Area area;
+    Sede sede;
     /**
-     * Creates new form VentanaCrudArea
+     * Creates new form VentanaCrudSede
      */
     public VentanaCrudSede(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
@@ -39,11 +39,8 @@ public class VentanaCrudSede extends javax.swing.JDialog {
         jPanel1 = new javax.swing.JPanel();
         EtiquetaId = new javax.swing.JLabel();
         CampoId = new javax.swing.JTextField();
-        EtiquetaNombre = new javax.swing.JLabel();
-        CampoNombre = new javax.swing.JTextField();
-        EtiquetaDescripcion = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        CampoDescripcion = new javax.swing.JTextArea();
+        EtiquetaCiudad = new javax.swing.JLabel();
+        CampoCiudad = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         BotonAgregar = new javax.swing.JButton();
         BotonBuscar = new javax.swing.JButton();
@@ -58,9 +55,9 @@ public class VentanaCrudSede extends javax.swing.JDialog {
 
         jLabel1.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 204, 255));
-        jLabel1.setText("Formulario Area");
+        jLabel1.setText("Formulario Sede");
 
-        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 153, 153)), "Datos del Area:", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 0, 14), new java.awt.Color(0, 102, 204))); // NOI18N
+        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 153, 153)), "Datos de la Sede:", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 0, 14), new java.awt.Color(0, 102, 204))); // NOI18N
 
         EtiquetaId.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         EtiquetaId.setText("ID:");
@@ -72,59 +69,46 @@ public class VentanaCrudSede extends javax.swing.JDialog {
             }
         });
 
-        EtiquetaNombre.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
-        EtiquetaNombre.setText("NOMBRE:");
+        EtiquetaCiudad.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        EtiquetaCiudad.setText("CIUDAD DONDE SE LOCALIZA:");
 
-        CampoNombre.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
-        CampoNombre.addActionListener(new java.awt.event.ActionListener() {
+        CampoCiudad.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
+        CampoCiudad.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CampoNombreActionPerformed(evt);
+                CampoCiudadActionPerformed(evt);
             }
         });
-
-        EtiquetaDescripcion.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
-        EtiquetaDescripcion.setText("DESCRIPCIÓN:");
-
-        CampoDescripcion.setColumns(20);
-        CampoDescripcion.setRows(5);
-        jScrollPane1.setViewportView(CampoDescripcion);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(12, 12, 12)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(EtiquetaDescripcion)
-                    .addComponent(EtiquetaNombre)
+                    .addComponent(EtiquetaCiudad)
                     .addComponent(EtiquetaId))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(CampoNombre, javax.swing.GroupLayout.DEFAULT_SIZE, 465, Short.MAX_VALUE)
-                    .addComponent(CampoId)
-                    .addComponent(jScrollPane1))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(CampoCiudad, javax.swing.GroupLayout.PREFERRED_SIZE, 297, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(CampoId, javax.swing.GroupLayout.PREFERRED_SIZE, 297, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(26, 26, 26))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(33, 33, 33)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(EtiquetaId)
                     .addComponent(CampoId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addGap(32, 32, 32)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(EtiquetaNombre)
-                    .addComponent(CampoNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(EtiquetaDescripcion)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(EtiquetaCiudad)
+                    .addComponent(CampoCiudad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(29, Short.MAX_VALUE))
         );
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/co/edu/ude/poo/empresas/vistas/iconos/area.png"))); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/co/edu/ude/poo/empresas/vistas/iconos/sede.png"))); // NOI18N
 
         BotonAgregar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/co/edu/ude/poo/empresas/vistas/iconos/guardar24px.png"))); // NOI18N
         BotonAgregar.setText("AGREGAR");
@@ -206,9 +190,9 @@ public class VentanaCrudSede extends javax.swing.JDialog {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(BotonCancelar))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(54, 54, 54)
+                        .addGap(47, 47, 47)
                         .addComponent(jLabel2)
-                        .addGap(48, 48, 48)
+                        .addGap(55, 55, 55)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addGroup(layout.createSequentialGroup()
@@ -219,25 +203,25 @@ public class VentanaCrudSede extends javax.swing.JDialog {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addGap(28, 28, 28)
+                .addComponent(jLabel1)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(28, 28, 28)
-                        .addComponent(jLabel1)
                         .addGap(26, 26, 26)
-                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(22, 22, 22)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(BotonAgregar)
+                            .addComponent(BotonBuscar)
+                            .addComponent(BotonEditar)
+                            .addComponent(BotonEliminar)
+                            .addComponent(BotonLimpiar)
+                            .addComponent(BotonCancelar)
+                            .addComponent(BotonListar)))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(132, 132, 132)
+                        .addGap(46, 46, 46)
                         .addComponent(jLabel2)))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(BotonAgregar)
-                    .addComponent(BotonBuscar)
-                    .addComponent(BotonEditar)
-                    .addComponent(BotonEliminar)
-                    .addComponent(BotonLimpiar)
-                    .addComponent(BotonCancelar)
-                    .addComponent(BotonListar))
-                .addContainerGap(20, Short.MAX_VALUE))
+                .addContainerGap(40, Short.MAX_VALUE))
         );
 
         pack();
@@ -247,35 +231,32 @@ public class VentanaCrudSede extends javax.swing.JDialog {
         // TODO add your handling code here:
     }//GEN-LAST:event_CampoIdActionPerformed
 
-    private void CampoNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CampoNombreActionPerformed
+    private void CampoCiudadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CampoCiudadActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_CampoNombreActionPerformed
+    }//GEN-LAST:event_CampoCiudadActionPerformed
 
     private void BotonAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonAgregarActionPerformed
         //recuperar los datos ingresados en los campos del formulario
         String id = CampoId.getText();
-        String nombre = CampoNombre.getText();
-        String descripcion = CampoDescripcion.getText();
-        //crear un objeto (variable tipo area)
-        Area area = new Area();
-        area.setId(id);
-        area.setNombre(nombre);
-        area.setDescripción(descripcion);
+        String nombre = CampoCiudad.getText();
+        //crear un objeto (variable tipo sede)
+        Sede sede = new Sede();
+        sede.setId(id);
+        sede.setCiudad_localiza(nombre);
         //validar si el Map existe
-        if(Area.getAreaBD() == null){
-            Area.setAreaBD(new HashMap<String, Area>());
+        if(Sede.getSedeBD() == null){
+            Sede.setSedeBD(new HashMap<String, Sede>());
         }
-        //validar si el Map ya tiene el area guardada
-        if(Area.getAreaBD().containsKey(id)){
-            String msj = "Ya existe el area con id: " + id;
+        //validar si el Map ya tiene el sede guardada
+        if(Sede.getSedeBD().containsKey(id)){
+            String msj = "Ya existe el sede con id: " + id;
             JOptionPane.showMessageDialog(this, msj);
         }else if(id.isEmpty() || id.length() == 0 ||    //verificar si algun campo está vacio
-                 nombre.isEmpty() || nombre.length() == 0 ||
-                 descripcion.isEmpty() || descripcion.length() == 0){
+                 nombre.isEmpty() || nombre.length() == 0){
             String msj = "Hay campo(s) vacio(s), no se guardara nada hasta que el problema se solucione";
             JOptionPane.showMessageDialog(this, msj);
-        }else if(!nombre.matches("[a-zA-Z\\s\\p{Punct}]+") || !descripcion.matches("[a-zA-Z0-9\\s\\p{Punct}]+")){
-            String msj = "El nombre o la descripción no son textos \n "
+        }else if(!nombre.matches("[a-zA-Z\\s\\p{Punct}]+")){
+            String msj = "El nombre no es valido \n "
                     + "no se guardara nada hasta que el problema se solucione \n "
                     + "Posible error: El nombre no puede llevar numeros" ;
             JOptionPane.showMessageDialog(this, msj);
@@ -285,12 +266,12 @@ public class VentanaCrudSede extends javax.swing.JDialog {
             , "Guardar la informacion?", "confirmar guardado"
             , JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
             if(option == JOptionPane.YES_OPTION){
-                //se guarda el area si no existia
-                Area.getAreaBD().put(id, area);
-                //obtenemos el numero de areas
-                int cuentaAreas = Area.getAreaBD().size();
-                String msj = "el area fue guardada. "
-                        + "Existen: " + cuentaAreas + " area(s)";
+                //se guarda el sede si no existia
+                Sede.getSedeBD().put(id, sede);
+                //obtenemos el numero de sedes
+                int cuentaSedes = Sede.getSedeBD().size();
+                String msj = "el sede fue guardada. "
+                        + "Existen: " + cuentaSedes + " sede(s)";
                 JOptionPane.showMessageDialog(this, msj);
                 limpiarCampos();
             }
@@ -300,8 +281,7 @@ public class VentanaCrudSede extends javax.swing.JDialog {
 
     public void limpiarCampos(){
         CampoId.setText("");
-        CampoNombre.setText("");
-        CampoDescripcion.setText("");
+        CampoCiudad.setText("");
         
         BotonEditar.setEnabled(false);
         BotonEliminar.setEnabled(false);
@@ -310,18 +290,16 @@ public class VentanaCrudSede extends javax.swing.JDialog {
     private void BotonBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonBuscarActionPerformed
         //recuperar los datos ingresados en los campos del formulario
         String id = CampoId.getText();
-        String nombre = CampoNombre.getText();
-        String descripcion = CampoDescripcion.getText();
+        String nombre = CampoCiudad.getText();
         //verificar si el map existe o si esta vacio
-        if(Area.getAreaBD() == null || Area.getAreaBD().isEmpty()){
+        if(Sede.getSedeBD() == null || Sede.getSedeBD().isEmpty()){
             String msj = "no hay usuarios en la BD";
             JOptionPane.showMessageDialog(this, msj);
         }else{
-            //buscar el area a partir del id
-            if(Area.getAreaBD().containsKey(id)){
-                this.area = Area.getAreaBD().get(id);
-                CampoNombre.setText(this.area.getNombre());
-                CampoDescripcion.setText(this.area.getDescripción());
+            //buscar el sede a partir del id
+            if(Sede.getSedeBD().containsKey(id)){
+                this.sede = Sede.getSedeBD().get(id);
+                CampoCiudad.setText(this.sede.getCiudad_localiza());
             //se activan los botones si la busqueda fue exitosa
             BotonEditar.setEnabled(true);
             BotonEliminar.setEnabled(true);
@@ -368,23 +346,22 @@ public class VentanaCrudSede extends javax.swing.JDialog {
             return;
         }
         //validar que el id coincida con el id consultado previamente
-        if(CampoId.getText().equals(this.area.getId()) != true){
+        if(CampoId.getText().equals(this.sede.getId()) != true){
             String msj = "El id no coincide con el id consultado previamente";
             JOptionPane.showMessageDialog(this, msj);
             limpiarCampos();
             return;
         }
         
-        //validando que el area sí sea editada
-        if(CampoNombre.getText().equals(this.area.getNombre()) == true && 
-           CampoDescripcion.getText().equals(this.area.getDescripción()) == true){
+        //validando que el sede sí sea editada
+        if(CampoCiudad.getText().equals(this.sede.getCiudad_localiza()) == true){
             String msj = "No se ha cambiado nada";
             JOptionPane.showMessageDialog(this, msj);
             return;
         }
         
         //recuperamos el texto que haya en el CampoId y el mapa nos devuelve el usuario con ese id
-        this.area = Area.getAreaBD().get(CampoId.getText());
+        this.sede = Sede.getSedeBD().get(CampoId.getText());
         
         //se pregunta si se quiere guardar la informacion
             int option = JOptionPane.showConfirmDialog(this
@@ -393,18 +370,16 @@ public class VentanaCrudSede extends javax.swing.JDialog {
             if(option == JOptionPane.YES_OPTION){
                 //recuperar los numevos datos ingresados en el formulario
                 String id = CampoId.getText();
-                String nombre = CampoNombre.getText();
-                String descripcion = CampoDescripcion.getText();
+                String nombre = CampoCiudad.getText();
 
-                //Cambiar los datos anteriores del area por los datos nuevos
-                this.area.setNombre(String.valueOf(nombre));
-                this.area.setDescripción(String.valueOf(descripcion));
+                //Cambiar los datos anteriores del sede por los datos nuevos
+                this.sede.setCiudad_localiza(String.valueOf(nombre));
 
-                //Guardamos el area con los nuevos datos
-                Area.getAreaBD().put(this.area.getId(), this.area);
+                //Guardamos el sede con los nuevos datos
+                Sede.getSedeBD().put(this.sede.getId(), this.sede);
 
                 //mostramos el mensaje
-                String msj = "Area modificada con exito";
+                String msj = "Sede modificada con exito";
                 JOptionPane.showMessageDialog(this, msj);
                 limpiarCampos();
             }
@@ -420,27 +395,27 @@ public class VentanaCrudSede extends javax.swing.JDialog {
         }
         
         //validar que el id coincida con el id consultado previamente
-        if(CampoId.getText().equals(this.area.getId()) != true){
+        if(CampoId.getText().equals(this.sede.getId()) != true){
             String msj = "El id no coincide con el id consultado previamente";
             JOptionPane.showMessageDialog(this, msj);
             limpiarCampos();
             return;
         }
-        String msj = "Seguro desea eliminar el area?";
+        String msj = "Seguro desea eliminar el sede?";
         int respuesta = JOptionPane.showConfirmDialog(this, msj
                 , "CONFIRMAR ELIMINACION", JOptionPane.YES_NO_OPTION
                 , JOptionPane.QUESTION_MESSAGE);
         if(respuesta == JOptionPane.YES_OPTION){
-            Area.getAreaBD().remove(this.area.getId());
-            int total = Area.getAreaBD().size();
-            String msj2 = "Area eliminada exitosamente, hay " + total + " area(s)";
+            Sede.getSedeBD().remove(this.sede.getId());
+            int total = Sede.getSedeBD().size();
+            String msj2 = "Sede eliminada exitosamente, hay " + total + " sede(s)";
             JOptionPane.showMessageDialog(this, msj2);
             limpiarCampos();
         }
     }//GEN-LAST:event_BotonEliminarActionPerformed
 
     private void BotonListarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonListarActionPerformed
-        if(Area.getAreaBD() == null || Area.getAreaBD().isEmpty()){
+        if(Sede.getSedeBD() == null || Sede.getSedeBD().isEmpty()){
             JOptionPane.showMessageDialog(this, "no hay usuarios para listar"
             , "RESULTADO NEGATIVO", JOptionPane.WARNING_MESSAGE);
             return;
@@ -448,7 +423,7 @@ public class VentanaCrudSede extends javax.swing.JDialog {
             
         this.dispose();
             
-        VentanaReporteArea ventanaReporte = new VentanaReporteArea(new JFrame(), true);
+        VentanaReporteSede ventanaReporte = new VentanaReporteSede(new JFrame(), true);
         ventanaReporte.setLocationRelativeTo(this);
         ventanaReporte.setVisible(true);
         
@@ -505,15 +480,12 @@ public class VentanaCrudSede extends javax.swing.JDialog {
     private javax.swing.JButton BotonEliminar;
     private javax.swing.JButton BotonLimpiar;
     private javax.swing.JButton BotonListar;
-    private javax.swing.JTextArea CampoDescripcion;
+    private javax.swing.JTextField CampoCiudad;
     private javax.swing.JTextField CampoId;
-    private javax.swing.JTextField CampoNombre;
-    private javax.swing.JLabel EtiquetaDescripcion;
+    private javax.swing.JLabel EtiquetaCiudad;
     private javax.swing.JLabel EtiquetaId;
-    private javax.swing.JLabel EtiquetaNombre;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
 }

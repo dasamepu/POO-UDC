@@ -4,6 +4,8 @@
  */
 package co.edu.ude.poo.empresas.modelo.entidades;
 
+import java.util.HashMap;
+
 /**
  *
  * @author david
@@ -13,13 +15,14 @@ public class Vendedor {
     private String nombre;
     private String direccion;
     private Integer numero_trabajos;
+    private static HashMap<String, Vendedor> vendedorBD;
 
     public Vendedor(String id, String nombre, String direccion) {
         this.id = id;
         this.nombre = nombre;
         this.direccion = direccion;
     }
-
+    
     public Vendedor() {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
@@ -63,6 +66,14 @@ public class Vendedor {
 
     public void setDireccion(String direccion) {
         this.direccion = direccion;
+    }
+
+    public static HashMap<String, Vendedor> getVendedorBD() {
+        return vendedorBD;
+    }
+
+    public static void setVendedorBD(HashMap<String, Vendedor> vendedorBD) {
+        Vendedor.vendedorBD = vendedorBD;
     }
     
     

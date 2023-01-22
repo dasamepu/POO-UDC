@@ -4,6 +4,8 @@
  */
 package co.edu.ude.poo.empresas.modelo.entidades;
 
+import java.util.HashMap;
+
 /**
  *
  * @author david
@@ -11,14 +13,14 @@ package co.edu.ude.poo.empresas.modelo.entidades;
 public class Sede {
     private String id;
     private String ciudad_localiza;
-
+    private static HashMap<String, Sede> sedeBD;
+    
     public Sede(String id, String ciudad_localiza) {
         this.id = id;
         this.ciudad_localiza = ciudad_localiza;
     }
-
+    
     public Sede() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
     @Override
@@ -41,6 +43,12 @@ public class Sede {
     public void setCiudad_localiza(String ciudad_localiza) {
         this.ciudad_localiza = ciudad_localiza;
     }
-    
-    
+
+    public static HashMap<String, Sede> getSedeBD() {
+        return sedeBD;
+    }
+
+    public static void setSedeBD(HashMap<String, Sede> areaBD) {
+        Sede.sedeBD = areaBD;
+    }
 }

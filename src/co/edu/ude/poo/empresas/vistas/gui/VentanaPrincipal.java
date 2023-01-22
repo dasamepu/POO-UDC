@@ -9,6 +9,7 @@ import co.edu.ude.poo.empresas.modelo.entidades.*;
 import co.edu.ude.poo.empresas.vistas.gui.reportes.empresa.*;
 import co.edu.ude.poo.empresas.vistas.gui.reportes.holding.*;
 import co.edu.ude.poo.empresas.vistas.gui.reportes.pais.*;
+import co.edu.ude.poo.empresas.vistas.gui.reportes.sede.*;
 import java.awt.Toolkit;
 import javax.swing.*;
 /**
@@ -624,6 +625,11 @@ public class VentanaPrincipal extends JFrame {
         SubMenuReportesSede.setText("Reportes");
 
         ItemListarTodoSede.setText("Listar Todo...");
+        ItemListarTodoSede.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ItemListarTodoSedeActionPerformed(evt);
+            }
+        });
         SubMenuReportesSede.add(ItemListarTodoSede);
 
         ItemListarPorIdSede.setText("Listar por Id...");
@@ -956,27 +962,45 @@ public class VentanaPrincipal extends JFrame {
     }//GEN-LAST:event_ItemListarPorNombrePaisActionPerformed
 
     private void ItemAgregarSedeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ItemAgregarSedeActionPerformed
-        // TODO add your handling code here:
+        VentanaCrudSede ventana = new VentanaCrudSede(this, true);
+        ventana.setLocationRelativeTo(this);
+        ventana.setVisible(true);
     }//GEN-LAST:event_ItemAgregarSedeActionPerformed
 
     private void ItemBuscarSedeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ItemBuscarSedeActionPerformed
-        // TODO add your handling code here:
+        ItemAgregarSedeActionPerformed(evt);
     }//GEN-LAST:event_ItemBuscarSedeActionPerformed
 
     private void ItemEditarSedeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ItemEditarSedeActionPerformed
-        // TODO add your handling code here:
+        ItemAgregarSedeActionPerformed(evt);
     }//GEN-LAST:event_ItemEditarSedeActionPerformed
 
     private void ItemEliminarSedeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ItemEliminarSedeActionPerformed
-        // TODO add your handling code here:
+        ItemAgregarSedeActionPerformed(evt);
     }//GEN-LAST:event_ItemEliminarSedeActionPerformed
 
     private void ItemListarPorIdSedeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ItemListarPorIdSedeActionPerformed
-        // TODO add your handling code here:
+        if(Sede.getSedeBD() == null || Sede.getSedeBD().isEmpty()){
+            JOptionPane.showMessageDialog(this, "no hay holgings"
+            , "RESULTADO NEGATIVO", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+        
+        VentanaReporteXIdSede v = new VentanaReporteXIdSede(this,true);
+        v.setLocationRelativeTo(this);
+        v.setVisible(true);
     }//GEN-LAST:event_ItemListarPorIdSedeActionPerformed
 
     private void ItemListarPorCiudadLocalizaSedeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ItemListarPorCiudadLocalizaSedeActionPerformed
-        // TODO add your handling code here:
+        if(Sede.getSedeBD() == null || Sede.getSedeBD().isEmpty()){
+            JOptionPane.showMessageDialog(this, "no hay holgings"
+            , "RESULTADO NEGATIVO", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+        
+        VentanaReporteXCiudadSede v = new VentanaReporteXCiudadSede(this,true);
+        v.setLocationRelativeTo(this);
+        v.setVisible(true);
     }//GEN-LAST:event_ItemListarPorCiudadLocalizaSedeActionPerformed
 
     private void ItemAgregarVendedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ItemAgregarVendedorActionPerformed
@@ -1174,6 +1198,18 @@ public class VentanaPrincipal extends JFrame {
         v.setLocationRelativeTo(this);
         v.setVisible(true);
     }//GEN-LAST:event_ItemListarTodoPaisActionPerformed
+
+    private void ItemListarTodoSedeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ItemListarTodoSedeActionPerformed
+        if(Sede.getSedeBD() == null || Sede.getSedeBD().isEmpty()){
+            JOptionPane.showMessageDialog(this, "no hay holgings"
+            , "RESULTADO NEGATIVO", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+        
+        VentanaReporteSede v = new VentanaReporteSede(this,true);
+        v.setLocationRelativeTo(this);
+        v.setVisible(true);
+    }//GEN-LAST:event_ItemListarTodoSedeActionPerformed
 
     /**
      * @param args the command line arguments
