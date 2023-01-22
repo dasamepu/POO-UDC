@@ -314,7 +314,7 @@ public class VentanaCrudArea extends javax.swing.JDialog {
         String descripcion = CampoDescripcion.getText();
         //verificar si el map existe o si esta vacio
         if(Area.getAreaBD() == null || Area.getAreaBD().isEmpty()){
-            String msj = "no hay usuarios en la BD";
+            String msj = "no hay areas en la BD";
             JOptionPane.showMessageDialog(this, msj);
         }else{
             //buscar el area a partir del id
@@ -441,7 +441,7 @@ public class VentanaCrudArea extends javax.swing.JDialog {
 
     private void BotonListarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonListarActionPerformed
         if(Area.getAreaBD() == null || Area.getAreaBD().isEmpty()){
-            JOptionPane.showMessageDialog(this, "no hay usuarios para listar"
+            JOptionPane.showMessageDialog(this, "no hay areas para listar"
             , "RESULTADO NEGATIVO", JOptionPane.WARNING_MESSAGE);
             return;
         }

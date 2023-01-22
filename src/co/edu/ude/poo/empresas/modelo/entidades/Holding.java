@@ -4,6 +4,8 @@
  */
 package co.edu.ude.poo.empresas.modelo.entidades;
 
+import java.util.HashMap;
+
 /**
  *
  * @author david
@@ -11,12 +13,16 @@ package co.edu.ude.poo.empresas.modelo.entidades;
 public class Holding {
     private String id;
     private String nombre_holding;
+    private static HashMap<String, Holding> holdingBD;
 
     public Holding(String id, String nombre_holding) {
         this.id = id;
         this.nombre_holding = nombre_holding;
     }
 
+    public Holding() {
+    }
+    
     @Override
     public String toString() {
         return "Holding{" + "id=" + id + ", nombre_holding=" + nombre_holding + '}';
@@ -36,6 +42,14 @@ public class Holding {
 
     public void setNombre_holding(String nombre_holding) {
         this.nombre_holding = nombre_holding;
+    }
+
+    public static HashMap<String, Holding> getHoldingBD() {
+        return holdingBD;
+    }
+
+    public static void setHoldingBD(HashMap<String, Holding> holdingBD) {
+        Holding.holdingBD = holdingBD;
     }
     
     

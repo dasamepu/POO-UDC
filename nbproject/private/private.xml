@@ -3,11 +3,12 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/home/david/poo-udc/src/co/edu/ude/poo/empresas/modelo/entidades/Asesor.java</file>
-            <file>file:/home/david/poo-udc/src/co/edu/ude/poo/empresas/vistas/gui/VentanaCrudEmpresa.java</file>
+            <file>file:/home/david/poo-udc/src/co/edu/ude/poo/empresas/Principal.java</file>
+            <file>file:/home/david/poo-udc/src/co/edu/ude/poo/empresas/vistas/gui/reportes/empresa/VentanaReporteXNumeroVendedoresEmpresa.java</file>
+            <file>file:/home/david/poo-udc/src/co/edu/ude/poo/empresas/vistas/gui/reportes/empresa/VentanaReporteXFacturacionEmpresa.java</file>
+            <file>file:/home/david/poo-udc/src/co/edu/ude/poo/empresas/vistas/gui/reportes/empresa/VentanaReporteXNumeroSedesEmpresa.java</file>
             <file>file:/home/david/poo-udc/src/co/edu/ude/poo/empresas/modelo/entidades/Empresa.java</file>
             <file>file:/home/david/poo-udc/src/co/edu/ude/poo/empresas/vistas/gui/VentanaPrincipal.java</file>
-            <file>file:/home/david/poo-udc/src/co/edu/ude/poo/empresas/vistas/gui/VentanaCrudAsesor.java</file>
         </group>
     </open-files>
 </project-private>

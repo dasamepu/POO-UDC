@@ -59,7 +59,7 @@ public class VentanaCrudEmpresa extends javax.swing.JDialog {
         BotonListar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setTitle("Area");
+        setTitle("Empresa");
 
         jLabel1.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 204, 255));
@@ -418,7 +418,7 @@ public class VentanaCrudEmpresa extends javax.swing.JDialog {
         String num_sedes = CampoNumeroSedes.getText();
         //verificar si el map existe o si esta vacio
         if(Empresa.getEmpresaBD() == null || Empresa.getEmpresaBD().isEmpty()){
-            String msj = "no hay usuarios en la BD";
+            String msj = "no hay empresas en la BD";
             JOptionPane.showMessageDialog(this, msj);
         }else{
             //buscar el empresa a partir del id
@@ -557,7 +557,7 @@ public class VentanaCrudEmpresa extends javax.swing.JDialog {
 
     private void BotonListarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonListarActionPerformed
         if(Empresa.getEmpresaBD() == null || Empresa.getEmpresaBD().isEmpty()){
-            JOptionPane.showMessageDialog(this, "no hay usuarios para listar"
+            JOptionPane.showMessageDialog(this, "no hay empresas para listar"
             , "RESULTADO NEGATIVO", JOptionPane.WARNING_MESSAGE);
             return;
         }

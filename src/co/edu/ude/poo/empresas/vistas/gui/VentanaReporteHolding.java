@@ -4,7 +4,7 @@
  */
 package co.edu.ude.poo.empresas.vistas.gui;
 
-import co.edu.ude.poo.empresas.modelo.entidades.Area;
+import co.edu.ude.poo.empresas.modelo.entidades.Holding;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
@@ -17,7 +17,7 @@ import javax.swing.table.DefaultTableModel;
 public class VentanaReporteHolding extends javax.swing.JDialog {
 
     /**
-     * Creates new form VentanaReporteArea
+     * Creates new form VentanaReporteHolding
      */
     public VentanaReporteHolding(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
@@ -37,12 +37,12 @@ public class VentanaReporteHolding extends javax.swing.JDialog {
         jLabel2 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        TablaAreas = new javax.swing.JTable();
+        TablaHolding = new javax.swing.JTable();
         jLabel3 = new javax.swing.JLabel();
         txtTotal = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setTitle("..:: Gestion de areas ::..");
+        setTitle("..:: Gestion del holding ::..");
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowOpened(java.awt.event.WindowEvent evt) {
                 formWindowOpened(evt);
@@ -54,12 +54,12 @@ public class VentanaReporteHolding extends javax.swing.JDialog {
 
         jLabel2.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setText("Gestion de Areas");
+        jLabel2.setText("Gestion del Holding");
 
-        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 204, 204), 1, true), "Datos de las areas", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 0, 14), new java.awt.Color(0, 204, 255))); // NOI18N
+        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 204, 204), 1, true), "Datos del holding", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 0, 14), new java.awt.Color(0, 204, 255))); // NOI18N
 
-        TablaAreas.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
-        TablaAreas.setModel(new javax.swing.table.DefaultTableModel(
+        TablaHolding.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
+        TablaHolding.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -70,14 +70,14 @@ public class VentanaReporteHolding extends javax.swing.JDialog {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        TablaAreas.setCellSelectionEnabled(true);
-        TablaAreas.setEnabled(false);
-        TablaAreas.setGridColor(new java.awt.Color(0, 0, 0));
-        TablaAreas.setRowHeight(40);
-        TablaAreas.setRowMargin(5);
-        TablaAreas.setShowHorizontalLines(true);
-        TablaAreas.setShowVerticalLines(true);
-        jScrollPane1.setViewportView(TablaAreas);
+        TablaHolding.setCellSelectionEnabled(true);
+        TablaHolding.setEnabled(false);
+        TablaHolding.setGridColor(new java.awt.Color(0, 0, 0));
+        TablaHolding.setRowHeight(40);
+        TablaHolding.setRowMargin(5);
+        TablaHolding.setShowHorizontalLines(true);
+        TablaHolding.setShowVerticalLines(true);
+        jScrollPane1.setViewportView(TablaHolding);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -130,7 +130,7 @@ public class VentanaReporteHolding extends javax.swing.JDialog {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 371, Short.MAX_VALUE))
+                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 371, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -142,21 +142,20 @@ public class VentanaReporteHolding extends javax.swing.JDialog {
     }// </editor-fold>//GEN-END:initComponents
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
-        Collection<Area> datos = Area.getAreaBD().values();
-        List<Area> listaAreas = new ArrayList (datos);
-        String columnas[] = {"ID","NOMBRE","DESCRIPTION"};
-        int totalAreas = listaAreas.size();
-        String filas[][] = new String[totalAreas][columnas.length];
-        for(int i=0; i<listaAreas.size(); i++){
-            Area area = listaAreas.get(i);
-            filas[i][0] = area.getId();
-            filas[i][1] = area.getNombre();
-            filas[i][2] = area.getDescripción();
+        Collection<Holding> datos = Holding.getHoldingBD().values();
+        List<Holding> listaHoldings = new ArrayList (datos);
+        String columnas[] = {"ID","NOMBRE"};
+        int totalHoldings = listaHoldings.size();
+        String filas[][] = new String[totalHoldings][columnas.length];
+        for(int i=0; i<listaHoldings.size(); i++){
+            Holding holding = listaHoldings.get(i);
+            filas[i][0] = holding.getId();
+            filas[i][1] = holding.getNombre_holding();
         }
         DefaultTableModel datosTabla = new DefaultTableModel();
         datosTabla.setDataVector(filas, columnas);
-        TablaAreas.setModel(datosTabla);
-        txtTotal.setText(totalAreas+"");
+        TablaHolding.setModel(datosTabla);
+        txtTotal.setText(totalHoldings+"");
     }//GEN-LAST:event_formWindowOpened
 
     /**
@@ -203,7 +202,7 @@ public class VentanaReporteHolding extends javax.swing.JDialog {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTable TablaAreas;
+    private javax.swing.JTable TablaHolding;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

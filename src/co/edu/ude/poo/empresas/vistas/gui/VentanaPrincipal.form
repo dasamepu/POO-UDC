@@ -408,6 +408,9 @@
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Listar Todo..."/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ItemListarTodoHoldingActionPerformed"/>
+                  </Events>
                 </MenuItem>
                 <MenuItem class="javax.swing.JMenuItem" name="ItemListarPorIdHolding">
                   <Properties>
