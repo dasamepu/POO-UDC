@@ -13,7 +13,7 @@ import javax.swing.JOptionPane;
  * @author david
  */
 public class VentanaCrudArea extends javax.swing.JDialog {
-
+    Area area;
     /**
      * Creates new form VentanaCrudArea
      */
@@ -296,9 +296,9 @@ public class VentanaCrudArea extends javax.swing.JDialog {
         }else{
             //buscar el area a partir del id
             if(Area.getAreaBD().containsKey(id)){
-                Area area = Area.getAreaBD().get(id);
-                CampoNombre.setText(area.getNombre());
-                CampoDescripcion.setText(area.getDescripción());
+                this.area = Area.getAreaBD().get(id);
+                CampoNombre.setText(this.area.getNombre());
+                CampoDescripcion.setText(this.area.getDescripción());
             //se activan los botones si la busqueda fue exitosa
             BotonEditar.setEnabled(true);
             BotonEliminar.setEnabled(true);
@@ -329,7 +329,41 @@ public class VentanaCrudArea extends javax.swing.JDialog {
     }//GEN-LAST:event_BotonCancelarActionPerformed
 
     private void BotonEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonEditarActionPerformed
+        //BotonBuscarActionPerformed(evt);
         
+        //validamos que el campo cedula tenga algun dato
+        if(CampoId.getText() == null || CampoId.getText().isEmpty()){
+            String msj = "Para editar introduzca el id";
+            JOptionPane.showMessageDialog(this, msj);
+            limpiarCampos();
+            return;
+        }
+        
+        if(CampoId.getText().equals(this.area.getId()) != true){
+            String msj = "El id no coincide con el id consultado previamente";
+            JOptionPane.showMessageDialog(this, msj);
+            limpiarCampos();
+            return;
+        }
+        
+        //recuperamos el texto que haya en el CampoId y el mapa nos devuelve el usuario con ese id
+        this.area = Area.getAreaBD().get(CampoId.getText());
+        
+        //recuperar los numevos datos ingresados en el formulario
+        String id = CampoId.getText();
+        String nombre = CampoNombre.getText();
+        String descripcion = CampoDescripcion.getText();
+        
+        //Cambiar los datos anteriores del area por los datos nuevos
+        this.area.setNombre(String.valueOf(nombre));
+        this.area.setDescripción(String.valueOf(descripcion));
+        
+        //Guardamos el area con los nuevos datos
+        Area.getAreaBD().put(this.area.getId(), this.area);
+        
+        //mostramos el mensaje
+        String msj = "Area modificada con exito";
+        JOptionPane.showMessageDialog(this, msj);
     }//GEN-LAST:event_BotonEditarActionPerformed
 
     /**
