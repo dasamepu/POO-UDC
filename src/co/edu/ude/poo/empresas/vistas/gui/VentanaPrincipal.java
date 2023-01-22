@@ -764,19 +764,21 @@ public class VentanaPrincipal extends JFrame {
     }//GEN-LAST:event_ItemListarPorNombreAreaActionPerformed
 
     private void ItemAgregarAsesorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ItemAgregarAsesorActionPerformed
-        // TODO add your handling code here:
+        VentanaCrudAsesor ventana_area = new VentanaCrudAsesor(this, true);
+        ventana_area.setLocationRelativeTo(this);
+        ventana_area.setVisible(true);
     }//GEN-LAST:event_ItemAgregarAsesorActionPerformed
 
     private void ItemBuscarAsesorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ItemBuscarAsesorActionPerformed
-        // TODO add your handling code here:
+        ItemAgregarAsesorActionPerformed(evt);
     }//GEN-LAST:event_ItemBuscarAsesorActionPerformed
 
     private void ItemEditarAsesorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ItemEditarAsesorActionPerformed
-        // TODO add your handling code here:
+        ItemAgregarAsesorActionPerformed(evt);
     }//GEN-LAST:event_ItemEditarAsesorActionPerformed
 
     private void ItemEliminarAsesorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ItemEliminarAsesorActionPerformed
-        // TODO add your handling code here:
+        ItemAgregarAsesorActionPerformed(evt);
     }//GEN-LAST:event_ItemEliminarAsesorActionPerformed
 
     private void ItemListarPorIdAsesorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ItemListarPorIdAsesorActionPerformed

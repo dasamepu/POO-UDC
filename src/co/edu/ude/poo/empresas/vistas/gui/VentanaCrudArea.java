@@ -360,7 +360,7 @@ public class VentanaCrudArea extends javax.swing.JDialog {
     }//GEN-LAST:event_BotonCancelarActionPerformed
 
     private void BotonEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonEditarActionPerformed
-        //validamos que el campo cedula tenga algun dato
+        //validamos que el campo id tenga algun dato
         if(CampoId.getText() == null || CampoId.getText().isEmpty()){
             String msj = "Para editar introduzca el id";
             JOptionPane.showMessageDialog(this, msj);
@@ -383,7 +383,7 @@ public class VentanaCrudArea extends javax.swing.JDialog {
             return;
         }
         
-        //recuperamos el texto que haya en el CampoId y el mapa nos devuelve el usuario con ese id
+        //recuperamos el texto que haya en el CampoId y el mapa nos devuelve el asesor con ese id
         this.area = Area.getAreaBD().get(CampoId.getText());
         
         //se pregunta si se quiere guardar la informacion
@@ -411,7 +411,7 @@ public class VentanaCrudArea extends javax.swing.JDialog {
     }//GEN-LAST:event_BotonEditarActionPerformed
 
     private void BotonEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonEliminarActionPerformed
-        //validamos que el campo cedula tenga algun dato
+        //validamos que el campo Id tenga algun dato
         if(CampoId.getText() == null || CampoId.getText().isEmpty()){
             String msj = "Para editar introduzca el id";
             JOptionPane.showMessageDialog(this, msj);

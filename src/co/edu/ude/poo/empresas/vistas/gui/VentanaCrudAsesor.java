@@ -17,9 +17,9 @@ import javax.swing.JOptionPane;
  * @author david
  */
 public class VentanaCrudAsesor extends javax.swing.JDialog {
-    Area area;
+    Asesor asesor;
     /**
-     * Creates new form VentanaCrudArea
+     * Creates new form VentanaCrudAsesor
      */
     public VentanaCrudAsesor(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
@@ -39,11 +39,14 @@ public class VentanaCrudAsesor extends javax.swing.JDialog {
         jPanel1 = new javax.swing.JPanel();
         EtiquetaId = new javax.swing.JLabel();
         CampoId = new javax.swing.JTextField();
+        EtiquetaFechaInicio = new javax.swing.JLabel();
+        CampoFechaInicio = new javax.swing.JTextField();
         EtiquetaNombre = new javax.swing.JLabel();
         CampoNombre = new javax.swing.JTextField();
-        EtiquetaDescripcion = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        CampoDescripcion = new javax.swing.JTextArea();
+        EtiquetaDireccion = new javax.swing.JLabel();
+        CampoDireccion = new javax.swing.JTextField();
+        EtiquetaTitulacion = new javax.swing.JLabel();
+        CampoTitulacion = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         BotonAgregar = new javax.swing.JButton();
         BotonBuscar = new javax.swing.JButton();
@@ -58,9 +61,9 @@ public class VentanaCrudAsesor extends javax.swing.JDialog {
 
         jLabel1.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 204, 255));
-        jLabel1.setText("Formulario Area");
+        jLabel1.setText("Formulario Asesor");
 
-        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 153, 153)), "Datos del Area:", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 0, 14), new java.awt.Color(0, 102, 204))); // NOI18N
+        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 153, 153)), "Datos del Asesor:", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 0, 14), new java.awt.Color(0, 102, 204))); // NOI18N
 
         EtiquetaId.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         EtiquetaId.setText("ID:");
@@ -69,6 +72,16 @@ public class VentanaCrudAsesor extends javax.swing.JDialog {
         CampoId.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 CampoIdActionPerformed(evt);
+            }
+        });
+
+        EtiquetaFechaInicio.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        EtiquetaFechaInicio.setText("FECHA DE INICIO:");
+
+        CampoFechaInicio.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
+        CampoFechaInicio.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CampoFechaInicioActionPerformed(evt);
             }
         });
 
@@ -82,29 +95,59 @@ public class VentanaCrudAsesor extends javax.swing.JDialog {
             }
         });
 
-        EtiquetaDescripcion.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
-        EtiquetaDescripcion.setText("DESCRIPCIÓN:");
+        EtiquetaDireccion.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        EtiquetaDireccion.setText("DIRECCIÓN:");
 
-        CampoDescripcion.setColumns(20);
-        CampoDescripcion.setRows(5);
-        jScrollPane1.setViewportView(CampoDescripcion);
+        CampoDireccion.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
+        CampoDireccion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CampoDireccionActionPerformed(evt);
+            }
+        });
+
+        EtiquetaTitulacion.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        EtiquetaTitulacion.setText("TITULACIÓN:");
+
+        CampoTitulacion.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
+        CampoTitulacion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CampoTitulacionActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(12, 12, 12)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(EtiquetaDescripcion)
-                    .addComponent(EtiquetaNombre)
-                    .addComponent(EtiquetaId))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(CampoNombre, javax.swing.GroupLayout.DEFAULT_SIZE, 465, Short.MAX_VALUE)
-                    .addComponent(CampoId)
-                    .addComponent(jScrollPane1))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(15, 15, 15)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(45, 45, 45)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                    .addComponent(EtiquetaNombre)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED))
+                                .addGroup(jPanel1Layout.createSequentialGroup()
+                                    .addComponent(EtiquetaDireccion)
+                                    .addGap(10, 10, 10)))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(EtiquetaTitulacion)
+                                .addGap(10, 10, 10)))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(CampoDireccion, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 400, Short.MAX_VALUE)
+                            .addComponent(CampoNombre)
+                            .addComponent(CampoTitulacion)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(EtiquetaFechaInicio)
+                            .addComponent(EtiquetaId))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(CampoFechaInicio, javax.swing.GroupLayout.DEFAULT_SIZE, 400, Short.MAX_VALUE)
+                            .addComponent(CampoId))))
+                .addContainerGap(14, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -113,18 +156,26 @@ public class VentanaCrudAsesor extends javax.swing.JDialog {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(EtiquetaId)
                     .addComponent(CampoId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(EtiquetaFechaInicio)
+                    .addComponent(CampoFechaInicio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(EtiquetaNombre)
                     .addComponent(CampoNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(EtiquetaDescripcion)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(CampoDireccion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(EtiquetaDireccion))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(EtiquetaTitulacion)
+                    .addComponent(CampoTitulacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(16, Short.MAX_VALUE))
         );
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/co/edu/ude/poo/empresas/vistas/iconos/area.png"))); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/co/edu/ude/poo/empresas/vistas/iconos/asesor.png"))); // NOI18N
 
         BotonAgregar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/co/edu/ude/poo/empresas/vistas/iconos/guardar24px.png"))); // NOI18N
         BotonAgregar.setText("AGREGAR");
@@ -188,10 +239,18 @@ public class VentanaCrudAsesor extends javax.swing.JDialog {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 428, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(35, 35, 35)
+                        .addComponent(jLabel2)
+                        .addGap(67, 67, 67)
+                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(23, 23, 23)
                         .addComponent(BotonAgregar)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(BotonBuscar)
@@ -203,32 +262,24 @@ public class VentanaCrudAsesor extends javax.swing.JDialog {
                         .addComponent(BotonLimpiar)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(BotonListar)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(BotonCancelar))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(54, 54, 54)
-                        .addComponent(jLabel2)
-                        .addGap(48, 48, 48)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(0, 0, Short.MAX_VALUE)
-                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 428, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addGap(35, 35, 35))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(BotonCancelar)))
+                .addGap(0, 18, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addGap(28, 28, 28)
+                .addComponent(jLabel1)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(28, 28, 28)
-                        .addComponent(jLabel1)
-                        .addGap(26, 26, 26)
-                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(132, 132, 132)
-                        .addComponent(jLabel2)))
-                .addGap(18, 18, 18)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel2)
+                        .addGap(72, 72, 72)))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(BotonAgregar)
                     .addComponent(BotonBuscar)
@@ -237,7 +288,7 @@ public class VentanaCrudAsesor extends javax.swing.JDialog {
                     .addComponent(BotonLimpiar)
                     .addComponent(BotonCancelar)
                     .addComponent(BotonListar))
-                .addContainerGap(20, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -247,37 +298,45 @@ public class VentanaCrudAsesor extends javax.swing.JDialog {
         // TODO add your handling code here:
     }//GEN-LAST:event_CampoIdActionPerformed
 
-    private void CampoNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CampoNombreActionPerformed
+    private void CampoFechaInicioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CampoFechaInicioActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_CampoNombreActionPerformed
+    }//GEN-LAST:event_CampoFechaInicioActionPerformed
 
     private void BotonAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonAgregarActionPerformed
         //recuperar los datos ingresados en los campos del formulario
         String id = CampoId.getText();
+        String fecha_inicio = CampoFechaInicio.getText();
         String nombre = CampoNombre.getText();
-        String descripcion = CampoDescripcion.getText();
-        //crear un objeto (variable tipo area)
-        Area area = new Area();
-        area.setId(id);
-        area.setNombre(nombre);
-        area.setDescripción(descripcion);
+        String direccion = CampoDireccion.getText();
+        String titulacion = CampoTitulacion.getText();
+        //crear un objeto (variable tipo asesor)
+        Asesor asesor = new Asesor();
+        asesor.setId(id);
+        asesor.setFecha_inicio(fecha_inicio);
+        asesor.setNombre(nombre);
+        asesor.setDireccion(direccion);
+        asesor.setTitulacion(titulacion);
         //validar si el Map existe
-        if(Area.getAreaBD() == null){
-            Area.setAreaBD(new HashMap<String, Area>());
+        if(Asesor.getAsesorBD() == null){
+            Asesor.setAsesorBD(new HashMap<String, Asesor>());
         }
-        //validar si el Map ya tiene el area guardada
-        if(Area.getAreaBD().containsKey(id)){
-            String msj = "Ya existe el area con id: " + id;
+        //validar si el Map ya tiene el asesor guardada
+        if(Asesor.getAsesorBD().containsKey(id)){
+            String msj = "Ya existe el asesor con id: " + id;
             JOptionPane.showMessageDialog(this, msj);
         }else if(id.isEmpty() || id.length() == 0 ||    //verificar si algun campo está vacio
-                 nombre.isEmpty() || nombre.length() == 0 ||
-                 descripcion.isEmpty() || descripcion.length() == 0){
+                 fecha_inicio.isEmpty() || fecha_inicio.length() == 0 ||
+                nombre.isEmpty() || nombre.length() == 0 ||
+                direccion.isEmpty() || direccion.length() == 0 ||
+                 titulacion.isEmpty() || titulacion.length() == 0){
             String msj = "Hay campo(s) vacio(s), no se guardara nada hasta que el problema se solucione";
             JOptionPane.showMessageDialog(this, msj);
-        }else if(!nombre.matches("[a-zA-Z\\s\\p{Punct}]+") || !descripcion.matches("[a-zA-Z0-9\\s\\p{Punct}]+")){
+        }else if(!fecha_inicio.matches("^[0-9/]+$") ||
+                !nombre.matches("^[\\p{L}\\s]+$") || 
+                !direccion.matches("[a-zA-Z0-9\\s\\p{Punct}]+") ||
+                !titulacion.matches("^[\\p{L}\\s]+$")){
             String msj = "El nombre o la descripción no son textos \n "
-                    + "no se guardara nada hasta que el problema se solucione \n "
-                    + "Posible error: El nombre no puede llevar numeros" ;
+                    + "no se guardara nada hasta que el problema se solucione \n ";
             JOptionPane.showMessageDialog(this, msj);
         }else{
             //se pregunta si se quiere guardar la informacion
@@ -285,12 +344,12 @@ public class VentanaCrudAsesor extends javax.swing.JDialog {
             , "Guardar la informacion?", "confirmar guardado"
             , JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
             if(option == JOptionPane.YES_OPTION){
-                //se guarda el area si no existia
-                Area.getAreaBD().put(id, area);
-                //obtenemos el numero de areas
-                int cuentaAreas = Area.getAreaBD().size();
-                String msj = "el area fue guardada. "
-                        + "Existen: " + cuentaAreas + " area(s)";
+                //se guarda el asesor si no existia
+                Asesor.getAsesorBD().put(id, asesor);
+                //obtenemos el numero de asesors
+                int cuentaAsesores = Asesor.getAsesorBD().size();
+                String msj = "el asesor fue guardada. "
+                        + "Existen: " + cuentaAsesores + " asesor(s)";
                 JOptionPane.showMessageDialog(this, msj);
                 limpiarCampos();
             }
@@ -300,8 +359,10 @@ public class VentanaCrudAsesor extends javax.swing.JDialog {
 
     public void limpiarCampos(){
         CampoId.setText("");
+        CampoFechaInicio.setText("");
         CampoNombre.setText("");
-        CampoDescripcion.setText("");
+        CampoDireccion.setText("");
+        CampoTitulacion.setText("");
         
         BotonEditar.setEnabled(false);
         BotonEliminar.setEnabled(false);
@@ -310,18 +371,22 @@ public class VentanaCrudAsesor extends javax.swing.JDialog {
     private void BotonBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonBuscarActionPerformed
         //recuperar los datos ingresados en los campos del formulario
         String id = CampoId.getText();
+        String fecha_inicio = CampoFechaInicio.getText();
         String nombre = CampoNombre.getText();
-        String descripcion = CampoDescripcion.getText();
+        String direccion = CampoDireccion.getText();
+        String titulacion = CampoTitulacion.getText();
         //verificar si el map existe o si esta vacio
-        if(Area.getAreaBD() == null || Area.getAreaBD().isEmpty()){
+        if(Asesor.getAsesorBD() == null || Asesor.getAsesorBD().isEmpty()){
             String msj = "no hay usuarios en la BD";
             JOptionPane.showMessageDialog(this, msj);
         }else{
-            //buscar el area a partir del id
-            if(Area.getAreaBD().containsKey(id)){
-                this.area = Area.getAreaBD().get(id);
-                CampoNombre.setText(this.area.getNombre());
-                CampoDescripcion.setText(this.area.getDescripción());
+            //buscar el asesor a partir del id
+            if(Asesor.getAsesorBD().containsKey(id)){
+                this.asesor = Asesor.getAsesorBD().get(id);
+                CampoFechaInicio.setText(this.asesor.getFecha_inicio());
+                CampoNombre.setText(this.asesor.getNombre());
+                CampoDireccion.setText(this.asesor.getDireccion());
+                CampoTitulacion.setText(this.asesor.getTitulacion());
             //se activan los botones si la busqueda fue exitosa
             BotonEditar.setEnabled(true);
             BotonEliminar.setEnabled(true);
@@ -368,23 +433,25 @@ public class VentanaCrudAsesor extends javax.swing.JDialog {
             return;
         }
         //validar que el id coincida con el id consultado previamente
-        if(CampoId.getText().equals(this.area.getId()) != true){
+        if(CampoId.getText().equals(this.asesor.getId()) != true){
             String msj = "El id no coincide con el id consultado previamente";
             JOptionPane.showMessageDialog(this, msj);
             limpiarCampos();
             return;
         }
         
-        //validando que el area sí sea editada
-        if(CampoNombre.getText().equals(this.area.getNombre()) == true && 
-           CampoDescripcion.getText().equals(this.area.getDescripción()) == true){
+        //validando que el asesor sí sea editado
+        if(CampoFechaInicio.getText().equals(this.asesor.getFecha_inicio()) == true && 
+           CampoNombre.getText().equals(this.asesor.getNombre()) == true && 
+           CampoDireccion.getText().equals(this.asesor.getDireccion()) == true && 
+           CampoTitulacion.getText().equals(this.asesor.getTitulacion()) == true){
             String msj = "No se ha cambiado nada";
             JOptionPane.showMessageDialog(this, msj);
             return;
         }
         
-        //recuperamos el texto que haya en el CampoId y el mapa nos devuelve el usuario con ese id
-        this.area = Area.getAreaBD().get(CampoId.getText());
+        //recuperamos el texto que haya en el CampoId y el mapa nos devuelve el asesor con ese id
+        this.asesor = Asesor.getAsesorBD().get(CampoId.getText());
         
         //se pregunta si se quiere guardar la informacion
             int option = JOptionPane.showConfirmDialog(this
@@ -393,25 +460,29 @@ public class VentanaCrudAsesor extends javax.swing.JDialog {
             if(option == JOptionPane.YES_OPTION){
                 //recuperar los numevos datos ingresados en el formulario
                 String id = CampoId.getText();
+                String fecha_inicio = CampoFechaInicio.getText();
                 String nombre = CampoNombre.getText();
-                String descripcion = CampoDescripcion.getText();
+                String direccion = CampoDireccion.getText();
+                String titulacion = CampoTitulacion.getText();
 
-                //Cambiar los datos anteriores del area por los datos nuevos
-                this.area.setNombre(String.valueOf(nombre));
-                this.area.setDescripción(String.valueOf(descripcion));
+                //Cambiar los datos anteriores del asesor por los datos nuevos
+                this.asesor.setFecha_inicio(String.valueOf(fecha_inicio));
+                this.asesor.setNombre(String.valueOf(nombre));
+                this.asesor.setDireccion(String.valueOf(direccion));
+                this.asesor.setTitulacion(String.valueOf(titulacion));
 
-                //Guardamos el area con los nuevos datos
-                Area.getAreaBD().put(this.area.getId(), this.area);
+                //Guardamos el asesor con los nuevos datos
+                Asesor.getAsesorBD().put(this.asesor.getId(), this.asesor);
 
                 //mostramos el mensaje
-                String msj = "Area modificada con exito";
+                String msj = "Asesor modificado con exito";
                 JOptionPane.showMessageDialog(this, msj);
                 limpiarCampos();
             }
     }//GEN-LAST:event_BotonEditarActionPerformed
 
     private void BotonEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonEliminarActionPerformed
-        //validamos que el campo cedula tenga algun dato
+        //validamos que el campo Id tenga algun dato
         if(CampoId.getText() == null || CampoId.getText().isEmpty()){
             String msj = "Para editar introduzca el id";
             JOptionPane.showMessageDialog(this, msj);
@@ -420,27 +491,27 @@ public class VentanaCrudAsesor extends javax.swing.JDialog {
         }
         
         //validar que el id coincida con el id consultado previamente
-        if(CampoId.getText().equals(this.area.getId()) != true){
+        if(CampoId.getText().equals(this.asesor.getId()) != true){
             String msj = "El id no coincide con el id consultado previamente";
             JOptionPane.showMessageDialog(this, msj);
             limpiarCampos();
             return;
         }
-        String msj = "Seguro desea eliminar el area?";
+        String msj = "Seguro desea eliminar el asesor?";
         int respuesta = JOptionPane.showConfirmDialog(this, msj
                 , "CONFIRMAR ELIMINACION", JOptionPane.YES_NO_OPTION
                 , JOptionPane.QUESTION_MESSAGE);
         if(respuesta == JOptionPane.YES_OPTION){
-            Area.getAreaBD().remove(this.area.getId());
-            int total = Area.getAreaBD().size();
-            String msj2 = "Area eliminada exitosamente, hay " + total + " area(s)";
+            Asesor.getAsesorBD().remove(this.asesor.getId());
+            int total = Asesor.getAsesorBD().size();
+            String msj2 = "Asesor eliminada exitosamente, hay " + total + " asesor(s)";
             JOptionPane.showMessageDialog(this, msj2);
             limpiarCampos();
         }
     }//GEN-LAST:event_BotonEliminarActionPerformed
 
     private void BotonListarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonListarActionPerformed
-        if(Area.getAreaBD() == null || Area.getAreaBD().isEmpty()){
+        if(Asesor.getAsesorBD() == null || Asesor.getAsesorBD().isEmpty()){
             JOptionPane.showMessageDialog(this, "no hay usuarios para listar"
             , "RESULTADO NEGATIVO", JOptionPane.WARNING_MESSAGE);
             return;
@@ -448,11 +519,23 @@ public class VentanaCrudAsesor extends javax.swing.JDialog {
             
         this.dispose();
             
-        VentanaReporteArea ventanaReporte = new VentanaReporteArea(new JFrame(), true);
+        VentanaReporteAsesor ventanaReporte = new VentanaReporteAsesor(new JFrame(), true);
         ventanaReporte.setLocationRelativeTo(this);
         ventanaReporte.setVisible(true);
         
     }//GEN-LAST:event_BotonListarActionPerformed
+
+    private void CampoNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CampoNombreActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_CampoNombreActionPerformed
+
+    private void CampoDireccionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CampoDireccionActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_CampoDireccionActionPerformed
+
+    private void CampoTitulacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CampoTitulacionActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_CampoTitulacionActionPerformed
 
     /**
      * @param args the command line arguments
@@ -505,15 +588,18 @@ public class VentanaCrudAsesor extends javax.swing.JDialog {
     private javax.swing.JButton BotonEliminar;
     private javax.swing.JButton BotonLimpiar;
     private javax.swing.JButton BotonListar;
-    private javax.swing.JTextArea CampoDescripcion;
+    private javax.swing.JTextField CampoDireccion;
+    private javax.swing.JTextField CampoFechaInicio;
     private javax.swing.JTextField CampoId;
     private javax.swing.JTextField CampoNombre;
-    private javax.swing.JLabel EtiquetaDescripcion;
+    private javax.swing.JTextField CampoTitulacion;
+    private javax.swing.JLabel EtiquetaDireccion;
+    private javax.swing.JLabel EtiquetaFechaInicio;
     private javax.swing.JLabel EtiquetaId;
     private javax.swing.JLabel EtiquetaNombre;
+    private javax.swing.JLabel EtiquetaTitulacion;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
 }

@@ -4,6 +4,8 @@
  */
 package co.edu.ude.poo.empresas.modelo.entidades;
 
+import java.util.HashMap;
+
 /**
  *
  * @author david
@@ -14,6 +16,7 @@ public class Asesor {
     private String nombre;
     private String direccion;
     private String titulacion;
+    private static HashMap<String, Asesor> asesorBD;
 
     public Asesor(String id, String fecha_inicio, String nombre, String direccion, String titulacion) {
         this.id = id;
@@ -23,6 +26,9 @@ public class Asesor {
         this.titulacion = titulacion;
     }
 
+    public Asesor() {
+    }
+    
     @Override
     public String toString() {
         return "Asesor{" + "id=" + id + ", fecha_inicio=" + fecha_inicio + ", nombre=" + nombre + ", direccion=" + direccion + ", titulacion=" + titulacion + '}';
@@ -66,6 +72,14 @@ public class Asesor {
 
     public void setTitulacion(String titulacion) {
         this.titulacion = titulacion;
+    }
+
+    public static HashMap<String, Asesor> getAsesorBD() {
+        return asesorBD;
+    }
+
+    public static void setAsesorBD(HashMap<String, Asesor> asesorBD) {
+        Asesor.asesorBD = asesorBD;
     }
     
     
