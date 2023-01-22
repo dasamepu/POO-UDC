@@ -4,7 +4,7 @@
  */
 package co.edu.ude.poo.empresas.vistas.gui;
 
-import co.edu.ude.poo.empresas.modelo.entidades.Area;
+import co.edu.ude.poo.empresas.modelo.entidades.Vendedor;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
@@ -17,7 +17,7 @@ import javax.swing.table.DefaultTableModel;
 public class VentanaReporteVendedor extends javax.swing.JDialog {
 
     /**
-     * Creates new form VentanaReporteArea
+     * Creates new form VentanaReporteVendedor
      */
     public VentanaReporteVendedor(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
@@ -37,12 +37,12 @@ public class VentanaReporteVendedor extends javax.swing.JDialog {
         jLabel2 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        TablaAreas = new javax.swing.JTable();
+        TablaVendedores = new javax.swing.JTable();
         jLabel3 = new javax.swing.JLabel();
         txtTotal = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setTitle("..:: Gestion de areas ::..");
+        setTitle("..:: Gestion de vendedores ::..");
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowOpened(java.awt.event.WindowEvent evt) {
                 formWindowOpened(evt);
@@ -54,12 +54,12 @@ public class VentanaReporteVendedor extends javax.swing.JDialog {
 
         jLabel2.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setText("Gestion de Areas");
+        jLabel2.setText("Gestion de Vendedores");
 
-        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 204, 204), 1, true), "Datos de las areas", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 0, 14), new java.awt.Color(0, 204, 255))); // NOI18N
+        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 204, 204), 1, true), "Datos de las vendedores", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 0, 14), new java.awt.Color(0, 204, 255))); // NOI18N
 
-        TablaAreas.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
-        TablaAreas.setModel(new javax.swing.table.DefaultTableModel(
+        TablaVendedores.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
+        TablaVendedores.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -70,14 +70,14 @@ public class VentanaReporteVendedor extends javax.swing.JDialog {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        TablaAreas.setCellSelectionEnabled(true);
-        TablaAreas.setEnabled(false);
-        TablaAreas.setGridColor(new java.awt.Color(0, 0, 0));
-        TablaAreas.setRowHeight(40);
-        TablaAreas.setRowMargin(5);
-        TablaAreas.setShowHorizontalLines(true);
-        TablaAreas.setShowVerticalLines(true);
-        jScrollPane1.setViewportView(TablaAreas);
+        TablaVendedores.setCellSelectionEnabled(true);
+        TablaVendedores.setEnabled(false);
+        TablaVendedores.setGridColor(new java.awt.Color(0, 0, 0));
+        TablaVendedores.setRowHeight(40);
+        TablaVendedores.setRowMargin(5);
+        TablaVendedores.setShowHorizontalLines(true);
+        TablaVendedores.setShowVerticalLines(true);
+        jScrollPane1.setViewportView(TablaVendedores);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -130,7 +130,7 @@ public class VentanaReporteVendedor extends javax.swing.JDialog {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 371, Short.MAX_VALUE))
+                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 371, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -142,21 +142,22 @@ public class VentanaReporteVendedor extends javax.swing.JDialog {
     }// </editor-fold>//GEN-END:initComponents
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
-        Collection<Area> datos = Area.getAreaBD().values();
-        List<Area> listaAreas = new ArrayList (datos);
-        String columnas[] = {"ID","NOMBRE","DESCRIPTION"};
-        int totalAreas = listaAreas.size();
-        String filas[][] = new String[totalAreas][columnas.length];
-        for(int i=0; i<listaAreas.size(); i++){
-            Area area = listaAreas.get(i);
-            filas[i][0] = area.getId();
-            filas[i][1] = area.getNombre();
-            filas[i][2] = area.getDescripción();
+        Collection<Vendedor> datos = Vendedor.getVendedorBD().values();
+        List<Vendedor> listaVendedores = new ArrayList (datos);
+        String columnas[] = {"ID","NOMBRE", "DIRECCION", "NUMERO DE TRABAJOS"};
+        int totalVendedores = listaVendedores.size();
+        String filas[][] = new String[totalVendedores][columnas.length];
+        for(int i=0; i<listaVendedores.size(); i++){
+            Vendedor vendedor = listaVendedores.get(i);
+            filas[i][0] = vendedor.getId();
+            filas[i][1] = vendedor.getNombre();
+            filas[i][2] = vendedor.getDireccion();
+            filas[i][3] = Integer.toString(vendedor.getNumero_trabajos());
         }
         DefaultTableModel datosTabla = new DefaultTableModel();
         datosTabla.setDataVector(filas, columnas);
-        TablaAreas.setModel(datosTabla);
-        txtTotal.setText(totalAreas+"");
+        TablaVendedores.setModel(datosTabla);
+        txtTotal.setText(totalVendedores+"");
     }//GEN-LAST:event_formWindowOpened
 
     /**
@@ -203,7 +204,7 @@ public class VentanaReporteVendedor extends javax.swing.JDialog {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTable TablaAreas;
+    private javax.swing.JTable TablaVendedores;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

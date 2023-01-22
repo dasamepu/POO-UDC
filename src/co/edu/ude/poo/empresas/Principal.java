@@ -35,14 +35,14 @@ public class Principal {
 
         System.out.println("");
         
-        Vendedor vendedor1 = new Vendedor("34566","Juan","Calle 80");
+        Vendedor vendedor1 = new Vendedor("34566","Juan","Calle 80",1);
         vendedor1.setNumero_trabajos(1);
         System.out.println(vendedor1);
         System.out.println(vendedor1.getNumero_trabajos());
         
         System.out.println();
         
-        Vendedor vendedor2 = new Vendedor("85678","Julian","Calle 60");
+        Vendedor vendedor2 = new Vendedor("85678","Julian","Calle 60",1);
         System.out.println(vendedor2);
         vendedor2.setNumero_trabajos(2);
         System.out.println(vendedor2.getNumero_trabajos());

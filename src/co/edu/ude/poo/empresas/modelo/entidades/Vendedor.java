@@ -17,14 +17,14 @@ public class Vendedor {
     private Integer numero_trabajos;
     private static HashMap<String, Vendedor> vendedorBD;
 
-    public Vendedor(String id, String nombre, String direccion) {
+    public Vendedor(String id, String nombre, String direccion, Integer numero_trabajos) {
         this.id = id;
         this.nombre = nombre;
         this.direccion = direccion;
+        this.numero_trabajos = numero_trabajos;
     }
     
     public Vendedor() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
     @Override

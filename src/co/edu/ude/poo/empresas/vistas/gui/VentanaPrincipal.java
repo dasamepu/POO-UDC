@@ -10,6 +10,7 @@ import co.edu.ude.poo.empresas.vistas.gui.reportes.empresa.*;
 import co.edu.ude.poo.empresas.vistas.gui.reportes.holding.*;
 import co.edu.ude.poo.empresas.vistas.gui.reportes.pais.*;
 import co.edu.ude.poo.empresas.vistas.gui.reportes.sede.*;
+import co.edu.ude.poo.empresas.vistas.gui.reportes.vendedor.*;
 import java.awt.Toolkit;
 import javax.swing.*;
 /**
@@ -697,6 +698,11 @@ public class VentanaPrincipal extends JFrame {
         SubMenuReportesVendedor.setText("Reportes");
 
         ItemListarTodoVendedor.setText("Listar Todo...");
+        ItemListarTodoVendedor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ItemListarTodoVendedorActionPerformed(evt);
+            }
+        });
         SubMenuReportesVendedor.add(ItemListarTodoVendedor);
 
         ItemListarPorIdVendedor.setText("Listar por Id...");
@@ -939,7 +945,7 @@ public class VentanaPrincipal extends JFrame {
 
     private void ItemListarPorIdPaisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ItemListarPorIdPaisActionPerformed
         if(Pais.getPaisBD() == null || Pais.getPaisBD().isEmpty()){
-            JOptionPane.showMessageDialog(this, "no hay holgings"
+            JOptionPane.showMessageDialog(this, "no hay holdings"
             , "RESULTADO NEGATIVO", JOptionPane.WARNING_MESSAGE);
             return;
         }
@@ -951,7 +957,7 @@ public class VentanaPrincipal extends JFrame {
 
     private void ItemListarPorNombrePaisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ItemListarPorNombrePaisActionPerformed
         if(Pais.getPaisBD() == null || Pais.getPaisBD().isEmpty()){
-            JOptionPane.showMessageDialog(this, "no hay holgings"
+            JOptionPane.showMessageDialog(this, "no hay holdings"
             , "RESULTADO NEGATIVO", JOptionPane.WARNING_MESSAGE);
             return;
         }
@@ -981,7 +987,7 @@ public class VentanaPrincipal extends JFrame {
 
     private void ItemListarPorIdSedeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ItemListarPorIdSedeActionPerformed
         if(Sede.getSedeBD() == null || Sede.getSedeBD().isEmpty()){
-            JOptionPane.showMessageDialog(this, "no hay holgings"
+            JOptionPane.showMessageDialog(this, "no hay holdings"
             , "RESULTADO NEGATIVO", JOptionPane.WARNING_MESSAGE);
             return;
         }
@@ -993,7 +999,7 @@ public class VentanaPrincipal extends JFrame {
 
     private void ItemListarPorCiudadLocalizaSedeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ItemListarPorCiudadLocalizaSedeActionPerformed
         if(Sede.getSedeBD() == null || Sede.getSedeBD().isEmpty()){
-            JOptionPane.showMessageDialog(this, "no hay holgings"
+            JOptionPane.showMessageDialog(this, "no hay holdings"
             , "RESULTADO NEGATIVO", JOptionPane.WARNING_MESSAGE);
             return;
         }
@@ -1004,27 +1010,45 @@ public class VentanaPrincipal extends JFrame {
     }//GEN-LAST:event_ItemListarPorCiudadLocalizaSedeActionPerformed
 
     private void ItemAgregarVendedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ItemAgregarVendedorActionPerformed
-        // TODO add your handling code here:
+        VentanaCrudVendedor v = new VentanaCrudVendedor(this,true);
+        v.setLocationRelativeTo(this);
+        v.setVisible(true);
     }//GEN-LAST:event_ItemAgregarVendedorActionPerformed
 
     private void ItemBuscarVendedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ItemBuscarVendedorActionPerformed
-        // TODO add your handling code here:
+        ItemAgregarVendedorActionPerformed(evt);
     }//GEN-LAST:event_ItemBuscarVendedorActionPerformed
 
     private void ItemEditarVendedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ItemEditarVendedorActionPerformed
-        // TODO add your handling code here:
+        ItemAgregarVendedorActionPerformed(evt);
     }//GEN-LAST:event_ItemEditarVendedorActionPerformed
 
     private void ItemEliminarVendedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ItemEliminarVendedorActionPerformed
-        // TODO add your handling code here:
+        ItemAgregarVendedorActionPerformed(evt);
     }//GEN-LAST:event_ItemEliminarVendedorActionPerformed
 
     private void ItemListarPorIdVendedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ItemListarPorIdVendedorActionPerformed
-        // TODO add your handling code here:
+        if(Vendedor.getVendedorBD() == null || Vendedor.getVendedorBD().isEmpty()){
+            JOptionPane.showMessageDialog(this, "no hay vendedores"
+            , "RESULTADO NEGATIVO", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+        
+        VentanaReporteXIdVendedor v = new VentanaReporteXIdVendedor(this,true);
+        v.setLocationRelativeTo(this);
+        v.setVisible(true);
     }//GEN-LAST:event_ItemListarPorIdVendedorActionPerformed
 
     private void ItemListarPorNombreVendedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ItemListarPorNombreVendedorActionPerformed
-        // TODO add your handling code here:
+        if(Vendedor.getVendedorBD() == null || Vendedor.getVendedorBD().isEmpty()){
+            JOptionPane.showMessageDialog(this, "no hay vendedores"
+            , "RESULTADO NEGATIVO", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+        
+        VentanaReporteXNombreVendedor v = new VentanaReporteXNombreVendedor(this,true);
+        v.setLocationRelativeTo(this);
+        v.setVisible(true);
     }//GEN-LAST:event_ItemListarPorNombreVendedorActionPerformed
 
     private void ItemListarPorNombreAsesorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ItemListarPorNombreAsesorActionPerformed
@@ -1040,11 +1064,27 @@ public class VentanaPrincipal extends JFrame {
     }//GEN-LAST:event_ItemListarPorNombreAsesorActionPerformed
 
     private void ItemListarPorDireccionAsesorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ItemListarPorDireccionAsesorActionPerformed
-        // TODO add your handling code here:
+        if(Asesor.getAsesorBD() == null || Asesor.getAsesorBD().isEmpty()){
+            JOptionPane.showMessageDialog(this, "no hay asesores"
+            , "RESULTADO NEGATIVO", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+        
+        VentanaReporteXDireccionAsesor ventana_asesor = new VentanaReporteXDireccionAsesor(this, true);
+        ventana_asesor.setLocationRelativeTo(this);
+        ventana_asesor.setVisible(true);
     }//GEN-LAST:event_ItemListarPorDireccionAsesorActionPerformed
 
     private void ItemListarPorTitulaciónAsesorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ItemListarPorTitulaciónAsesorActionPerformed
-        // TODO add your handling code here:
+        if(Asesor.getAsesorBD() == null || Asesor.getAsesorBD().isEmpty()){
+            JOptionPane.showMessageDialog(this, "no hay asesores"
+            , "RESULTADO NEGATIVO", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+        
+        VentanaReporteXTitulacionAsesor ventana_asesor = new VentanaReporteXTitulacionAsesor(this, true);
+        ventana_asesor.setLocationRelativeTo(this);
+        ventana_asesor.setVisible(true);
     }//GEN-LAST:event_ItemListarPorTitulaciónAsesorActionPerformed
 
     private void ItemListarPorFechaEntradaEmpresaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ItemListarPorFechaEntradaEmpresaActionPerformed
@@ -1073,7 +1113,7 @@ public class VentanaPrincipal extends JFrame {
 
     private void ItemListarPorNumeroVendedoresEmpresaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ItemListarPorNumeroVendedoresEmpresaActionPerformed
         if(Empresa.getEmpresaBD() == null || Empresa.getEmpresaBD().isEmpty()){
-            JOptionPane.showMessageDialog(this, "no hay empresas"
+            JOptionPane.showMessageDialog(this, "no hay vendedores"
             , "RESULTADO NEGATIVO", JOptionPane.WARNING_MESSAGE);
             return;
         }
@@ -1097,7 +1137,7 @@ public class VentanaPrincipal extends JFrame {
 
     private void ItemListarPorCapitalPaisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ItemListarPorCapitalPaisActionPerformed
         if(Pais.getPaisBD() == null || Pais.getPaisBD().isEmpty()){
-            JOptionPane.showMessageDialog(this, "no hay holgings"
+            JOptionPane.showMessageDialog(this, "no hay holdings"
             , "RESULTADO NEGATIVO", JOptionPane.WARNING_MESSAGE);
             return;
         }
@@ -1109,7 +1149,7 @@ public class VentanaPrincipal extends JFrame {
 
     private void ItemListarPorNumeroHabitantesPaisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ItemListarPorNumeroHabitantesPaisActionPerformed
         if(Pais.getPaisBD() == null || Pais.getPaisBD().isEmpty()){
-            JOptionPane.showMessageDialog(this, "no hay holgings"
+            JOptionPane.showMessageDialog(this, "no hay holdings"
             , "RESULTADO NEGATIVO", JOptionPane.WARNING_MESSAGE);
             return;
         }
@@ -1121,7 +1161,7 @@ public class VentanaPrincipal extends JFrame {
 
     private void ItemListarPorPibPaisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ItemListarPorPibPaisActionPerformed
         if(Pais.getPaisBD() == null || Pais.getPaisBD().isEmpty()){
-            JOptionPane.showMessageDialog(this, "no hay holgings"
+            JOptionPane.showMessageDialog(this, "no hay holdings"
             , "RESULTADO NEGATIVO", JOptionPane.WARNING_MESSAGE);
             return;
         }
@@ -1132,11 +1172,27 @@ public class VentanaPrincipal extends JFrame {
     }//GEN-LAST:event_ItemListarPorPibPaisActionPerformed
 
     private void ItemListarPorDireccionVendedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ItemListarPorDireccionVendedorActionPerformed
-        // TODO add your handling code here:
+        if(Vendedor.getVendedorBD() == null || Vendedor.getVendedorBD().isEmpty()){
+            JOptionPane.showMessageDialog(this, "no hay vendedores"
+            , "RESULTADO NEGATIVO", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+        
+        VentanaReporteXDireccionVendedor v = new VentanaReporteXDireccionVendedor(this,true);
+        v.setLocationRelativeTo(this);
+        v.setVisible(true);
     }//GEN-LAST:event_ItemListarPorDireccionVendedorActionPerformed
 
     private void ItemListarPorNumeroTrabajosVendedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ItemListarPorNumeroTrabajosVendedorActionPerformed
-        // TODO add your handling code here:
+        if(Vendedor.getVendedorBD() == null || Vendedor.getVendedorBD().isEmpty()){
+            JOptionPane.showMessageDialog(this, "no hay vendedores"
+            , "RESULTADO NEGATIVO", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+        
+        VentanaReporteXNumeroTrabajosVendedor v = new VentanaReporteXNumeroTrabajosVendedor(this,true);
+        v.setLocationRelativeTo(this);
+        v.setVisible(true);
     }//GEN-LAST:event_ItemListarPorNumeroTrabajosVendedorActionPerformed
 
     private void ItemListarTodoAreaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ItemListarTodoAreaActionPerformed
@@ -1177,7 +1233,7 @@ public class VentanaPrincipal extends JFrame {
 
     private void ItemListarTodoHoldingActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ItemListarTodoHoldingActionPerformed
         if(Holding.getHoldingBD() == null || Holding.getHoldingBD().isEmpty()){
-            JOptionPane.showMessageDialog(this, "no hay holgings"
+            JOptionPane.showMessageDialog(this, "no hay holdings"
             , "RESULTADO NEGATIVO", JOptionPane.WARNING_MESSAGE);
             return;
         }
@@ -1189,7 +1245,7 @@ public class VentanaPrincipal extends JFrame {
 
     private void ItemListarTodoPaisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ItemListarTodoPaisActionPerformed
         if(Pais.getPaisBD() == null || Pais.getPaisBD().isEmpty()){
-            JOptionPane.showMessageDialog(this, "no hay holgings"
+            JOptionPane.showMessageDialog(this, "no hay holdings"
             , "RESULTADO NEGATIVO", JOptionPane.WARNING_MESSAGE);
             return;
         }
@@ -1201,7 +1257,7 @@ public class VentanaPrincipal extends JFrame {
 
     private void ItemListarTodoSedeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ItemListarTodoSedeActionPerformed
         if(Sede.getSedeBD() == null || Sede.getSedeBD().isEmpty()){
-            JOptionPane.showMessageDialog(this, "no hay holgings"
+            JOptionPane.showMessageDialog(this, "no hay holdings"
             , "RESULTADO NEGATIVO", JOptionPane.WARNING_MESSAGE);
             return;
         }
@@ -1210,6 +1266,18 @@ public class VentanaPrincipal extends JFrame {
         v.setLocationRelativeTo(this);
         v.setVisible(true);
     }//GEN-LAST:event_ItemListarTodoSedeActionPerformed
+
+    private void ItemListarTodoVendedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ItemListarTodoVendedorActionPerformed
+        if(Vendedor.getVendedorBD() == null || Vendedor.getVendedorBD().isEmpty()){
+            JOptionPane.showMessageDialog(this, "no hay vendedores"
+            , "RESULTADO NEGATIVO", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+        
+        VentanaReporteVendedor v = new VentanaReporteVendedor(this,true);
+        v.setLocationRelativeTo(this);
+        v.setVisible(true);
+    }//GEN-LAST:event_ItemListarTodoVendedorActionPerformed
 
     /**
      * @param args the command line arguments
