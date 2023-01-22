@@ -373,8 +373,8 @@ public class VentanaCrudEmpresa extends javax.swing.JDialog {
             String msj = "El numero de vendedores no es valido \n "
                     + "no se guardara nada hasta que el problema se solucione \n ";
             JOptionPane.showMessageDialog(this, msj);
-        }else if(!CampoNumeroSedes.getText().matches("\\d+")){
-            String msj = "El numero de sedes no es valido \n "
+        }else if(!CampoNumeroSedes.getText().matches("1")){
+            String msj = "El numero de sedes no es valido, una empresa solo puede tener una sede \n "
                     + "no se guardara nada hasta que el problema se solucione \n ";
             JOptionPane.showMessageDialog(this, msj);
         }else{

@@ -3,8 +3,12 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package co.edu.ude.poo.empresas.vistas.gui;
+import co.edu.ude.poo.empresas.vistas.gui.reportes.asesor.VentanaReporteXFechaInicioAsesor;
+import co.edu.ude.poo.empresas.vistas.gui.reportes.area.VentanaReporteXIdArea;
+import co.edu.ude.poo.empresas.vistas.gui.reportes.asesor.VentanaReporteXIdAsesor;
+import co.edu.ude.poo.empresas.vistas.gui.reportes.area.VentanaReporteXNombreArea;
+import co.edu.ude.poo.empresas.vistas.gui.reportes.asesor.VentanaReporteXNombreAsesor;
 import co.edu.ude.poo.empresas.modelo.entidades.*;
-import co.edu.ude.poo.empresas.vistas.gui.reportes.*;
 import java.awt.Toolkit;
 import javax.swing.*;
 /**
