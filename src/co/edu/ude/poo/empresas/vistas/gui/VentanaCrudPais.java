@@ -99,6 +99,7 @@ public class VentanaCrudPais extends javax.swing.JDialog {
         EtiquetaNumeroHabitantes.setText("NUMERO HABITANTES:");
 
         CampoNumeroHabitantes.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
+        CampoNumeroHabitantes.setText("0");
         CampoNumeroHabitantes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 CampoNumeroHabitantesActionPerformed(evt);
@@ -109,6 +110,7 @@ public class VentanaCrudPais extends javax.swing.JDialog {
         EtiquetaPib.setText("PIB:");
 
         CampoPib.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
+        CampoPib.setText("0");
         CampoPib.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 CampoPibActionPerformed(evt);
@@ -321,11 +323,12 @@ public class VentanaCrudPais extends javax.swing.JDialog {
         if(Pais.getPaisBD().containsKey(id)){
             String msj = "Ya existe el pais con id: " + id;
             JOptionPane.showMessageDialog(this, msj);
-        }else if(id.isEmpty() || id.length() == 0 ||    //verificar si algun campo está vacio
+        }else if(id.isEmpty() || id.length() == 0 ||    
                 nombre.isEmpty() || nombre.length() == 0 ||
                 capital.isEmpty() || capital.length() == 0 ||
                 num_habitantes == 0 ||
                 pib == 0){
+            //verificar si algun campo está vacio
             String msj = "Hay campo(s) vacio(s), no se guardara nada hasta que el problema se solucione";
             JOptionPane.showMessageDialog(this, msj);
         }else if(!nombre.matches("^[\\p{L}\\s]+$")){
@@ -336,12 +339,12 @@ public class VentanaCrudPais extends javax.swing.JDialog {
             String msj = "La capital no es valido\n "
                     + "no se guardara nada hasta que el problema se solucione \n ";
             JOptionPane.showMessageDialog(this, msj);
-        }else if(!CampoNumeroHabitantes.getText().matches("\\d+")){
-            String msj = "La facturacion no es valida \n "
+        }else if(!CampoNumeroHabitantes.getText().matches("^\\d+")){
+            String msj = "El numero de habtantes no es valido \n "
                     + "no se guardara nada hasta que el problema se solucione \n ";
             JOptionPane.showMessageDialog(this, msj);
-        }else if(!CampoPib.getText().matches("\\d+")){
-            String msj = "El numero de vendedores no es valido \n "
+        }else if(!CampoPib.getText().matches("^\\d+")){
+            String msj = "El PIB no es valido \n "
                     + "no se guardara nada hasta que el problema se solucione \n ";
             JOptionPane.showMessageDialog(this, msj);
         }else{
@@ -366,8 +369,9 @@ public class VentanaCrudPais extends javax.swing.JDialog {
     public void limpiarCampos(){
         CampoId.setText("");
         CampoNombre.setText("");
-        CampoNumeroHabitantes.setText("");
-        CampoPib.setText("");
+        CampoCapital.setText("");
+        CampoNumeroHabitantes.setText("0");
+        CampoPib.setText("0");
         
         BotonEditar.setEnabled(false);
         BotonEliminar.setEnabled(false);
@@ -389,6 +393,7 @@ public class VentanaCrudPais extends javax.swing.JDialog {
             if(Pais.getPaisBD().containsKey(id)){
                 this.pais = Pais.getPaisBD().get(id);
                 CampoNombre.setText(this.pais.getNombre());
+                CampoCapital.setText(this.pais.getCapital());
                 CampoNumeroHabitantes.setText(Integer.toString(this.pais.getNum_habitantes()));
                 CampoPib.setText(Integer.toString(this.pais.getPib()));
             //se activan los botones si la busqueda fue exitosa

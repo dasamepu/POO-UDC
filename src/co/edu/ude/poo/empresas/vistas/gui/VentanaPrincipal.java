@@ -914,19 +914,21 @@ public class VentanaPrincipal extends JFrame {
     }//GEN-LAST:event_ItemListarPorNombreHoldingActionPerformed
 
     private void ItemAgregarPaisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ItemAgregarPaisActionPerformed
-        // TODO add your handling code here:
+        VentanaCrudPais ventana = new VentanaCrudPais(this, true);
+        ventana.setLocationRelativeTo(this);
+        ventana.setVisible(true);
     }//GEN-LAST:event_ItemAgregarPaisActionPerformed
 
     private void ItemBuscarPaisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ItemBuscarPaisActionPerformed
-        // TODO add your handling code here:
+        ItemAgregarPaisActionPerformed(evt);
     }//GEN-LAST:event_ItemBuscarPaisActionPerformed
 
     private void ItemEditarPaisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ItemEditarPaisActionPerformed
-        // TODO add your handling code here:
+        ItemAgregarPaisActionPerformed(evt);
     }//GEN-LAST:event_ItemEditarPaisActionPerformed
 
     private void ItemEliminarPaisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ItemEliminarPaisActionPerformed
-        // TODO add your handling code here:
+        ItemAgregarPaisActionPerformed(evt);
     }//GEN-LAST:event_ItemEliminarPaisActionPerformed
 
     private void ItemListarPorIdPaisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ItemListarPorIdPaisActionPerformed
