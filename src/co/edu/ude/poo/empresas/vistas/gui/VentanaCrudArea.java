@@ -360,22 +360,28 @@ public class VentanaCrudArea extends javax.swing.JDialog {
         //recuperamos el texto que haya en el CampoId y el mapa nos devuelve el usuario con ese id
         this.area = Area.getAreaBD().get(CampoId.getText());
         
-        //recuperar los numevos datos ingresados en el formulario
-        String id = CampoId.getText();
-        String nombre = CampoNombre.getText();
-        String descripcion = CampoDescripcion.getText();
-        
-        //Cambiar los datos anteriores del area por los datos nuevos
-        this.area.setNombre(String.valueOf(nombre));
-        this.area.setDescripción(String.valueOf(descripcion));
-        
-        //Guardamos el area con los nuevos datos
-        Area.getAreaBD().put(this.area.getId(), this.area);
-        
-        //mostramos el mensaje
-        String msj = "Area modificada con exito";
-        JOptionPane.showMessageDialog(this, msj);
-        limpiarCampos();
+        //se pregunta si se quiere guardar la informacion
+            int option = JOptionPane.showConfirmDialog(this
+            , "Guardar los cambios?", "confirmar cambios"
+            , JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+            if(option == JOptionPane.YES_OPTION){
+                //recuperar los numevos datos ingresados en el formulario
+                String id = CampoId.getText();
+                String nombre = CampoNombre.getText();
+                String descripcion = CampoDescripcion.getText();
+
+                //Cambiar los datos anteriores del area por los datos nuevos
+                this.area.setNombre(String.valueOf(nombre));
+                this.area.setDescripción(String.valueOf(descripcion));
+
+                //Guardamos el area con los nuevos datos
+                Area.getAreaBD().put(this.area.getId(), this.area);
+
+                //mostramos el mensaje
+                String msj = "Area modificada con exito";
+                JOptionPane.showMessageDialog(this, msj);
+                limpiarCampos();
+            }
     }//GEN-LAST:event_BotonEditarActionPerformed
 
     private void BotonEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonEliminarActionPerformed
