@@ -731,11 +731,11 @@ public class VentanaPrincipal extends JFrame {
     }//GEN-LAST:event_ItemBuscarAreaActionPerformed
 
     private void ItemEditarAreaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ItemEditarAreaActionPerformed
-        // TODO add your handling code here:
+        ItemAgregarAreaActionPerformed(evt);
     }//GEN-LAST:event_ItemEditarAreaActionPerformed
 
     private void ItemEliminarAreaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ItemEliminarAreaActionPerformed
-        // TODO add your handling code here:
+        ItemAgregarAreaActionPerformed(evt);
     }//GEN-LAST:event_ItemEliminarAreaActionPerformed
 
     private void ItemListarPorIdAreaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ItemListarPorIdAreaActionPerformed

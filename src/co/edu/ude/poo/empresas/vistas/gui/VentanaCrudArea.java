@@ -5,7 +5,11 @@
 package co.edu.ude.poo.empresas.vistas.gui;
 
 import co.edu.ude.poo.empresas.modelo.entidades.*;
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.HashMap;
+import java.util.List;
+import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
 /**
@@ -47,6 +51,7 @@ public class VentanaCrudArea extends javax.swing.JDialog {
         BotonEliminar = new javax.swing.JButton();
         BotonLimpiar = new javax.swing.JButton();
         BotonCancelar = new javax.swing.JButton();
+        BotonListar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Area");
@@ -171,6 +176,14 @@ public class VentanaCrudArea extends javax.swing.JDialog {
             }
         });
 
+        BotonListar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/co/edu/ude/poo/empresas/vistas/iconos/reporte24px.png"))); // NOI18N
+        BotonListar.setText("LISTAR");
+        BotonListar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotonListarActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -188,6 +201,8 @@ public class VentanaCrudArea extends javax.swing.JDialog {
                         .addComponent(BotonEliminar)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(BotonLimpiar)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(BotonListar)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(BotonCancelar))
                     .addGroup(layout.createSequentialGroup()
@@ -220,8 +235,9 @@ public class VentanaCrudArea extends javax.swing.JDialog {
                     .addComponent(BotonEditar)
                     .addComponent(BotonEliminar)
                     .addComponent(BotonLimpiar)
-                    .addComponent(BotonCancelar))
-                .addContainerGap(27, Short.MAX_VALUE))
+                    .addComponent(BotonCancelar)
+                    .addComponent(BotonListar))
+                .addContainerGap(20, Short.MAX_VALUE))
         );
 
         pack();
@@ -413,6 +429,21 @@ public class VentanaCrudArea extends javax.swing.JDialog {
         }
     }//GEN-LAST:event_BotonEliminarActionPerformed
 
+    private void BotonListarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonListarActionPerformed
+        if(Area.getAreaBD() == null || Area.getAreaBD().isEmpty()){
+            JOptionPane.showMessageDialog(this, "no hay usuarios para listar"
+            , "RESULTADO NEGATIVO", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+            
+        this.dispose();
+            
+        VentanaReporteArea ventanaReporte = new VentanaReporteArea(new JFrame(), true);
+        ventanaReporte.setLocationRelativeTo(this);
+        ventanaReporte.setVisible(true);
+        
+    }//GEN-LAST:event_BotonListarActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -462,6 +493,7 @@ public class VentanaCrudArea extends javax.swing.JDialog {
     private javax.swing.JButton BotonEditar;
     private javax.swing.JButton BotonEliminar;
     private javax.swing.JButton BotonLimpiar;
+    private javax.swing.JButton BotonListar;
     private javax.swing.JTextArea CampoDescripcion;
     private javax.swing.JTextField CampoId;
     private javax.swing.JTextField CampoNombre;
