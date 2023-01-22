@@ -331,7 +331,7 @@ public class VentanaCrudArea extends javax.swing.JDialog {
             }else{
                 BotonEditar.setEnabled(false);
                 BotonEliminar.setEnabled(false);
-                String msj = "no hay usuarios en la BD con ese id: " + id;
+                String msj = "no hay areas en la BD con ese id: " + id;
                 JOptionPane.showMessageDialog(this, msj);
                 limpiarCampos();
             }

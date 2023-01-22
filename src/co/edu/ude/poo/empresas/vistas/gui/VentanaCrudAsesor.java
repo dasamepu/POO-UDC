@@ -79,6 +79,8 @@ public class VentanaCrudAsesor extends javax.swing.JDialog {
         EtiquetaFechaInicio.setText("FECHA DE INICIO:");
 
         CampoFechaInicio.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
+        CampoFechaInicio.setText("aaaa/mm/dd");
+        CampoFechaInicio.setToolTipText("");
         CampoFechaInicio.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 CampoFechaInicioActionPerformed(evt);
@@ -271,13 +273,12 @@ public class VentanaCrudAsesor extends javax.swing.JDialog {
             .addGroup(layout.createSequentialGroup()
                 .addGap(28, 28, 28)
                 .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel2)
                         .addGap(72, 72, 72)))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -331,11 +332,21 @@ public class VentanaCrudAsesor extends javax.swing.JDialog {
                  titulacion.isEmpty() || titulacion.length() == 0){
             String msj = "Hay campo(s) vacio(s), no se guardara nada hasta que el problema se solucione";
             JOptionPane.showMessageDialog(this, msj);
-        }else if(!fecha_inicio.matches("^[0-9/]+$") ||
-                !nombre.matches("^[\\p{L}\\s]+$") || 
-                !direccion.matches("[a-zA-Z0-9\\s\\p{Punct}]+") ||
-                !titulacion.matches("^[\\p{L}\\s]+$")){
-            String msj = "El nombre o la descripción no son textos \n "
+        }else if(!fecha_inicio.matches("^[0-9]{4}/[0-9]{2}/[0-9]{2}")){
+            String msj = "La fecha de inicio no es valida \n "
+                    + "no se guardara nada hasta que el problema se solucione \n "
+                    + "El formato valido es: aaaa/mm/dd";
+            JOptionPane.showMessageDialog(this, msj);
+        }else if(!nombre.matches("^[\\p{L}\\s]+$")){
+            String msj = "El nombre no es valido\n "
+                    + "no se guardara nada hasta que el problema se solucione \n ";
+            JOptionPane.showMessageDialog(this, msj);
+        }else if(!direccion.matches("[a-zA-Z0-9\\s\\p{Punct}]+")){
+            String msj = "La direccion no es valida \n "
+                    + "no se guardara nada hasta que el problema se solucione \n ";
+            JOptionPane.showMessageDialog(this, msj);
+        }else if(!titulacion.matches("^[\\p{L}\\s]+$")){
+            String msj = "La titulacion no es valida \n "
                     + "no se guardara nada hasta que el problema se solucione \n ";
             JOptionPane.showMessageDialog(this, msj);
         }else{
@@ -359,7 +370,7 @@ public class VentanaCrudAsesor extends javax.swing.JDialog {
 
     public void limpiarCampos(){
         CampoId.setText("");
-        CampoFechaInicio.setText("");
+        CampoFechaInicio.setText("aaaa/mm/dd");
         CampoNombre.setText("");
         CampoDireccion.setText("");
         CampoTitulacion.setText("");
@@ -396,7 +407,7 @@ public class VentanaCrudAsesor extends javax.swing.JDialog {
             }else{
                 BotonEditar.setEnabled(false);
                 BotonEliminar.setEnabled(false);
-                String msj = "no hay usuarios en la BD con ese id: " + id;
+                String msj = "no hay asesores en la BD con ese id: " + id;
                 JOptionPane.showMessageDialog(this, msj);
                 limpiarCampos();
             }

@@ -3,7 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package co.edu.ude.poo.empresas.vistas.gui;
-import co.edu.ude.poo.empresas.modelo.entidades.Area;
+import co.edu.ude.poo.empresas.modelo.entidades.*;
 import co.edu.ude.poo.empresas.vistas.gui.reportes.*;
 import java.awt.Toolkit;
 import javax.swing.*;
@@ -252,6 +252,11 @@ public class VentanaPrincipal extends JFrame {
         SubMenuReportesAsesor.setText("Reportes");
 
         ItemListarTodoAsesor.setText("Listar Todo...");
+        ItemListarTodoAsesor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ItemListarTodoAsesorActionPerformed(evt);
+            }
+        });
         SubMenuReportesAsesor.add(ItemListarTodoAsesor);
 
         ItemListarPorIdAsesor.setText("Listar por Id...");
@@ -782,11 +787,15 @@ public class VentanaPrincipal extends JFrame {
     }//GEN-LAST:event_ItemEliminarAsesorActionPerformed
 
     private void ItemListarPorIdAsesorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ItemListarPorIdAsesorActionPerformed
-        // TODO add your handling code here:
+        VentanaReporteXIdAsesor ventana_asesor = new VentanaReporteXIdAsesor(this, true);
+        ventana_asesor.setLocationRelativeTo(this);
+        ventana_asesor.setVisible(true);
     }//GEN-LAST:event_ItemListarPorIdAsesorActionPerformed
 
     private void ItemListarPorFechaInicioAsesorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ItemListarPorFechaInicioAsesorActionPerformed
-        // TODO add your handling code here:
+        VentanaReporteXFechaInicioAsesor ventana_asesor = new VentanaReporteXFechaInicioAsesor(this, true);
+        ventana_asesor.setLocationRelativeTo(this);
+        ventana_asesor.setVisible(true);
     }//GEN-LAST:event_ItemListarPorFechaInicioAsesorActionPerformed
 
     private void ItemAgregarEmpresaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ItemAgregarEmpresaActionPerformed
@@ -910,7 +919,9 @@ public class VentanaPrincipal extends JFrame {
     }//GEN-LAST:event_ItemListarPorNombreVendedorActionPerformed
 
     private void ItemListarPorNombreAsesorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ItemListarPorNombreAsesorActionPerformed
-        // TODO add your handling code here:
+        VentanaReporteXNombreAsesor ventana_asesor = new VentanaReporteXNombreAsesor(this, true);
+        ventana_asesor.setLocationRelativeTo(this);
+        ventana_asesor.setVisible(true);
     }//GEN-LAST:event_ItemListarPorNombreAsesorActionPerformed
 
     private void ItemListarPorDireccionAsesorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ItemListarPorDireccionAsesorActionPerformed
@@ -968,6 +979,18 @@ public class VentanaPrincipal extends JFrame {
         v.setLocationRelativeTo(this);
         v.setVisible(true);
     }//GEN-LAST:event_ItemListarTodoAreaActionPerformed
+
+    private void ItemListarTodoAsesorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ItemListarTodoAsesorActionPerformed
+        if(Asesor.getAsesorBD() == null || Asesor.getAsesorBD().isEmpty()){
+            JOptionPane.showMessageDialog(this, "no hay usuarios"
+            , "RESULTADO NEGATIVO", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+        
+        VentanaReporteAsesor v = new VentanaReporteAsesor(this,true);
+        v.setLocationRelativeTo(this);
+        v.setVisible(true);
+    }//GEN-LAST:event_ItemListarTodoAsesorActionPerformed
 
     /**
      * @param args the command line arguments
