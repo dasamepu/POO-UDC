@@ -3,12 +3,10 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package co.edu.ude.poo.empresas.vistas.gui;
-import co.edu.ude.poo.empresas.vistas.gui.reportes.asesor.VentanaReporteXFechaInicioAsesor;
-import co.edu.ude.poo.empresas.vistas.gui.reportes.area.VentanaReporteXIdArea;
-import co.edu.ude.poo.empresas.vistas.gui.reportes.asesor.VentanaReporteXIdAsesor;
-import co.edu.ude.poo.empresas.vistas.gui.reportes.area.VentanaReporteXNombreArea;
-import co.edu.ude.poo.empresas.vistas.gui.reportes.asesor.VentanaReporteXNombreAsesor;
+import co.edu.ude.poo.empresas.vistas.gui.reportes.asesor.*;
+import co.edu.ude.poo.empresas.vistas.gui.reportes.area.*;
 import co.edu.ude.poo.empresas.modelo.entidades.*;
+import co.edu.ude.poo.empresas.vistas.gui.reportes.empresa.*;
 import java.awt.Toolkit;
 import javax.swing.*;
 /**
@@ -352,6 +350,11 @@ public class VentanaPrincipal extends JFrame {
         SubMenuReportesEmpresa.setText("Reportes");
 
         ItemListarTodoEmpresa.setText("Listar Todo...");
+        ItemListarTodoEmpresa.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ItemListarTodoEmpresaActionPerformed(evt);
+            }
+        });
         SubMenuReportesEmpresa.add(ItemListarTodoEmpresa);
 
         ItemListarPorIdEmpresa.setText("Listar por Id...");
@@ -791,12 +794,24 @@ public class VentanaPrincipal extends JFrame {
     }//GEN-LAST:event_ItemEliminarAsesorActionPerformed
 
     private void ItemListarPorIdAsesorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ItemListarPorIdAsesorActionPerformed
+        if(Asesor.getAsesorBD() == null || Asesor.getAsesorBD().isEmpty()){
+            JOptionPane.showMessageDialog(this, "no hay usuarios"
+            , "RESULTADO NEGATIVO", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+        
         VentanaReporteXIdAsesor ventana_asesor = new VentanaReporteXIdAsesor(this, true);
         ventana_asesor.setLocationRelativeTo(this);
         ventana_asesor.setVisible(true);
     }//GEN-LAST:event_ItemListarPorIdAsesorActionPerformed
 
     private void ItemListarPorFechaInicioAsesorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ItemListarPorFechaInicioAsesorActionPerformed
+        if(Asesor.getAsesorBD() == null || Asesor.getAsesorBD().isEmpty()){
+            JOptionPane.showMessageDialog(this, "no hay usuarios"
+            , "RESULTADO NEGATIVO", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+        
         VentanaReporteXFechaInicioAsesor ventana_asesor = new VentanaReporteXFechaInicioAsesor(this, true);
         ventana_asesor.setLocationRelativeTo(this);
         ventana_asesor.setVisible(true);
@@ -821,11 +836,27 @@ public class VentanaPrincipal extends JFrame {
     }//GEN-LAST:event_ItemEliminarEmpresaActionPerformed
 
     private void ItemListarPorIdEmpresaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ItemListarPorIdEmpresaActionPerformed
-        // TODO add your handling code here:
+        if(Empresa.getEmpresaBD() == null || Empresa.getEmpresaBD().isEmpty()){
+            JOptionPane.showMessageDialog(this, "no hay usuarios"
+            , "RESULTADO NEGATIVO", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+        
+        VentanaReporteXIdEmpresa ventana_empresa = new VentanaReporteXIdEmpresa(this, true);
+        ventana_empresa.setLocationRelativeTo(this);
+        ventana_empresa.setVisible(true);
     }//GEN-LAST:event_ItemListarPorIdEmpresaActionPerformed
 
     private void ItemListarPorNombreEmpresaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ItemListarPorNombreEmpresaActionPerformed
-        // TODO add your handling code here:
+        if(Empresa.getEmpresaBD() == null || Empresa.getEmpresaBD().isEmpty()){
+            JOptionPane.showMessageDialog(this, "no hay usuarios"
+            , "RESULTADO NEGATIVO", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+        
+        VentanaReporteXNombreEmpresa ventana_empresa = new VentanaReporteXNombreEmpresa(this, true);
+        ventana_empresa.setLocationRelativeTo(this);
+        ventana_empresa.setVisible(true);
     }//GEN-LAST:event_ItemListarPorNombreEmpresaActionPerformed
 
     private void ItemAgregarHoldingActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ItemAgregarHoldingActionPerformed
@@ -925,6 +956,12 @@ public class VentanaPrincipal extends JFrame {
     }//GEN-LAST:event_ItemListarPorNombreVendedorActionPerformed
 
     private void ItemListarPorNombreAsesorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ItemListarPorNombreAsesorActionPerformed
+        if(Asesor.getAsesorBD() == null || Asesor.getAsesorBD().isEmpty()){
+            JOptionPane.showMessageDialog(this, "no hay usuarios"
+            , "RESULTADO NEGATIVO", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+        
         VentanaReporteXNombreAsesor ventana_asesor = new VentanaReporteXNombreAsesor(this, true);
         ventana_asesor.setLocationRelativeTo(this);
         ventana_asesor.setVisible(true);
@@ -939,19 +976,51 @@ public class VentanaPrincipal extends JFrame {
     }//GEN-LAST:event_ItemListarPorTitulaciónAsesorActionPerformed
 
     private void ItemListarPorFechaEntradaEmpresaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ItemListarPorFechaEntradaEmpresaActionPerformed
-        // TODO add your handling code here:
+        if(Empresa.getEmpresaBD() == null || Empresa.getEmpresaBD().isEmpty()){
+            JOptionPane.showMessageDialog(this, "no hay usuarios"
+            , "RESULTADO NEGATIVO", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+        
+        VentanaReporteXFechaEntradaEmpresa ventana_empresa = new VentanaReporteXFechaEntradaEmpresa(this, true);
+        ventana_empresa.setLocationRelativeTo(this);
+        ventana_empresa.setVisible(true);
     }//GEN-LAST:event_ItemListarPorFechaEntradaEmpresaActionPerformed
 
     private void ItemListarPorFacturacionAnualEmpresaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ItemListarPorFacturacionAnualEmpresaActionPerformed
-        // TODO add your handling code here:
+        if(Empresa.getEmpresaBD() == null || Empresa.getEmpresaBD().isEmpty()){
+            JOptionPane.showMessageDialog(this, "no hay usuarios"
+            , "RESULTADO NEGATIVO", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+        
+        VentanaReporteXFacturacionEmpresa ventana_empresa = new VentanaReporteXFacturacionEmpresa(this, true);
+        ventana_empresa.setLocationRelativeTo(this);
+        ventana_empresa.setVisible(true);
     }//GEN-LAST:event_ItemListarPorFacturacionAnualEmpresaActionPerformed
 
     private void ItemListarPorNumeroVendedoresEmpresaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ItemListarPorNumeroVendedoresEmpresaActionPerformed
-        // TODO add your handling code here:
+        if(Empresa.getEmpresaBD() == null || Empresa.getEmpresaBD().isEmpty()){
+            JOptionPane.showMessageDialog(this, "no hay usuarios"
+            , "RESULTADO NEGATIVO", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+        
+        VentanaReporteXNumeroVendedoresEmpresa ventana_empresa = new VentanaReporteXNumeroVendedoresEmpresa(this, true);
+        ventana_empresa.setLocationRelativeTo(this);
+        ventana_empresa.setVisible(true);
     }//GEN-LAST:event_ItemListarPorNumeroVendedoresEmpresaActionPerformed
 
     private void ItemListarPorNUmeroSedesEmpresaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ItemListarPorNUmeroSedesEmpresaActionPerformed
-        // TODO add your handling code here:
+        if(Empresa.getEmpresaBD() == null || Empresa.getEmpresaBD().isEmpty()){
+            JOptionPane.showMessageDialog(this, "no hay usuarios"
+            , "RESULTADO NEGATIVO", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+        
+        VentanaReporteXNumeroSedesEmpresa ventana_empresa = new VentanaReporteXNumeroSedesEmpresa(this, true);
+        ventana_empresa.setLocationRelativeTo(this);
+        ventana_empresa.setVisible(true);
     }//GEN-LAST:event_ItemListarPorNUmeroSedesEmpresaActionPerformed
 
     private void ItemListarPorCapitalPaisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ItemListarPorCapitalPaisActionPerformed
@@ -997,6 +1066,18 @@ public class VentanaPrincipal extends JFrame {
         v.setLocationRelativeTo(this);
         v.setVisible(true);
     }//GEN-LAST:event_ItemListarTodoAsesorActionPerformed
+
+    private void ItemListarTodoEmpresaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ItemListarTodoEmpresaActionPerformed
+        if(Empresa.getEmpresaBD() == null || Empresa.getEmpresaBD().isEmpty()){
+            JOptionPane.showMessageDialog(this, "no hay usuarios"
+            , "RESULTADO NEGATIVO", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+        
+        VentanaReporteEmpresa v = new VentanaReporteEmpresa(this,true);
+        v.setLocationRelativeTo(this);
+        v.setVisible(true);
+    }//GEN-LAST:event_ItemListarTodoEmpresaActionPerformed
 
     /**
      * @param args the command line arguments

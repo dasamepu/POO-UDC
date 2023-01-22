@@ -153,7 +153,7 @@ public class VentanaReporteXNumeroSedesEmpresa extends javax.swing.JDialog {
         Collections.sort(listaEmpresas, new Comparator<Empresa>() {
             @Override
             public int compare(Empresa a1, Empresa a2) {
-                return a1.getNumero_vendedores().compareTo(a2.getNumero_vendedores());
+                return a1.getNum_sedes().compareTo(a2.getNum_sedes());
             }
         });
         
