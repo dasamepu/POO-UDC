@@ -153,7 +153,7 @@ public class VentanaReporteXFacturacionEmpresa extends javax.swing.JDialog {
         Collections.sort(listaEmpresas, new Comparator<Empresa>() {
             @Override
             public int compare(Empresa a1, Empresa a2) {
-                return a1.getFecha_entrada_holding().compareTo(a2.getFecha_entrada_holding());
+                return a1.getFacturacion_anual().compareTo(a2.getFacturacion_anual());
             }
         });
         
