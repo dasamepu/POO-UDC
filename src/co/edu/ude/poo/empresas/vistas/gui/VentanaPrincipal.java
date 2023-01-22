@@ -8,6 +8,7 @@ import co.edu.ude.poo.empresas.vistas.gui.reportes.area.*;
 import co.edu.ude.poo.empresas.modelo.entidades.*;
 import co.edu.ude.poo.empresas.vistas.gui.reportes.empresa.*;
 import co.edu.ude.poo.empresas.vistas.gui.reportes.holding.*;
+import co.edu.ude.poo.empresas.vistas.gui.reportes.pais.*;
 import java.awt.Toolkit;
 import javax.swing.*;
 /**
@@ -527,6 +528,11 @@ public class VentanaPrincipal extends JFrame {
         SubMenuReportesPais.setText("Reportes");
 
         ItemListarTodoPais.setText("Listar Todo...");
+        ItemListarTodoPais.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ItemListarTodoPaisActionPerformed(evt);
+            }
+        });
         SubMenuReportesPais.add(ItemListarTodoPais);
 
         ItemListarPorIdPais.setText("Listar por Id...");
@@ -924,11 +930,27 @@ public class VentanaPrincipal extends JFrame {
     }//GEN-LAST:event_ItemEliminarPaisActionPerformed
 
     private void ItemListarPorIdPaisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ItemListarPorIdPaisActionPerformed
-        // TODO add your handling code here:
+        if(Pais.getPaisBD() == null || Pais.getPaisBD().isEmpty()){
+            JOptionPane.showMessageDialog(this, "no hay holgings"
+            , "RESULTADO NEGATIVO", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+        
+        VentanaReporteXIdPais v = new VentanaReporteXIdPais(this,true);
+        v.setLocationRelativeTo(this);
+        v.setVisible(true);
     }//GEN-LAST:event_ItemListarPorIdPaisActionPerformed
 
     private void ItemListarPorNombrePaisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ItemListarPorNombrePaisActionPerformed
-        // TODO add your handling code here:
+        if(Pais.getPaisBD() == null || Pais.getPaisBD().isEmpty()){
+            JOptionPane.showMessageDialog(this, "no hay holgings"
+            , "RESULTADO NEGATIVO", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+        
+        VentanaReporteXNombrePais v = new VentanaReporteXNombrePais(this,true);
+        v.setLocationRelativeTo(this);
+        v.setVisible(true);
     }//GEN-LAST:event_ItemListarPorNombrePaisActionPerformed
 
     private void ItemAgregarSedeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ItemAgregarSedeActionPerformed
@@ -1048,15 +1070,39 @@ public class VentanaPrincipal extends JFrame {
     }//GEN-LAST:event_ItemListarPorNUmeroSedesEmpresaActionPerformed
 
     private void ItemListarPorCapitalPaisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ItemListarPorCapitalPaisActionPerformed
-        // TODO add your handling code here:
+        if(Pais.getPaisBD() == null || Pais.getPaisBD().isEmpty()){
+            JOptionPane.showMessageDialog(this, "no hay holgings"
+            , "RESULTADO NEGATIVO", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+        
+        VentanaReporteXCapitalPais v = new VentanaReporteXCapitalPais(this,true);
+        v.setLocationRelativeTo(this);
+        v.setVisible(true);
     }//GEN-LAST:event_ItemListarPorCapitalPaisActionPerformed
 
     private void ItemListarPorNumeroHabitantesPaisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ItemListarPorNumeroHabitantesPaisActionPerformed
-        // TODO add your handling code here:
+        if(Pais.getPaisBD() == null || Pais.getPaisBD().isEmpty()){
+            JOptionPane.showMessageDialog(this, "no hay holgings"
+            , "RESULTADO NEGATIVO", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+        
+        VentanaReporteXNumeroHabitantesPais v = new VentanaReporteXNumeroHabitantesPais(this,true);
+        v.setLocationRelativeTo(this);
+        v.setVisible(true);
     }//GEN-LAST:event_ItemListarPorNumeroHabitantesPaisActionPerformed
 
     private void ItemListarPorPibPaisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ItemListarPorPibPaisActionPerformed
-        // TODO add your handling code here:
+        if(Pais.getPaisBD() == null || Pais.getPaisBD().isEmpty()){
+            JOptionPane.showMessageDialog(this, "no hay holgings"
+            , "RESULTADO NEGATIVO", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+        
+        VentanaReporteXNumeroHabitantesPais v = new VentanaReporteXNumeroHabitantesPais(this,true);
+        v.setLocationRelativeTo(this);
+        v.setVisible(true);
     }//GEN-LAST:event_ItemListarPorPibPaisActionPerformed
 
     private void ItemListarPorDireccionVendedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ItemListarPorDireccionVendedorActionPerformed
@@ -1114,6 +1160,18 @@ public class VentanaPrincipal extends JFrame {
         v.setLocationRelativeTo(this);
         v.setVisible(true);
     }//GEN-LAST:event_ItemListarTodoHoldingActionPerformed
+
+    private void ItemListarTodoPaisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ItemListarTodoPaisActionPerformed
+        if(Pais.getPaisBD() == null || Pais.getPaisBD().isEmpty()){
+            JOptionPane.showMessageDialog(this, "no hay holgings"
+            , "RESULTADO NEGATIVO", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+        
+        VentanaReportePais v = new VentanaReportePais(this,true);
+        v.setLocationRelativeTo(this);
+        v.setVisible(true);
+    }//GEN-LAST:event_ItemListarTodoPaisActionPerformed
 
     /**
      * @param args the command line arguments
