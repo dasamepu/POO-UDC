@@ -4,6 +4,7 @@
  */
 package co.edu.ude.poo.empresas.vistas.gui;
 
+import co.edu.ude.poo.empresas.modelo.crud.VendedorCrud;
 import co.edu.ude.poo.empresas.modelo.entidades.Vendedor;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -142,19 +143,21 @@ public class VentanaReporteVendedor extends javax.swing.JDialog {
     }// </editor-fold>//GEN-END:initComponents
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
-        Collection<Vendedor> datos = Vendedor.getVendedorBD().values();
-        List<Vendedor> listaVendedores = new ArrayList (datos);
-        String columnas[] = {"ID","NOMBRE", "DIRECCION", "NUMERO DE TRABAJOS"};
-        int totalVendedores = listaVendedores.size();
-        String filas[][] = new String[totalVendedores][columnas.length];
-        for(int i=0; i<listaVendedores.size(); i++){
-            Vendedor vendedor = listaVendedores.get(i);
+        VendedorCrud vendedorCrud = new VendedorCrud(); 
+        Collection<Vendedor> datos = vendedorCrud.listarTodo(); 
+        List<Vendedor> listaVendedores = new ArrayList (datos); 
+        String columnas[] = {"ID","NOMBRE", "DIRECCION", "NUMERO DE TRABAJOS", "VENDEDOR CAPTURANTE"}; 
+        int totalVendedores = listaVendedores.size(); 
+        String filas[][] = new String[totalVendedores][columnas.length]; 
+        for(int i=0; i<listaVendedores.size(); i++){ 
+            Vendedor vendedor = listaVendedores.get(i); 
             filas[i][0] = vendedor.getId();
-            filas[i][1] = vendedor.getNombre();
-            filas[i][2] = vendedor.getDireccion();
-            filas[i][3] = Integer.toString(vendedor.getNumero_trabajos());
-        }
-        DefaultTableModel datosTabla = new DefaultTableModel();
+            filas[i][1] = vendedor.getNombre(); 
+            filas[i][2] = vendedor.getDireccion(); 
+            filas[i][3] = Integer.toString(vendedor.getNumero_trabajos()); 
+            filas[i][4] = vendedor.getVendedorCapturante() != null ? vendedor.getVendedorCapturante(): "";
+        } 
+        DefaultTableModel datosTabla = new DefaultTableModel(); 
         datosTabla.setDataVector(filas, columnas);
         TablaVendedores.setModel(datosTabla);
         txtTotal.setText(totalVendedores+"");

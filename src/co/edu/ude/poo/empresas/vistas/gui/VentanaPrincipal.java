@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package co.edu.ude.poo.empresas.vistas.gui;
+import co.edu.ude.poo.empresas.modelo.crud.VendedorCrud;
 import co.edu.ude.poo.empresas.vistas.gui.reportes.asesor.*;
 import co.edu.ude.poo.empresas.vistas.gui.reportes.area.*;
 import co.edu.ude.poo.empresas.modelo.entidades.*;
@@ -1028,7 +1029,8 @@ public class VentanaPrincipal extends JFrame {
     }//GEN-LAST:event_ItemEliminarVendedorActionPerformed
 
     private void ItemListarPorIdVendedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ItemListarPorIdVendedorActionPerformed
-        if(Vendedor.getVendedorBD() == null || Vendedor.getVendedorBD().isEmpty()){
+        VendedorCrud vendedorCrud = new VendedorCrud();
+        if(vendedorCrud.contar() == 0){
             JOptionPane.showMessageDialog(this, "no hay vendedores"
             , "RESULTADO NEGATIVO", JOptionPane.WARNING_MESSAGE);
             return;
@@ -1040,7 +1042,8 @@ public class VentanaPrincipal extends JFrame {
     }//GEN-LAST:event_ItemListarPorIdVendedorActionPerformed
 
     private void ItemListarPorNombreVendedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ItemListarPorNombreVendedorActionPerformed
-        if(Vendedor.getVendedorBD() == null || Vendedor.getVendedorBD().isEmpty()){
+        VendedorCrud vendedorCrud = new VendedorCrud();
+        if(vendedorCrud.contar() == 0){
             JOptionPane.showMessageDialog(this, "no hay vendedores"
             , "RESULTADO NEGATIVO", JOptionPane.WARNING_MESSAGE);
             return;
@@ -1172,7 +1175,8 @@ public class VentanaPrincipal extends JFrame {
     }//GEN-LAST:event_ItemListarPorPibPaisActionPerformed
 
     private void ItemListarPorDireccionVendedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ItemListarPorDireccionVendedorActionPerformed
-        if(Vendedor.getVendedorBD() == null || Vendedor.getVendedorBD().isEmpty()){
+        VendedorCrud vendedorCrud = new VendedorCrud();
+        if(vendedorCrud.contar() == 0){
             JOptionPane.showMessageDialog(this, "no hay vendedores"
             , "RESULTADO NEGATIVO", JOptionPane.WARNING_MESSAGE);
             return;
@@ -1184,7 +1188,8 @@ public class VentanaPrincipal extends JFrame {
     }//GEN-LAST:event_ItemListarPorDireccionVendedorActionPerformed
 
     private void ItemListarPorNumeroTrabajosVendedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ItemListarPorNumeroTrabajosVendedorActionPerformed
-        if(Vendedor.getVendedorBD() == null || Vendedor.getVendedorBD().isEmpty()){
+        VendedorCrud vendedorCrud = new VendedorCrud();
+        if(vendedorCrud.contar() == 0){
             JOptionPane.showMessageDialog(this, "no hay vendedores"
             , "RESULTADO NEGATIVO", JOptionPane.WARNING_MESSAGE);
             return;
@@ -1268,7 +1273,8 @@ public class VentanaPrincipal extends JFrame {
     }//GEN-LAST:event_ItemListarTodoSedeActionPerformed
 
     private void ItemListarTodoVendedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ItemListarTodoVendedorActionPerformed
-        if(Vendedor.getVendedorBD() == null || Vendedor.getVendedorBD().isEmpty()){
+        VendedorCrud vendedorCrud = new VendedorCrud();
+        if(vendedorCrud.contar() == 0){
             JOptionPane.showMessageDialog(this, "no hay vendedores"
             , "RESULTADO NEGATIVO", JOptionPane.WARNING_MESSAGE);
             return;

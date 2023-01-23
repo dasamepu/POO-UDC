@@ -4,6 +4,7 @@
  */
 package co.edu.ude.poo.empresas.vistas.gui.reportes.vendedor;
 
+import co.edu.ude.poo.empresas.modelo.crud.VendedorCrud;
 import co.edu.ude.poo.empresas.modelo.entidades.Sede;
 import co.edu.ude.poo.empresas.vistas.gui.*;
 import co.edu.ude.poo.empresas.modelo.entidades.Vendedor;
@@ -146,7 +147,8 @@ public class VentanaReporteXNumeroTrabajosVendedor extends javax.swing.JDialog {
     }// </editor-fold>//GEN-END:initComponents
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
-        Collection<Vendedor> datos = Vendedor.getVendedorBD().values();
+        VendedorCrud vendedorCrud = new VendedorCrud(); 
+        Collection<Vendedor> datos = vendedorCrud.listarTodo(); 
         List<Vendedor> listaVendedores = new ArrayList (datos);
         
         // Ordenar la lista por ID usando el Comparator

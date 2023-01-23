@@ -4,6 +4,7 @@
  */
 package co.edu.ude.poo.empresas.modelo.entidades;
 
+import co.edu.ude.poo.empresas.modelo.crud.VendedorCrud;
 import java.util.HashMap;
 
 /**
@@ -15,7 +16,7 @@ public class Vendedor {
     private String nombre;
     private String direccion;
     private Integer numero_trabajos;
-    private static HashMap<String, Vendedor> vendedorBD;
+    private String vendedorCapturante;
 
     public Vendedor(String id, String nombre, String direccion, Integer numero_trabajos) {
         this.id = id;
@@ -68,13 +69,12 @@ public class Vendedor {
         this.direccion = direccion;
     }
 
-    public static HashMap<String, Vendedor> getVendedorBD() {
-        return vendedorBD;
+    public String getVendedorCapturante() {
+        return vendedorCapturante;
     }
 
-    public static void setVendedorBD(HashMap<String, Vendedor> vendedorBD) {
-        Vendedor.vendedorBD = vendedorBD;
+    public void setVendedorCapturante(String vendedorCapturante) {
+        this.vendedorCapturante = vendedorCapturante;
     }
-    
     
 }

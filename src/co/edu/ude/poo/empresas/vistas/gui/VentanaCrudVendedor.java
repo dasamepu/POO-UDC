@@ -4,6 +4,7 @@
  */
 package co.edu.ude.poo.empresas.vistas.gui;
 
+import co.edu.ude.poo.empresas.modelo.crud.VendedorCrud;
 import co.edu.ude.poo.empresas.modelo.entidades.*;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -17,7 +18,9 @@ import javax.swing.JOptionPane;
  * @author david
  */
 public class VentanaCrudVendedor extends javax.swing.JDialog {
-    Vendedor Vendedor;
+    
+    VendedorCrud vendedorCrud = new VendedorCrud();
+
     /**
      * Creates new form VentanaCrudVendedor
      */
@@ -45,6 +48,8 @@ public class VentanaCrudVendedor extends javax.swing.JDialog {
         CampoDireccion = new javax.swing.JTextField();
         EtiquetaNumeroTrabajos = new javax.swing.JLabel();
         CampoNumeroTrabajos = new javax.swing.JTextField();
+        EtiquetaCapturador = new javax.swing.JLabel();
+        CampoCapturador = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         BotonAgregar = new javax.swing.JButton();
         BotonBuscar = new javax.swing.JButton();
@@ -104,6 +109,16 @@ public class VentanaCrudVendedor extends javax.swing.JDialog {
             }
         });
 
+        EtiquetaCapturador.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        EtiquetaCapturador.setText("ID DE QUIEN LO CAPTURÓ:");
+
+        CampoCapturador.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
+        CampoCapturador.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CampoCapturadorActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -111,25 +126,28 @@ public class VentanaCrudVendedor extends javax.swing.JDialog {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addContainerGap(127, Short.MAX_VALUE)
+                        .addGap(160, 160, 160)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(EtiquetaId)
                             .addComponent(EtiquetaNombre))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(CampoId, javax.swing.GroupLayout.DEFAULT_SIZE, 365, Short.MAX_VALUE)
-                            .addComponent(CampoNombre)))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addGap(0, 23, Short.MAX_VALUE)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(CampoNombre, javax.swing.GroupLayout.DEFAULT_SIZE, 332, Short.MAX_VALUE)
+                            .addComponent(CampoId)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(56, 56, 56)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(EtiquetaDireccion)
+                            .addComponent(EtiquetaNumeroTrabajos))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                .addComponent(EtiquetaNumeroTrabajos)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(CampoNumeroTrabajos, javax.swing.GroupLayout.PREFERRED_SIZE, 365, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                .addComponent(EtiquetaDireccion)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(CampoDireccion, javax.swing.GroupLayout.PREFERRED_SIZE, 365, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                            .addComponent(CampoDireccion)
+                            .addComponent(CampoNumeroTrabajos)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(EtiquetaCapturador)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(CampoCapturador)))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -148,12 +166,14 @@ public class VentanaCrudVendedor extends javax.swing.JDialog {
                     .addComponent(EtiquetaDireccion)
                     .addComponent(CampoDireccion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(CampoNumeroTrabajos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(3, 3, 3)
-                        .addComponent(EtiquetaNumeroTrabajos, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(17, Short.MAX_VALUE))
+                    .addComponent(EtiquetaNumeroTrabajos, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(CampoCapturador, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(EtiquetaCapturador))
+                .addContainerGap(10, Short.MAX_VALUE))
         );
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/co/edu/ude/poo/empresas/vistas/iconos/vendedor.png"))); // NOI18N
@@ -281,28 +301,26 @@ public class VentanaCrudVendedor extends javax.swing.JDialog {
 
     private void BotonAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonAgregarActionPerformed
         //recuperar los datos ingresados en los campos del formulario
-        String id = CampoId.getText();        
-        String nombre = CampoNombre.getText();
-        String direccion = CampoDireccion.getText();
-        int numero_trabajos = Integer.parseInt(CampoNumeroTrabajos.getText());
-        //crear un objeto (variable tipo Vendedor)
-        Vendedor Vendedor = new Vendedor();
-        Vendedor.setId(id);
-        Vendedor.setNombre(nombre);
-        Vendedor.setDireccion(direccion);
-        Vendedor.setNumero_trabajos(numero_trabajos);
-        //validar si el Map existe
-        if(Vendedor.getVendedorBD() == null){
-            Vendedor.setVendedorBD(new HashMap<>());
-        }
-        //validar si el Map ya tiene el Vendedor guardada
-        if(Vendedor.getVendedorBD().containsKey(id)){
-            String msj = "Ya existe el Vendedor con id: " + id;
-            JOptionPane.showMessageDialog(this, msj);
-        }else if(id.isEmpty() || id.length() == 0 ||    
-                nombre.isEmpty() || nombre.length() == 0 ||
-                direccion.isEmpty() || direccion.length() == 0 ||
-                numero_trabajos == 0){
+        String id = CampoId.getText();
+        String nombre = CampoNombre.getText(); 
+        String direccion = CampoDireccion.getText(); 
+        int numero_trabajos = Integer.parseInt(CampoNumeroTrabajos.getText()); 
+        String idVendedorCapturante = CampoCapturador.getText();
+        //crear un objeto (variable tipo Vendedor) 
+        Vendedor vendedor = new Vendedor(); 
+        vendedor.setId(id); 
+        vendedor.setNombre(nombre);
+        vendedor.setDireccion(direccion); 
+        vendedor.setNumero_trabajos(numero_trabajos);
+        vendedor.setVendedorCapturante(idVendedorCapturante);
+        
+        
+
+        
+        if(id.isEmpty() || id.length() == 0 ||    
+            nombre.isEmpty() || nombre.length() == 0 ||
+            direccion.isEmpty() || direccion.length() == 0 ||
+            numero_trabajos == 0){
             //verificar si algun campo está vacio
             String msj = "Hay campo(s) vacio(s), no se guardara nada hasta que el problema se solucione";
             JOptionPane.showMessageDialog(this, msj);
@@ -320,22 +338,26 @@ public class VentanaCrudVendedor extends javax.swing.JDialog {
                     + "no se guardara nada hasta que el problema se solucione \n ";
             JOptionPane.showMessageDialog(this, msj);
         }else{
-            //se pregunta si se quiere guardar la informacion
-            int option = JOptionPane.showConfirmDialog(this
-            , "Guardar la informacion?", "confirmar guardado"
-            , JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
-            if(option == JOptionPane.YES_OPTION){
-                //se guarda el Vendedor si no existia
-                Vendedor.getVendedorBD().put(id, Vendedor);
-                //obtenemos el numero de Vendedores
-                int cuentaVendedores = Vendedor.getVendedorBD().size();
-                String msj = "el Vendedor fue guardada. "
-                        + "Existen: " + cuentaVendedores + " Vendedor(s)";
-                JOptionPane.showMessageDialog(this, msj);
-                limpiarCampos();
-            }
             
-        }        
+            if(!idVendedorCapturante.isEmpty()) {    
+                vendedor.setVendedorCapturante(idVendedorCapturante); // se asigna el vendedor capturante al vendedor capturado
+                vendedorCrud.agregar(vendedor); // se agrega el vendedor al diccionario de VendedorCrud
+                 String msj = "Vendedor agregado con éxito \n "
+                    + "exixte(n)" + vendedorCrud.contar() + "vendedor(es)";
+                JOptionPane.showMessageDialog(this, msj);
+                limpiarCampos(); // se limpian los campos del formulario
+            } else {
+                int option = JOptionPane.showConfirmDialog(this, "El vendedor capturante no existe, ¿Desea agregarlo de todos modos?", "Confirmar Agregar", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+                if(option == JOptionPane.YES_OPTION){
+                    vendedor.setVendedorCapturante("-");
+                    vendedorCrud.agregar(vendedor); // se agrega el vendedor al diccionario de VendedorCrud
+                    String msj = "Vendedor agregado con éxito \n "
+                            + "exixte(n) " + vendedorCrud.contar() + " vendedor(es)";
+                    JOptionPane.showMessageDialog(this, msj);
+                    limpiarCampos(); // se limpian los campos del formulario
+                }
+            }
+        }
     }//GEN-LAST:event_BotonAgregarActionPerformed
 
     public void limpiarCampos(){
@@ -343,6 +365,7 @@ public class VentanaCrudVendedor extends javax.swing.JDialog {
         CampoNombre.setText("");
         CampoDireccion.setText("");
         CampoNumeroTrabajos.setText("0");
+        CampoCapturador.setText("");
         
         BotonEditar.setEnabled(false);
         BotonEliminar.setEnabled(false);
@@ -351,33 +374,22 @@ public class VentanaCrudVendedor extends javax.swing.JDialog {
     private void BotonBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonBuscarActionPerformed
         //recuperar los datos ingresados en los campos del formulario
         String id = CampoId.getText();        
-        String nombre = CampoNombre.getText();
-        String direccion = CampoDireccion.getText();
-        int numero_trabajos = Integer.parseInt(CampoNumeroTrabajos.getText());
-        //verificar si el map existe o si esta vacio
-        if(Vendedor.getVendedorBD() == null || Vendedor.getVendedorBD().isEmpty()){
-            String msj = "no hay Vendedores en la BD";
-            JOptionPane.showMessageDialog(this, msj);
-        }else{
-            //buscar el Vendedor a partir del id
-            if(Vendedor.getVendedorBD().containsKey(id)){
-                this.Vendedor = Vendedor.getVendedorBD().get(id);
-                CampoNombre.setText(this.Vendedor.getNombre());
-                CampoDireccion.setText(this.Vendedor.getDireccion());
-                CampoNumeroTrabajos.setText(Integer.toString(this.Vendedor.getNumero_trabajos()));
+        
+        
+        Vendedor vendedor = vendedorCrud.buscar(id);
+        if(vendedor != null) {
+            CampoNombre.setText(vendedor.getNombre());
+            CampoDireccion.setText(vendedor.getDireccion());
+            CampoNumeroTrabajos.setText(Integer.toString(vendedor.getNumero_trabajos()));
             //se activan los botones si la busqueda fue exitosa
             BotonEditar.setEnabled(true);
             BotonEliminar.setEnabled(true);
-            }else if(id.isEmpty() || id.length() == 0){
-                String msj = "El campo id está vacio, es requerido para realizar la busqueda";
-                JOptionPane.showMessageDialog(this, msj);
-            }else{
-                BotonEditar.setEnabled(false);
-                BotonEliminar.setEnabled(false);
-                String msj = "no hay Vendedores en la BD con ese id: " + id;
-                JOptionPane.showMessageDialog(this, msj);
-                limpiarCampos();
-            }
+        }else{
+            BotonEditar.setEnabled(false);
+            BotonEliminar.setEnabled(false);
+            String msj = "no hay Vendedores en la BD con ese id: " + id;
+            JOptionPane.showMessageDialog(this, msj);
+            limpiarCampos();
         }
     }//GEN-LAST:event_BotonBuscarActionPerformed
 
@@ -410,25 +422,26 @@ public class VentanaCrudVendedor extends javax.swing.JDialog {
             limpiarCampos();
             return;
         }
-        //validar que el id coincida con el id consultado previamente
-        if(CampoId.getText().equals(this.Vendedor.getId()) != true){
-            String msj = "El id no coincide con el id consultado previamente";
+
+        
+        Vendedor vendedor = vendedorCrud.buscar(CampoId.getText());
+    
+        if(vendedor == null){
+            String msj = "No se encontro el vendedor con ese id";
             JOptionPane.showMessageDialog(this, msj);
             limpiarCampos();
             return;
         }
-        
-        //validando que el Vendedor sí sea editado
-        if(CampoNombre.getText().equals(this.Vendedor.getNombre()) == true && 
-           CampoNumeroTrabajos.getText().equals(Integer.toString(this.Vendedor.getNumero_trabajos())) == true){
+        //validando que el vendedor sí sea editado
+        if(CampoNombre.getText().equals(vendedor.getNombre()) == true && 
+           CampoDireccion.getText().equals(vendedor.getDireccion()) == true && 
+           CampoNumeroTrabajos.getText().equals(Integer.toString(vendedor.getNumero_trabajos())) == true){
             String msj = "No se ha cambiado nada";
             JOptionPane.showMessageDialog(this, msj);
             return;
         }
-        
-        //recuperamos el texto que haya en el CampoId y el mapa nos devuelve el Vendedor con ese id
-        this.Vendedor = Vendedor.getVendedorBD().get(CampoId.getText());
-        
+
+
         //se pregunta si se quiere guardar la informacion
             int option = JOptionPane.showConfirmDialog(this
             , "Guardar los cambios?", "confirmar cambios"
@@ -439,23 +452,25 @@ public class VentanaCrudVendedor extends javax.swing.JDialog {
                 String nombre = CampoNombre.getText();
                 String direccion = CampoDireccion.getText();
                 int numero_trabajos = Integer.parseInt(CampoNumeroTrabajos.getText());
-        
-                //Cambiar los datos anteriores del Vendedor por los datos nuevos
-                this.Vendedor.setNombre(String.valueOf(nombre));
-                this.Vendedor.setDireccion(direccion);
-                this.Vendedor.setNumero_trabajos(numero_trabajos);
 
-                //Guardamos el Vendedor con los nuevos datos
-                Vendedor.getVendedorBD().put(this.Vendedor.getId(), this.Vendedor);
+                //Cambiar los datos anteriores del vendedor por los datos nuevos
+                vendedor.setNombre(String.valueOf(nombre));
+                vendedor.setDireccion(direccion);
+                vendedor.setNumero_trabajos(numero_trabajos);
+
+                //Guardamos el vendedor con los nuevos datos
+                vendedorCrud.editar(vendedor);
 
                 //mostramos el mensaje
-                String msj = "Vendedor modificado con exito";
+                String msj = "vendedor modificado con exito";
                 JOptionPane.showMessageDialog(this, msj);
                 limpiarCampos();
             }
+
     }//GEN-LAST:event_BotonEditarActionPerformed
 
     private void BotonEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonEliminarActionPerformed
+        
         //validamos que el campo Id tenga algun dato
         if(CampoId.getText() == null || CampoId.getText().isEmpty()){
             String msj = "Para editar introduzca el id";
@@ -465,7 +480,8 @@ public class VentanaCrudVendedor extends javax.swing.JDialog {
         }
         
         //validar que el id coincida con el id consultado previamente
-        if(CampoId.getText().equals(this.Vendedor.getId()) != true){
+        Vendedor vendedor = vendedorCrud.buscar(CampoId.getText());
+        if(vendedor == null){
             String msj = "El id no coincide con el id consultado previamente";
             JOptionPane.showMessageDialog(this, msj);
             limpiarCampos();
@@ -476,8 +492,8 @@ public class VentanaCrudVendedor extends javax.swing.JDialog {
                 , "CONFIRMAR ELIMINACION", JOptionPane.YES_NO_OPTION
                 , JOptionPane.QUESTION_MESSAGE);
         if(respuesta == JOptionPane.YES_OPTION){
-            Vendedor.getVendedorBD().remove(this.Vendedor.getId());
-            int total = Vendedor.getVendedorBD().size();
+            vendedorCrud.eliminar(vendedor.getId());
+            int total = vendedorCrud.contar();
             String msj2 = "Vendedor eliminada exitosamente, hay " + total + " Vendedor(s)";
             JOptionPane.showMessageDialog(this, msj2);
             limpiarCampos();
@@ -485,7 +501,8 @@ public class VentanaCrudVendedor extends javax.swing.JDialog {
     }//GEN-LAST:event_BotonEliminarActionPerformed
 
     private void BotonListarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonListarActionPerformed
-        if(Vendedor.getVendedorBD() == null || Vendedor.getVendedorBD().isEmpty()){
+        
+        if(vendedorCrud.contar() == 0) { 
             JOptionPane.showMessageDialog(this, "no hay Vendedores para listar"
             , "RESULTADO NEGATIVO", JOptionPane.WARNING_MESSAGE);
             return;
@@ -510,6 +527,10 @@ public class VentanaCrudVendedor extends javax.swing.JDialog {
     private void CampoDireccionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CampoDireccionActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_CampoDireccionActionPerformed
+
+    private void CampoCapturadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CampoCapturadorActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_CampoCapturadorActionPerformed
 
     /**
      * @param args the command line arguments
@@ -576,10 +597,12 @@ public class VentanaCrudVendedor extends javax.swing.JDialog {
     private javax.swing.JButton BotonEliminar;
     private javax.swing.JButton BotonLimpiar;
     private javax.swing.JButton BotonListar;
+    private javax.swing.JTextField CampoCapturador;
     private javax.swing.JTextField CampoDireccion;
     private javax.swing.JTextField CampoId;
     private javax.swing.JTextField CampoNombre;
     private javax.swing.JTextField CampoNumeroTrabajos;
+    private javax.swing.JLabel EtiquetaCapturador;
     private javax.swing.JLabel EtiquetaDireccion;
     private javax.swing.JLabel EtiquetaId;
     private javax.swing.JLabel EtiquetaNombre;
