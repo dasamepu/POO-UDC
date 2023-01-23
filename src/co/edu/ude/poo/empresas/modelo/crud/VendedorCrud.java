@@ -1,56 +1,59 @@
 
 package co.edu.ude.poo.empresas.modelo.crud;
 
+import co.edu.ude.poo.empresas.modelo.entidades.Empresa;
 import co.edu.ude.poo.empresas.modelo.entidades.Vendedor;
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.HashMap;
 
 /**
  *
  * @author renejk
  */
 public class VendedorCrud {
+    private static VendedorCrud instance; // static variable to hold the single instance of the class
+    private static HashMap<String, Vendedor> vendedorBD;
     
-    ArrayList<Vendedor> vendedores = new ArrayList<>();
-    
-    public void agregar(Vendedor v ){
-        vendedores.add(v);
-        
+    private VendedorCrud() {
+        vendedorBD = new HashMap<>();
     }
     
-    public Vendedor buscar(String codigo){
-        for (Vendedor v : vendedores) {
-            if(v.id.equals(codigo)){
-               return v; 
-            }}             
-        
+    public static VendedorCrud getInstance() { // static method to return the single instance of the class
+        if (instance == null) {
+            instance = new VendedorCrud();
+        }
+        return instance;
+    }
+    
+    public void agregar(Vendedor v){
+        vendedorBD.put(v.getId(), v);
+    }
+
+    public Vendedor buscar(String id){
+        if(vendedorBD.containsKey(id)){
+            return vendedorBD.get(id);
+        }
         return null;
     }
-    
+
     public void editar(Vendedor v){
-           for (Vendedor aux : vendedores) {
-            if(aux.id.equals(v.id)){
-              aux.setNombre(v.getNombre());
-              aux.setNumero_trabajos(v.getNumero_trabajos());
-              aux.setDireccion(v.getDireccion());
-            }}             
-        
+        if(vendedorBD.containsKey(v.getId())){
+            vendedorBD.put(v.getId(), v);
+        }
     }
-    
-    public void eliminar(String codigo){
-           for (Vendedor v : vendedores) {
-            if(v.id.equals(codigo)){
-              vendedores.remove(v);
-            }}       
+
+    public void eliminar(String id){
+        if(vendedorBD.containsKey(id)){
+            vendedorBD.remove(id);
+        }
     }
-    
-    public ArrayList<Vendedor> listarTodo(){
-        
-        
-        return vendedores;
+
+    public Collection<Vendedor> listarTodo(){
+        return vendedorBD.values();
     }
-    
+
     public int contar() {
-        return vendedores.size();
+        return vendedorBD.size();
     }
 }
-        
