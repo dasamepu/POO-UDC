@@ -4,13 +4,16 @@
  */
 package co.edu.ude.poo.empresas.modelo.entidades;
 
+import co.edu.ude.poo.empresas.util.GestionDeAlmacenamiento;
+import java.io.Serializable;
 import java.util.HashMap;
+import java.util.List;
 
 /**
  *
  * @author david
  */
-public class Area {
+public class Area implements Serializable{
     private String id;
     private String nombre;
     private String descripción;
@@ -54,12 +57,25 @@ public class Area {
         this.descripción = descripción;
     }
 
-    public static HashMap<String, Area> getAreaBD() {
+    public static HashMap<String, Area> getAreaBD()  {
+        List<Area> areas = GestionDeAlmacenamiento.recuperarArea();
+
+        for (Area a : areas) {
+            String id_a = a.getId();
+            if (areaBD == null) {
+                setAreaBD(new HashMap<>());
+            }
+            if (!areaBD.containsKey(id_a)) {
+                areaBD.put(a.getId(), a);
+            }
+        }
+
         return areaBD;
     }
 
     public static void setAreaBD(HashMap<String, Area> areaBD) {
         Area.areaBD = areaBD;
+      
     }
     
     

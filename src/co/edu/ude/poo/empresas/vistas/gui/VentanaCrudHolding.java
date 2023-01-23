@@ -5,6 +5,7 @@
 package co.edu.ude.poo.empresas.vistas.gui;
 
 import co.edu.ude.poo.empresas.modelo.entidades.*;
+import co.edu.ude.poo.empresas.util.GestionDeAlmacenamiento;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
@@ -236,7 +237,13 @@ public class VentanaCrudHolding extends javax.swing.JDialog {
     private void CampoNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CampoNombreActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_CampoNombreActionPerformed
-
+    
+     private void UpdateArchivo() {
+        Collection<Holding> datos = Holding.getHoldingBD().values();
+        List<Holding> listaHoldings = new ArrayList<>(datos);
+        System.out.println("lista de holdings" + listaHoldings);
+        GestionDeAlmacenamiento.guardarHoldings(listaHoldings);
+    }
     private void BotonAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonAgregarActionPerformed
         //recuperar los datos ingresados en los campos del formulario
         String id = CampoId.getText();
@@ -274,6 +281,7 @@ public class VentanaCrudHolding extends javax.swing.JDialog {
             if(option == JOptionPane.YES_OPTION){
                 //se guarda el holding si no existia
                 Holding.getHoldingBD().put(id, holding);
+                UpdateArchivo();
                 //obtenemos el numero de holdings
                 int cuentaHoldings = Holding.getHoldingBD().size();
                 String msj = "el holding fue guardada. "
@@ -383,7 +391,7 @@ public class VentanaCrudHolding extends javax.swing.JDialog {
 
                 //Guardamos el holding con los nuevos datos
                 Holding.getHoldingBD().put(this.holding.getId(), this.holding);
-
+                UpdateArchivo();
                 //mostramos el mensaje
                 String msj = "Holding modificada con exito";
                 JOptionPane.showMessageDialog(this, msj);
@@ -413,6 +421,7 @@ public class VentanaCrudHolding extends javax.swing.JDialog {
                 , JOptionPane.QUESTION_MESSAGE);
         if(respuesta == JOptionPane.YES_OPTION){
             Holding.getHoldingBD().remove(this.holding.getId());
+            UpdateArchivo();
             int total = Holding.getHoldingBD().size();
             String msj2 = "Holding eliminada exitosamente, hay " + total + " holding(s)";
             JOptionPane.showMessageDialog(this, msj2);

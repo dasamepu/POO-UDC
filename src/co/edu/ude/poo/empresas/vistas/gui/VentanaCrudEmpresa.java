@@ -5,6 +5,7 @@
 package co.edu.ude.poo.empresas.vistas.gui;
 
 import co.edu.ude.poo.empresas.modelo.entidades.*;
+import co.edu.ude.poo.empresas.util.GestionDeAlmacenamiento;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
@@ -324,6 +325,12 @@ public class VentanaCrudEmpresa extends javax.swing.JDialog {
         // TODO add your handling code here:
     }//GEN-LAST:event_CampoFechaInicioActionPerformed
 
+     private void UpdateArchivo() {
+        Collection<Empresa> datos = Empresa.getEmpresaBD().values();
+        List<Empresa> listaEmpresas = new ArrayList<>(datos);
+        System.out.println("lista de empresas" + listaEmpresas);
+        GestionDeAlmacenamiento.guardarEmpresas(listaEmpresas);
+    }
     private void BotonAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonAgregarActionPerformed
         //recuperar los datos ingresados en los campos del formulario
         String id = CampoId.getText();        
@@ -385,6 +392,7 @@ public class VentanaCrudEmpresa extends javax.swing.JDialog {
             if(option == JOptionPane.YES_OPTION){
                 //se guarda el empresa si no existia
                 Empresa.getEmpresaBD().put(id, empresa);
+                UpdateArchivo();
                 //obtenemos el numero de empresas
                 int cuentaEmpresas = Empresa.getEmpresaBD().size();
                 String msj = "el empresa fue guardada. "
@@ -518,7 +526,7 @@ public class VentanaCrudEmpresa extends javax.swing.JDialog {
 
                 //Guardamos el empresa con los nuevos datos
                 Empresa.getEmpresaBD().put(this.empresa.getId(), this.empresa);
-
+                UpdateArchivo();
                 //mostramos el mensaje
                 String msj = "Empresa modificado con exito";
                 JOptionPane.showMessageDialog(this, msj);
@@ -548,6 +556,7 @@ public class VentanaCrudEmpresa extends javax.swing.JDialog {
                 , JOptionPane.QUESTION_MESSAGE);
         if(respuesta == JOptionPane.YES_OPTION){
             Empresa.getEmpresaBD().remove(this.empresa.getId());
+            UpdateArchivo();
             int total = Empresa.getEmpresaBD().size();
             String msj2 = "Empresa eliminada exitosamente, hay " + total + " empresa(s)";
             JOptionPane.showMessageDialog(this, msj2);

@@ -4,13 +4,16 @@
  */
 package co.edu.ude.poo.empresas.modelo.entidades;
 
+import co.edu.ude.poo.empresas.util.GestionDeAlmacenamiento;
+import java.io.Serializable;
 import java.util.HashMap;
+import java.util.List;
 
 /**
  *
  * @author david
  */
-public class Pais {
+public class Pais implements Serializable {
     private String id;
     private String nombre;
     private String capital;
@@ -75,6 +78,17 @@ public class Pais {
     }
 
     public static HashMap<String, Pais> getPaisBD() {
+         List<Pais> paises = GestionDeAlmacenamiento.recuperarPaises();
+
+        for (Pais p : paises) {
+            String id_a = p.getId();
+            if (paisBD == null) {
+                setPaisBD(new HashMap<>());
+            }
+            if (!paisBD.containsKey(id_a)) {
+                paisBD.put(p.getId(), p);
+            }
+        }
         return paisBD;
     }
 

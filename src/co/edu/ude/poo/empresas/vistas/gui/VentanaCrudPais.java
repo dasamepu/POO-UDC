@@ -5,6 +5,7 @@
 package co.edu.ude.poo.empresas.vistas.gui;
 
 import co.edu.ude.poo.empresas.modelo.entidades.*;
+import co.edu.ude.poo.empresas.util.GestionDeAlmacenamiento;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
@@ -301,6 +302,13 @@ public class VentanaCrudPais extends javax.swing.JDialog {
         // TODO add your handling code here:
     }//GEN-LAST:event_CampoIdActionPerformed
 
+     private void UpdateArchivo() {
+        Collection<Pais> datos = Pais.getPaisBD().values();
+        List<Pais> listaPaises = new ArrayList<>(datos);
+        System.out.println("lista de paises" + listaPaises);
+        GestionDeAlmacenamiento.guardarPaises(listaPaises);
+    }
+     
     private void BotonAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonAgregarActionPerformed
         //recuperar los datos ingresados en los campos del formulario
         String id = CampoId.getText();        
@@ -355,6 +363,7 @@ public class VentanaCrudPais extends javax.swing.JDialog {
             if(option == JOptionPane.YES_OPTION){
                 //se guarda el pais si no existia
                 Pais.getPaisBD().put(id, pais);
+                UpdateArchivo();
                 //obtenemos el numero de Paises
                 int cuentaPaises = Pais.getPaisBD().size();
                 String msj = "el pais fue guardada. "
@@ -481,7 +490,7 @@ public class VentanaCrudPais extends javax.swing.JDialog {
 
                 //Guardamos el pais con los nuevos datos
                 Pais.getPaisBD().put(this.pais.getId(), this.pais);
-
+                UpdateArchivo();
                 //mostramos el mensaje
                 String msj = "Pais modificado con exito";
                 JOptionPane.showMessageDialog(this, msj);
@@ -511,6 +520,7 @@ public class VentanaCrudPais extends javax.swing.JDialog {
                 , JOptionPane.QUESTION_MESSAGE);
         if(respuesta == JOptionPane.YES_OPTION){
             Pais.getPaisBD().remove(this.pais.getId());
+            UpdateArchivo();
             int total = Pais.getPaisBD().size();
             String msj2 = "Pais eliminada exitosamente, hay " + total + " pais(s)";
             JOptionPane.showMessageDialog(this, msj2);

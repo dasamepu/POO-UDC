@@ -5,6 +5,7 @@
 package co.edu.ude.poo.empresas.vistas.gui;
 
 import co.edu.ude.poo.empresas.modelo.entidades.*;
+import co.edu.ude.poo.empresas.util.GestionDeAlmacenamiento;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
@@ -17,7 +18,9 @@ import javax.swing.JOptionPane;
  * @author david
  */
 public class VentanaCrudArea extends javax.swing.JDialog {
+
     Area area;
+
     /**
      * Creates new form VentanaCrudArea
      */
@@ -251,6 +254,12 @@ public class VentanaCrudArea extends javax.swing.JDialog {
         // TODO add your handling code here:
     }//GEN-LAST:event_CampoNombreActionPerformed
 
+    private void UpdateArchivo() {
+        Collection<Area> datos = Area.getAreaBD().values();
+        List<Area> listaAreas = new ArrayList<>(datos);
+        System.out.println("lista de areas" + listaAreas);
+        GestionDeAlmacenamiento.guardarAreas(listaAreas);
+    }
     private void BotonAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonAgregarActionPerformed
         //recuperar los datos ingresados en los campos del formulario
         String id = CampoId.getText();
@@ -262,29 +271,30 @@ public class VentanaCrudArea extends javax.swing.JDialog {
         area.setNombre(nombre);
         area.setDescripción(descripcion);
         //validar si el Map existe
-        if(Area.getAreaBD() == null){
+        if (Area.getAreaBD() == null) {
             Area.setAreaBD(new HashMap<String, Area>());
         }
         //validar si el Map ya tiene el area guardada
-        if(Area.getAreaBD().containsKey(id)){
+        if (Area.getAreaBD().containsKey(id)) {
             String msj = "Ya existe el area con id: " + id;
             JOptionPane.showMessageDialog(this, msj);
-        }else if(id.isEmpty() || id.length() == 0 ||    //verificar si algun campo está vacio
-                 nombre.isEmpty() || nombre.length() == 0 ||
-                 descripcion.isEmpty() || descripcion.length() == 0){
+        } else if (id.isEmpty() || id.length() == 0
+                || //verificar si algun campo está vacio
+                nombre.isEmpty() || nombre.length() == 0
+                || descripcion.isEmpty() || descripcion.length() == 0) {
             String msj = "Hay campo(s) vacio(s), no se guardara nada hasta que el problema se solucione";
             JOptionPane.showMessageDialog(this, msj);
-        }else if(!nombre.matches("[a-zA-Z\\s\\p{Punct}]+") || !descripcion.matches("[a-zA-Z0-9\\s\\p{Punct}]+")){
+        } else if (!nombre.matches("[a-zA-Z\\s\\p{Punct}]+") || !descripcion.matches("[a-zA-Z0-9\\s\\p{Punct}]+")) {
             String msj = "El nombre o la descripción no son textos \n "
                     + "no se guardara nada hasta que el problema se solucione \n "
-                    + "Posible error: El nombre no puede llevar numeros" ;
+                    + "Posible error: El nombre no puede llevar numeros";
             JOptionPane.showMessageDialog(this, msj);
-        }else{
+        } else {
             //se pregunta si se quiere guardar la informacion
-            int option = JOptionPane.showConfirmDialog(this
-            , "Guardar la informacion?", "confirmar guardado"
-            , JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
-            if(option == JOptionPane.YES_OPTION){
+            int option = JOptionPane.showConfirmDialog(this,
+                    "Guardar la informacion?", "confirmar guardado",
+                    JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+            if (option == JOptionPane.YES_OPTION) {
                 //se guarda el area si no existia
                 Area.getAreaBD().put(id, area);
                 //obtenemos el numero de areas
@@ -292,43 +302,44 @@ public class VentanaCrudArea extends javax.swing.JDialog {
                 String msj = "el area fue guardada. "
                         + "Existen: " + cuentaAreas + " area(s)";
                 JOptionPane.showMessageDialog(this, msj);
+                UpdateArchivo();
                 limpiarCampos();
             }
-            
-        }        
+
+        }
     }//GEN-LAST:event_BotonAgregarActionPerformed
 
-    public void limpiarCampos(){
+    public void limpiarCampos() {
         CampoId.setText("");
         CampoNombre.setText("");
         CampoDescripcion.setText("");
-        
+
         BotonEditar.setEnabled(false);
         BotonEliminar.setEnabled(false);
     }
-    
+
     private void BotonBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonBuscarActionPerformed
         //recuperar los datos ingresados en los campos del formulario
         String id = CampoId.getText();
         String nombre = CampoNombre.getText();
         String descripcion = CampoDescripcion.getText();
         //verificar si el map existe o si esta vacio
-        if(Area.getAreaBD() == null || Area.getAreaBD().isEmpty()){
+        if (Area.getAreaBD() == null || Area.getAreaBD().isEmpty()) {
             String msj = "no hay areas en la BD";
             JOptionPane.showMessageDialog(this, msj);
-        }else{
+        } else {
             //buscar el area a partir del id
-            if(Area.getAreaBD().containsKey(id)){
+            if (Area.getAreaBD().containsKey(id)) {
                 this.area = Area.getAreaBD().get(id);
                 CampoNombre.setText(this.area.getNombre());
                 CampoDescripcion.setText(this.area.getDescripción());
-            //se activan los botones si la busqueda fue exitosa
-            BotonEditar.setEnabled(true);
-            BotonEliminar.setEnabled(true);
-            }else if(id.isEmpty() || id.length() == 0){
+                //se activan los botones si la busqueda fue exitosa
+                BotonEditar.setEnabled(true);
+                BotonEliminar.setEnabled(true);
+            } else if (id.isEmpty() || id.length() == 0) {
                 String msj = "El campo id está vacio, es requerido para realizar la busqueda";
                 JOptionPane.showMessageDialog(this, msj);
-            }else{
+            } else {
                 BotonEditar.setEnabled(false);
                 BotonEliminar.setEnabled(false);
                 String msj = "no hay areas en la BD con ese id: " + id;
@@ -340,99 +351,101 @@ public class VentanaCrudArea extends javax.swing.JDialog {
 
     private void BotonLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonLimpiarActionPerformed
         //se pregunta si se quiere guardar la informacion
-            int option = JOptionPane.showConfirmDialog(this
-            , "Limpiar el formulario?", "confirmar limpieza"
-            , JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
-            if(option == JOptionPane.YES_OPTION){
-                String msj = "Formulario limpiado con exito";
-                JOptionPane.showMessageDialog(this, msj);
-                limpiarCampos();
-            }
+        int option = JOptionPane.showConfirmDialog(this,
+                "Limpiar el formulario?", "confirmar limpieza",
+                JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+        if (option == JOptionPane.YES_OPTION) {
+            String msj = "Formulario limpiado con exito";
+            JOptionPane.showMessageDialog(this, msj);
+            limpiarCampos();
+        }
     }//GEN-LAST:event_BotonLimpiarActionPerformed
 
     private void BotonCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonCancelarActionPerformed
-        int option = JOptionPane.showConfirmDialog(this
-            , "Cerrar ventana?", "confirmar cierre"
-            , JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
-        if(option == JOptionPane.YES_OPTION){
+        int option = JOptionPane.showConfirmDialog(this,
+                "Cerrar ventana?", "confirmar cierre",
+                JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+        if (option == JOptionPane.YES_OPTION) {
             this.dispose();
         }
     }//GEN-LAST:event_BotonCancelarActionPerformed
 
     private void BotonEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonEditarActionPerformed
         //validamos que el campo id tenga algun dato
-        if(CampoId.getText() == null || CampoId.getText().isEmpty()){
+        if (CampoId.getText() == null || CampoId.getText().isEmpty()) {
             String msj = "Para editar introduzca el id";
             JOptionPane.showMessageDialog(this, msj);
             limpiarCampos();
             return;
         }
         //validar que el id coincida con el id consultado previamente
-        if(CampoId.getText().equals(this.area.getId()) != true){
+        if (CampoId.getText().equals(this.area.getId()) != true) {
             String msj = "El id no coincide con el id consultado previamente";
             JOptionPane.showMessageDialog(this, msj);
             limpiarCampos();
             return;
         }
-        
+
         //validando que el area sí sea editada
-        if(CampoNombre.getText().equals(this.area.getNombre()) == true && 
-           CampoDescripcion.getText().equals(this.area.getDescripción()) == true){
+        if (CampoNombre.getText().equals(this.area.getNombre()) == true
+                && CampoDescripcion.getText().equals(this.area.getDescripción()) == true) {
             String msj = "No se ha cambiado nada";
             JOptionPane.showMessageDialog(this, msj);
             return;
         }
-        
+
         //recuperamos el texto que haya en el CampoId y el mapa nos devuelve el asesor con ese id
         this.area = Area.getAreaBD().get(CampoId.getText());
-        
+
         //se pregunta si se quiere guardar la informacion
-            int option = JOptionPane.showConfirmDialog(this
-            , "Guardar los cambios?", "confirmar cambios"
-            , JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
-            if(option == JOptionPane.YES_OPTION){
-                //recuperar los numevos datos ingresados en el formulario
-                String id = CampoId.getText();
-                String nombre = CampoNombre.getText();
-                String descripcion = CampoDescripcion.getText();
+        int option = JOptionPane.showConfirmDialog(this,
+                "Guardar los cambios?", "confirmar cambios",
+                JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+        if (option == JOptionPane.YES_OPTION) {
+            //recuperar los numevos datos ingresados en el formulario
+            String id = CampoId.getText();
+            String nombre = CampoNombre.getText();
+            String descripcion = CampoDescripcion.getText();
 
-                //Cambiar los datos anteriores del area por los datos nuevos
-                this.area.setNombre(String.valueOf(nombre));
-                this.area.setDescripción(String.valueOf(descripcion));
+            //Cambiar los datos anteriores del area por los datos nuevos
+            this.area.setNombre(String.valueOf(nombre));
+            this.area.setDescripción(String.valueOf(descripcion));
 
-                //Guardamos el area con los nuevos datos
-                Area.getAreaBD().put(this.area.getId(), this.area);
-
-                //mostramos el mensaje
-                String msj = "Area modificada con exito";
-                JOptionPane.showMessageDialog(this, msj);
-                limpiarCampos();
-            }
+            //Guardamos el area con los nuevos datos
+            Area.getAreaBD().put(this.area.getId(), this.area);
+            UpdateArchivo();
+            //mostramos el mensaje
+            String msj = "Area modificada con exito";
+            JOptionPane.showMessageDialog(this, msj);
+            limpiarCampos();
+        }
     }//GEN-LAST:event_BotonEditarActionPerformed
 
     private void BotonEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonEliminarActionPerformed
         //validamos que el campo Id tenga algun dato
-        if(CampoId.getText() == null || CampoId.getText().isEmpty()){
+        if (CampoId.getText() == null || CampoId.getText().isEmpty()) {
             String msj = "Para editar introduzca el id";
             JOptionPane.showMessageDialog(this, msj);
             limpiarCampos();
             return;
         }
-        
+
         //validar que el id coincida con el id consultado previamente
-        if(CampoId.getText().equals(this.area.getId()) != true){
+        if (CampoId.getText().equals(this.area.getId()) != true) {
             String msj = "El id no coincide con el id consultado previamente";
             JOptionPane.showMessageDialog(this, msj);
             limpiarCampos();
             return;
         }
         String msj = "Seguro desea eliminar el area?";
-        int respuesta = JOptionPane.showConfirmDialog(this, msj
-                , "CONFIRMAR ELIMINACION", JOptionPane.YES_NO_OPTION
-                , JOptionPane.QUESTION_MESSAGE);
-        if(respuesta == JOptionPane.YES_OPTION){
+        int respuesta = JOptionPane.showConfirmDialog(this, msj,
+                "CONFIRMAR ELIMINACION", JOptionPane.YES_NO_OPTION,
+                JOptionPane.QUESTION_MESSAGE);
+        if (respuesta == JOptionPane.YES_OPTION) {
             Area.getAreaBD().remove(this.area.getId());
             int total = Area.getAreaBD().size();
+            //  actualizacion de archivo
+            UpdateArchivo();
             String msj2 = "Area eliminada exitosamente, hay " + total + " area(s)";
             JOptionPane.showMessageDialog(this, msj2);
             limpiarCampos();
@@ -440,18 +453,18 @@ public class VentanaCrudArea extends javax.swing.JDialog {
     }//GEN-LAST:event_BotonEliminarActionPerformed
 
     private void BotonListarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonListarActionPerformed
-        if(Area.getAreaBD() == null || Area.getAreaBD().isEmpty()){
-            JOptionPane.showMessageDialog(this, "no hay areas para listar"
-            , "RESULTADO NEGATIVO", JOptionPane.WARNING_MESSAGE);
+        if (Area.getAreaBD() == null || Area.getAreaBD().isEmpty()) {
+            JOptionPane.showMessageDialog(this, "no hay areas para listar",
+                    "RESULTADO NEGATIVO", JOptionPane.WARNING_MESSAGE);
             return;
         }
-            
+
         this.dispose();
-            
+
         VentanaReporteArea ventanaReporte = new VentanaReporteArea(new JFrame(), true);
         ventanaReporte.setLocationRelativeTo(this);
         ventanaReporte.setVisible(true);
-        
+
     }//GEN-LAST:event_BotonListarActionPerformed
 
     /**

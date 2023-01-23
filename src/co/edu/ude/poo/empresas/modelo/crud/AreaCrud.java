@@ -6,16 +6,19 @@ package co.edu.ude.poo.empresas.modelo.crud;
 
 import co.edu.ude.poo.empresas.modelo.entidades.Area;
 import java.util.ArrayList;
-
+import co.edu.ude.poo.empresas.util.GestionDeAlmacenamiento;
 /**
  *
  * @author renejk
  */
 public class AreaCrud {
     ArrayList<Area> areas = new ArrayList<>();
+     
     
     public void agregar(Area v ){
         areas.add(v);
+        GestionDeAlmacenamiento.guardarAreas(areas);
+       
         
     }
     

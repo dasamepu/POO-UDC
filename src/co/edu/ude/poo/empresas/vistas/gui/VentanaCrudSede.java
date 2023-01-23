@@ -5,6 +5,7 @@
 package co.edu.ude.poo.empresas.vistas.gui;
 
 import co.edu.ude.poo.empresas.modelo.entidades.*;
+import co.edu.ude.poo.empresas.util.GestionDeAlmacenamiento;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
@@ -234,7 +235,13 @@ public class VentanaCrudSede extends javax.swing.JDialog {
     private void CampoCiudadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CampoCiudadActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_CampoCiudadActionPerformed
-
+    
+     private void UpdateArchivo() {
+        Collection<Sede> datos = Sede.getSedeBD().values();
+        List<Sede> listaSedes = new ArrayList<>(datos);
+        System.out.println("lista de sedes" + listaSedes);
+        GestionDeAlmacenamiento.guardarSedes(listaSedes);
+    }
     private void BotonAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonAgregarActionPerformed
         //recuperar los datos ingresados en los campos del formulario
         String id = CampoId.getText();
@@ -268,6 +275,7 @@ public class VentanaCrudSede extends javax.swing.JDialog {
             if(option == JOptionPane.YES_OPTION){
                 //se guarda el sede si no existia
                 Sede.getSedeBD().put(id, sede);
+                UpdateArchivo();
                 //obtenemos el numero de sedes
                 int cuentaSedes = Sede.getSedeBD().size();
                 String msj = "el sede fue guardada. "
@@ -377,7 +385,7 @@ public class VentanaCrudSede extends javax.swing.JDialog {
 
                 //Guardamos el sede con los nuevos datos
                 Sede.getSedeBD().put(this.sede.getId(), this.sede);
-
+                UpdateArchivo();
                 //mostramos el mensaje
                 String msj = "Sede modificada con exito";
                 JOptionPane.showMessageDialog(this, msj);
@@ -407,6 +415,7 @@ public class VentanaCrudSede extends javax.swing.JDialog {
                 , JOptionPane.QUESTION_MESSAGE);
         if(respuesta == JOptionPane.YES_OPTION){
             Sede.getSedeBD().remove(this.sede.getId());
+            UpdateArchivo();
             int total = Sede.getSedeBD().size();
             String msj2 = "Sede eliminada exitosamente, hay " + total + " sede(s)";
             JOptionPane.showMessageDialog(this, msj2);

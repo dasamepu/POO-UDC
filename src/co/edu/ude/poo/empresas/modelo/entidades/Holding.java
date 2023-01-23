@@ -4,13 +4,16 @@
  */
 package co.edu.ude.poo.empresas.modelo.entidades;
 
+import co.edu.ude.poo.empresas.util.GestionDeAlmacenamiento;
+import java.io.Serializable;
 import java.util.HashMap;
+import java.util.List;
 
 /**
  *
  * @author david
  */
-public class Holding {
+public class Holding implements Serializable {
     private String id;
     private String nombre_holding;
     private static HashMap<String, Holding> holdingBD;
@@ -45,6 +48,17 @@ public class Holding {
     }
 
     public static HashMap<String, Holding> getHoldingBD() {
+         List<Holding> holdings = GestionDeAlmacenamiento.recuperarHoldings();
+
+        for (Holding h : holdings) {
+            String id_a = h.getId();
+            if (holdingBD == null) {
+                setHoldingBD(new HashMap<>());
+            }
+            if (!holdingBD.containsKey(id_a)) {
+                holdingBD.put(h.getId(), h);
+            }
+        }
         return holdingBD;
     }
 

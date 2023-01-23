@@ -4,13 +4,17 @@
  */
 package co.edu.ude.poo.empresas.modelo.entidades;
 
+
+import co.edu.ude.poo.empresas.util.GestionDeAlmacenamiento;
+import java.io.Serializable;
 import java.util.HashMap;
+import java.util.List;
 
 /**
  *
  * @author david
  */
-public class Asesor {
+public class Asesor implements Serializable{
     private String id;
     private String fecha_inicio;
     private String nombre;
@@ -75,6 +79,19 @@ public class Asesor {
     }
 
     public static HashMap<String, Asesor> getAsesorBD() {
+            List<Asesor> asesores = GestionDeAlmacenamiento.recuperarAsesor();
+        
+       for(Asesor a:asesores){
+            String id_a = a.getId();
+          if(asesorBD==null){
+              setAsesorBD(new HashMap<>());
+          }
+           if(!asesorBD.containsKey(id_a)){
+               asesorBD.put(a.getId(), a);
+           } 
+       }
+        
+        
         return asesorBD;
     }
 

@@ -4,13 +4,17 @@
  */
 package co.edu.ude.poo.empresas.modelo.entidades;
 
+import static co.edu.ude.poo.empresas.modelo.entidades.Area.setAreaBD;
+import co.edu.ude.poo.empresas.util.GestionDeAlmacenamiento;
+import java.io.Serializable;
 import java.util.HashMap;
+import java.util.List;
 
 /**
  *
  * @author david
  */
-public class Vendedor {
+public class Vendedor implements Serializable {
     public String id;
     private String nombre;
     private String direccion;
@@ -69,6 +73,17 @@ public class Vendedor {
     }
 
     public static HashMap<String, Vendedor> getVendedorBD() {
+         List<Vendedor> vendedores = GestionDeAlmacenamiento.recuperarVendedores();
+
+        for (Vendedor v : vendedores) {
+            String id_a = v.getId();
+            if (vendedorBD == null) {
+                setVendedorBD(new HashMap<>());
+            }
+            if (!vendedorBD.containsKey(id_a)) {
+                vendedorBD.put(v.getId(), v);
+            }
+        }
         return vendedorBD;
     }
 

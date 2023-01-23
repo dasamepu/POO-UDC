@@ -5,6 +5,7 @@
 package co.edu.ude.poo.empresas.vistas.gui;
 
 import co.edu.ude.poo.empresas.modelo.entidades.*;
+import co.edu.ude.poo.empresas.util.GestionDeAlmacenamiento;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
@@ -303,6 +304,13 @@ public class VentanaCrudAsesor extends javax.swing.JDialog {
         // TODO add your handling code here:
     }//GEN-LAST:event_CampoFechaInicioActionPerformed
 
+     private void UpdateArchivo() {
+        Collection<Asesor> datos = Asesor.getAsesorBD().values();
+        List<Asesor> listaAsesores = new ArrayList<>(datos);
+        System.out.println("lista de asesores" + listaAsesores);
+        GestionDeAlmacenamiento.guardarAsesores(listaAsesores);
+    }
+     
     private void BotonAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonAgregarActionPerformed
         //recuperar los datos ingresados en los campos del formulario
         String id = CampoId.getText();
@@ -357,6 +365,7 @@ public class VentanaCrudAsesor extends javax.swing.JDialog {
             if(option == JOptionPane.YES_OPTION){
                 //se guarda el asesor si no existia
                 Asesor.getAsesorBD().put(id, asesor);
+                UpdateArchivo();
                 //obtenemos el numero de asesors
                 int cuentaAsesores = Asesor.getAsesorBD().size();
                 String msj = "el asesor fue guardada. "
@@ -484,7 +493,7 @@ public class VentanaCrudAsesor extends javax.swing.JDialog {
 
                 //Guardamos el asesor con los nuevos datos
                 Asesor.getAsesorBD().put(this.asesor.getId(), this.asesor);
-
+                UpdateArchivo();
                 //mostramos el mensaje
                 String msj = "Asesor modificado con exito";
                 JOptionPane.showMessageDialog(this, msj);
@@ -514,6 +523,7 @@ public class VentanaCrudAsesor extends javax.swing.JDialog {
                 , JOptionPane.QUESTION_MESSAGE);
         if(respuesta == JOptionPane.YES_OPTION){
             Asesor.getAsesorBD().remove(this.asesor.getId());
+            UpdateArchivo();
             int total = Asesor.getAsesorBD().size();
             String msj2 = "Asesor eliminada exitosamente, hay " + total + " asesor(s)";
             JOptionPane.showMessageDialog(this, msj2);
