@@ -1029,8 +1029,8 @@ public class VentanaPrincipal extends JFrame {
     }//GEN-LAST:event_ItemEliminarVendedorActionPerformed
 
     private void ItemListarPorIdVendedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ItemListarPorIdVendedorActionPerformed
-        VendedorCrud vendedorCrud = new VendedorCrud();
-        if(vendedorCrud.contar() == 0){
+       
+        if(VendedorCrud.getInstance().contar() == 0){
             JOptionPane.showMessageDialog(this, "no hay vendedores"
             , "RESULTADO NEGATIVO", JOptionPane.WARNING_MESSAGE);
             return;
@@ -1042,8 +1042,7 @@ public class VentanaPrincipal extends JFrame {
     }//GEN-LAST:event_ItemListarPorIdVendedorActionPerformed
 
     private void ItemListarPorNombreVendedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ItemListarPorNombreVendedorActionPerformed
-        VendedorCrud vendedorCrud = new VendedorCrud();
-        if(vendedorCrud.contar() == 0){
+        if(VendedorCrud.getInstance().contar() == 0){
             JOptionPane.showMessageDialog(this, "no hay vendedores"
             , "RESULTADO NEGATIVO", JOptionPane.WARNING_MESSAGE);
             return;
@@ -1175,8 +1174,7 @@ public class VentanaPrincipal extends JFrame {
     }//GEN-LAST:event_ItemListarPorPibPaisActionPerformed
 
     private void ItemListarPorDireccionVendedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ItemListarPorDireccionVendedorActionPerformed
-        VendedorCrud vendedorCrud = new VendedorCrud();
-        if(vendedorCrud.contar() == 0){
+        if(VendedorCrud.getInstance().contar() == 0){
             JOptionPane.showMessageDialog(this, "no hay vendedores"
             , "RESULTADO NEGATIVO", JOptionPane.WARNING_MESSAGE);
             return;
@@ -1188,8 +1186,7 @@ public class VentanaPrincipal extends JFrame {
     }//GEN-LAST:event_ItemListarPorDireccionVendedorActionPerformed
 
     private void ItemListarPorNumeroTrabajosVendedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ItemListarPorNumeroTrabajosVendedorActionPerformed
-        VendedorCrud vendedorCrud = new VendedorCrud();
-        if(vendedorCrud.contar() == 0){
+        if(VendedorCrud.getInstance().contar() == 0){
             JOptionPane.showMessageDialog(this, "no hay vendedores"
             , "RESULTADO NEGATIVO", JOptionPane.WARNING_MESSAGE);
             return;
@@ -1273,8 +1270,8 @@ public class VentanaPrincipal extends JFrame {
     }//GEN-LAST:event_ItemListarTodoSedeActionPerformed
 
     private void ItemListarTodoVendedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ItemListarTodoVendedorActionPerformed
-        VendedorCrud vendedorCrud = new VendedorCrud();
-        if(vendedorCrud.contar() == 0){
+        
+        if(VendedorCrud.getInstance().contar() == 0){
             JOptionPane.showMessageDialog(this, "no hay vendedores"
             , "RESULTADO NEGATIVO", JOptionPane.WARNING_MESSAGE);
             return;

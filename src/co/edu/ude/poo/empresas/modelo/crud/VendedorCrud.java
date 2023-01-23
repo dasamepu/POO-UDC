@@ -12,11 +12,18 @@ import java.util.HashMap;
  * @author renejk
  */
 public class VendedorCrud {
-    
+    private static VendedorCrud instance; // static variable to hold the single instance of the class
     private static HashMap<String, Vendedor> vendedorBD;
-
-    public VendedorCrud(){
-        vendedorBD = new HashMap<String, Vendedor>();
+    
+    private VendedorCrud() {
+        vendedorBD = new HashMap<>();
+    }
+    
+    public static VendedorCrud getInstance() { // static method to return the single instance of the class
+        if (instance == null) {
+            instance = new VendedorCrud();
+        }
+        return instance;
     }
     
     public void agregar(Vendedor v){
@@ -50,4 +57,3 @@ public class VendedorCrud {
         return vendedorBD.size();
     }
 }
-        

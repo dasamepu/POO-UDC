@@ -147,8 +147,8 @@ public class VentanaReporteXIdVendedor extends javax.swing.JDialog {
     }// </editor-fold>//GEN-END:initComponents
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
-        VendedorCrud vendedorCrud = new VendedorCrud(); 
-        Collection<Vendedor> datos = vendedorCrud.listarTodo(); 
+        
+        Collection<Vendedor> datos = VendedorCrud.getInstance().listarTodo(); 
         List<Vendedor> listaVendedores = new ArrayList (datos);
         
         // Ordenar la lista por ID usando el Comparator

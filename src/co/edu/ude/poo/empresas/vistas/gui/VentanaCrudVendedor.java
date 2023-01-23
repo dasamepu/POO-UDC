@@ -19,7 +19,7 @@ import javax.swing.JOptionPane;
  */
 public class VentanaCrudVendedor extends javax.swing.JDialog {
     
-    VendedorCrud vendedorCrud = new VendedorCrud();
+    
 
     /**
      * Creates new form VentanaCrudVendedor
@@ -341,18 +341,18 @@ public class VentanaCrudVendedor extends javax.swing.JDialog {
             
             if(!idVendedorCapturante.isEmpty()) {    
                 vendedor.setVendedorCapturante(idVendedorCapturante); // se asigna el vendedor capturante al vendedor capturado
-                vendedorCrud.agregar(vendedor); // se agrega el vendedor al diccionario de VendedorCrud
-                 String msj = "Vendedor agregado con éxito \n "
-                    + "exixte(n)" + vendedorCrud.contar() + "vendedor(es)";
+                VendedorCrud.getInstance().agregar(vendedor); // se agrega el vendedor al diccionario de VendedorCrud
+                 String msj = "Vendedor agregado con éxito \n ";
+//                    + "exixte(n)" + VendedorCrud.getInstance().contar() + "vendedor(es)";
                 JOptionPane.showMessageDialog(this, msj);
                 limpiarCampos(); // se limpian los campos del formulario
             } else {
                 int option = JOptionPane.showConfirmDialog(this, "El vendedor capturante no existe, ¿Desea agregarlo de todos modos?", "Confirmar Agregar", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
                 if(option == JOptionPane.YES_OPTION){
                     vendedor.setVendedorCapturante("-");
-                    vendedorCrud.agregar(vendedor); // se agrega el vendedor al diccionario de VendedorCrud
+                    VendedorCrud.getInstance().agregar(vendedor); 
                     String msj = "Vendedor agregado con éxito \n "
-                            + "exixte(n) " + vendedorCrud.contar() + " vendedor(es)";
+                            + "exixte(n) " + VendedorCrud.getInstance().contar() + " vendedor(es)";
                     JOptionPane.showMessageDialog(this, msj);
                     limpiarCampos(); // se limpian los campos del formulario
                 }
@@ -376,7 +376,7 @@ public class VentanaCrudVendedor extends javax.swing.JDialog {
         String id = CampoId.getText();        
         
         
-        Vendedor vendedor = vendedorCrud.buscar(id);
+        Vendedor vendedor = VendedorCrud.getInstance().buscar(id);
         if(vendedor != null) {
             CampoNombre.setText(vendedor.getNombre());
             CampoDireccion.setText(vendedor.getDireccion());
@@ -424,7 +424,7 @@ public class VentanaCrudVendedor extends javax.swing.JDialog {
         }
 
         
-        Vendedor vendedor = vendedorCrud.buscar(CampoId.getText());
+        Vendedor vendedor = VendedorCrud.getInstance().buscar(CampoId.getText());
     
         if(vendedor == null){
             String msj = "No se encontro el vendedor con ese id";
@@ -459,7 +459,7 @@ public class VentanaCrudVendedor extends javax.swing.JDialog {
                 vendedor.setNumero_trabajos(numero_trabajos);
 
                 //Guardamos el vendedor con los nuevos datos
-                vendedorCrud.editar(vendedor);
+                VendedorCrud.getInstance().editar(vendedor);
 
                 //mostramos el mensaje
                 String msj = "vendedor modificado con exito";
@@ -480,7 +480,7 @@ public class VentanaCrudVendedor extends javax.swing.JDialog {
         }
         
         //validar que el id coincida con el id consultado previamente
-        Vendedor vendedor = vendedorCrud.buscar(CampoId.getText());
+        Vendedor vendedor = VendedorCrud.getInstance().buscar(CampoId.getText());
         if(vendedor == null){
             String msj = "El id no coincide con el id consultado previamente";
             JOptionPane.showMessageDialog(this, msj);
@@ -492,8 +492,8 @@ public class VentanaCrudVendedor extends javax.swing.JDialog {
                 , "CONFIRMAR ELIMINACION", JOptionPane.YES_NO_OPTION
                 , JOptionPane.QUESTION_MESSAGE);
         if(respuesta == JOptionPane.YES_OPTION){
-            vendedorCrud.eliminar(vendedor.getId());
-            int total = vendedorCrud.contar();
+            VendedorCrud.getInstance().eliminar(vendedor.getId());
+            int total = VendedorCrud.getInstance().contar();
             String msj2 = "Vendedor eliminada exitosamente, hay " + total + " Vendedor(s)";
             JOptionPane.showMessageDialog(this, msj2);
             limpiarCampos();
@@ -502,7 +502,7 @@ public class VentanaCrudVendedor extends javax.swing.JDialog {
 
     private void BotonListarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonListarActionPerformed
         
-        if(vendedorCrud.contar() == 0) { 
+        if(VendedorCrud.getInstance().contar() == 0) { 
             JOptionPane.showMessageDialog(this, "no hay Vendedores para listar"
             , "RESULTADO NEGATIVO", JOptionPane.WARNING_MESSAGE);
             return;
