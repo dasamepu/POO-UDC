@@ -3,9 +3,11 @@ package co.edu.ude.poo.empresas.modelo.crud;
 
 import co.edu.ude.poo.empresas.modelo.entidades.Empresa;
 import co.edu.ude.poo.empresas.modelo.entidades.Vendedor;
+import co.edu.ude.poo.empresas.util.GestionDeAlmacenamiento;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
+import java.util.List;
 
 /**
  *
@@ -16,7 +18,20 @@ public class VendedorCrud {
     private static HashMap<String, Vendedor> vendedorBD;
     
     private VendedorCrud() {
-        vendedorBD = new HashMap<>();
+
+        List<Vendedor> listaVendedoresRecuperadas = GestionDeAlmacenamiento.recuperarVendedores();
+        
+        for (Vendedor vendedor : listaVendedoresRecuperadas) {
+            
+            String id_vendedor = vendedor.getId();
+            if (vendedorBD == null) {
+                vendedorBD = new HashMap<>();
+            }
+            if (!vendedorBD.containsKey(id_vendedor)) {
+                vendedorBD.put(vendedor.getId(), vendedor);
+            }
+
+        }   
     }
     
     public static VendedorCrud getInstance() { // static method to return the single instance of the class
@@ -56,4 +71,5 @@ public class VendedorCrud {
     public int contar() {
         return vendedorBD.size();
     }
+
 }

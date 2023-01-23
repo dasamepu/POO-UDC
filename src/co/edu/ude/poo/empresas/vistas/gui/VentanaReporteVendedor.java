@@ -6,10 +6,8 @@ package co.edu.ude.poo.empresas.vistas.gui;
 
 import co.edu.ude.poo.empresas.modelo.crud.VendedorCrud;
 import co.edu.ude.poo.empresas.modelo.entidades.Vendedor;
-import co.edu.ude.poo.empresas.util.GestionDeAlmacenamiento;
-import java.util.ArrayList;
 import java.util.Collection;
-import java.util.List;
+import java.util.*;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -147,7 +145,7 @@ public class VentanaReporteVendedor extends javax.swing.JDialog {
         
         Collection<Vendedor> datos = VendedorCrud.getInstance().listarTodo(); 
         List<Vendedor> listaVendedores = new ArrayList (datos); 
-        
+
         String columnas[] = {"ID","NOMBRE", "DIRECCION", "NUMERO DE TRABAJOS", "VENDEDOR CAPTURANTE"}; 
         int totalVendedores = listaVendedores.size(); 
         String filas[][] = new String[totalVendedores][columnas.length]; 
