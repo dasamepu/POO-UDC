@@ -20,7 +20,7 @@ public class Principal {
         ventana.setVisible(true);
         
         Empresa empresa1 = new Empresa("12345", "ecopetrol", 
-                "1/1/2022", 363563456, 354, 45);
+                "1/1/2022", 363563456, 354, 1);
         empresa1.setNum_sedes(1);
         System.out.println(empresa1);
         System.out.println(empresa1.getNum_sedes());
@@ -30,7 +30,7 @@ public class Principal {
         Empresa empresa2 = new Empresa("54321", "terpel", 
                 "2/1/2022", 1000000, 1000, 12);
         System.out.println(empresa2);
-        empresa2.setNum_sedes(2);
+        empresa2.setNum_sedes(12);
         System.out.println(empresa2.getNum_sedes());
 
         System.out.println("");
@@ -42,7 +42,7 @@ public class Principal {
         
         System.out.println();
         
-        Vendedor vendedor2 = new Vendedor("85678","Julian","Calle 60",1);
+        Vendedor vendedor2 = new Vendedor("85678","Julian","Calle 60",2);
         System.out.println(vendedor2);
         vendedor2.setNumero_trabajos(2);
         System.out.println(vendedor2.getNumero_trabajos());

@@ -17,7 +17,7 @@ import java.util.List;
  * @author david
  */
 public class Vendedor implements Serializable {
-    public String id;
+    private String id;
     private String nombre;
     private String direccion;
     private Integer numero_trabajos;
